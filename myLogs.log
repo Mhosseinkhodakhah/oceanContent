@@ -1,0 +1,2292 @@
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '8e9c5b94-ce94-43b3-8765-feadc0c18075',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '28'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 401 },
+    responseTime: 25
+  },
+  level: 'warn',
+  message: 'POST /content/create-lesson 401 25ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 09:52:33'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '1b3e95f5-d44f-49e8-a86c-5dad02d40ce4',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '28'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 20
+  },
+  level: 'warn',
+  message: 'POST /content/create-lesson 400 20ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 09:52:55'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '28a0361b-ed2e-45ea-a4ad-dbac450b40a7',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '28'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 20
+  },
+  level: 'warn',
+  message: 'POST /content/create-lesson 400 20ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 09:53:22'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'ab21054b-aefb-412e-a719-c924da916858',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '45'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 156
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 156ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 09:55:12'
+}
+{
+  meta: {
+    req: {
+      url: '/content//create-sublesson/673ed248ff63c7cdae88cde6',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '41e81832-4c5c-43d1-a069-6f033dba89b5',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '31'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content//create-sublesson/673ed248ff63c7cdae88cde6',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 310
+  },
+  level: 'info',
+  message: 'POST /content//create-sublesson/673ed248ff63c7cdae88cde6 200 310ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:18:04'
+}
+{
+  meta: {
+    req: {
+      url: '/content//create-sublesson/673ed248ff63c7cdae88cde6',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'fbd849b1-960f-4d31-950e-2f15eb6144e4',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '31'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content//create-sublesson/673ed248ff63c7cdae88cde6',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 403
+  },
+  level: 'info',
+  message: 'POST /content//create-sublesson/673ed248ff63c7cdae88cde6 200 403ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:20:12'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '8986ff16-3559-4abb-9d1f-7ce44749f1cc',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '45'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 116
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 116ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:20:34'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673ed248ff63c7cdae88cde6',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'f693aefa-fc8a-4a7d-aa96-c93c12e56825',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673ed248ff63c7cdae88cde6',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 157
+  },
+  level: 'warn',
+  message: 'POST /content/create-sublesson/673ed248ff63c7cdae88cde6 404 157ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:22:55'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '0399bfa4-3340-422b-a8ec-d8dd1eb1a709',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 373
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673ee64aa4364e098e45e2e1 200 373ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:23:33'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '912988d7-ab4d-4aed-bfc0-cc39be1278a0',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 241
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 241ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:27:34'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '4b077a50-c085-4aa8-8104-f36fbd040837',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 255
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 255ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:27:59'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'adbe4475-26a3-4be1-86fe-b43243d2dbf1',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 493
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 493ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:52:51'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '3d3d9daf-ab89-4548-974d-f887b8a08f00',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 462
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 462ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:55:56'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '67690a39-ab30-4c35-bb0b-faeafb5ec7b4',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 331
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 331ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:56:30'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '6015c44c-1a1b-4019-8b11-348fc44f41e0',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 869
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 869ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 11:56:53'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '9ece8b34-3b34-40c0-b064-38c2510bd828',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 5
+  },
+  level: 'warn',
+  message: 'GET /content/create-sublesson/673ee64aa4364e098e45e2e1 404 5ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:08:12'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'ea3c51aa-7797-4758-b254-2c4febfc7ced',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      query: {}
+    },
+    res: { statusCode: 400 },
+    responseTime: 5
+  },
+  level: 'warn',
+  message: 'POST /content/create-sublesson/673ee64aa4364e098e45e2e1 400 5ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:08:18'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'aeef1655-b4c0-4c02-982b-9dd652347f7f',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '31'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673ee64aa4364e098e45e2e1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1449
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673ee64aa4364e098e45e2e1 200 1449ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:08:36'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-content/673ef18b73a257e6dfc9b286',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '92d96fe3-f182-41c6-9d90-a7aaccb4666d',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '142'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-content/673ef18b73a257e6dfc9b286',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 904
+  },
+  level: 'info',
+  message: 'POST /content/create-content/673ef18b73a257e6dfc9b286 200 904ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:10:43'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'c4fe24a4-23ac-4491-bbc5-ceabbf4c3cc8',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 409
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 409ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:11:46'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'd482c528-8fe0-4f3b-980a-6de51d5dcde6',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 161
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 161ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:14:00'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-content/673ef18b73a257e6dfc9b286',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '8ee945d5-08c6-4e74-aad0-3d31404eb8ec',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '142'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-content/673ef18b73a257e6dfc9b286',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 345
+  },
+  level: 'info',
+  message: 'POST /content/create-content/673ef18b73a257e6dfc9b286 200 345ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:14:07'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '7ec85356-595f-4b69-a9a0-7fb1fbbaa780',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 146
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 146ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:15:13'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-content/673ef18b73a257e6dfc9b286',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '40c98280-b66c-4bd5-9783-e941bf5f17ff',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '142'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-content/673ef18b73a257e6dfc9b286',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 393
+  },
+  level: 'info',
+  message: 'POST /content/create-content/673ef18b73a257e6dfc9b286 200 393ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:17:12'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'fa2804ba-dec3-4796-9854-1a671c4e9270',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 247
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 247ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 12:17:17'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '43d9bd4f-f4ba-4530-8e16-539aa1503bde',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 293
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 293ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:27:28'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a2c1870f-788a-46b0-bea9-d011b176868e',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 301
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 301ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:30:38'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-sublessons',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '0504b742-e88e-495c-a454-b4197498bc97',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-sublessons',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 14
+  },
+  level: 'warn',
+  message: 'GET /content/get-sublessons 404 14ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:32:03'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-sublesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '55d9edd6-16ad-4d77-858a-1ec3ca897a9c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-sublesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 126
+  },
+  level: 'info',
+  message: 'GET /content/get-sublesson 200 126ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:32:14'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-sublesson/673ef18b73a257e6dfc9b286',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'd149468e-7150-4b4e-a2cc-9e54b0472108',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-sublesson/673ef18b73a257e6dfc9b286',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 0
+  },
+  level: 'warn',
+  message: 'GET /content/get-sublesson/673ef18b73a257e6dfc9b286 404 0ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:32:40'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-sublesson/673ef18b73a257e6dfc9b286',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'd733f269-87a0-489f-a863-58daf94e74d0',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-sublesson/673ef18b73a257e6dfc9b286',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 274
+  },
+  level: 'info',
+  message: 'GET /content/get-sublesson/673ef18b73a257e6dfc9b286 200 274ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:33:04'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-content/673ef39081b307f0cccfbf10',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'c3e536c2-4bfb-4116-b353-53c7a3d8f87c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '34'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-content/673ef39081b307f0cccfbf10',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 259
+  },
+  level: 'info',
+  message: 'GET /content/get-content/673ef39081b307f0cccfbf10 200 259ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:33:33'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '33a23631-ae6c-4408-bea5-f34eca430035',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '126'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 13
+  },
+  level: 'warn',
+  message: 'GET /content/create-lesson 404 13ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:49:36'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '4a8d6150-159e-42e5-979e-e88009efe492',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '126'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 182
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 182ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:49:41'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f093c602a0059131335d9',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '339a4326-a0de-49d2-b3ec-c497e2627063',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '75'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f093c602a0059131335d9',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 394
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f093c602a0059131335d9 200 394ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:54:31'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a871ca86-a08d-4f6c-84c7-efb707b7b392',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 230
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 230ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 13:54:52'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '2eecb6eb-56d2-4180-9813-dc7716a6be61',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '126'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 267
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 267ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:25:38'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f093c602a0059131335d9',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '9b4a9dcb-b326-45de-ab54-9db11586758d',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '75'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f093c602a0059131335d9',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 134
+  },
+  level: 'warn',
+  message: 'POST /content/create-sublesson/673f093c602a0059131335d9 404 134ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:26:12'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '539346e1-73cb-439f-a1b4-53da103924df',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '75'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 353
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 353ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:26:26'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'df7cdf9f-a748-4e97-9abe-135a9cc55c73',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '70'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 344
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 344ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:27:22'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'db8a9b16-fe73-4347-a44c-1aa240ed67ee',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '93'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 358
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 358ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:27:41'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '8a104f16-e31d-4014-b5d4-9ff51e4a5faf',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '168'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 351
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 351ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:29:03'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'eb83c480-9315-4bf5-a4d2-e91ed5d51c7e',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '90'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 354
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 354ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:29:46'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'fa4cd0cc-c866-4bae-82bd-4a25ef115653',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '80'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 493
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 493ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:30:33'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f11aa72050b43e809408d',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '231a3bad-b68d-493d-88b9-f246ecca617c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '80'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f11aa72050b43e809408d',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 348
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f11aa72050b43e809408d 200 348ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:30:50'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '05512620-344b-48d6-a0df-ffe271778bc4',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 267
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 267ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:30:57'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'f69e2e2d-ff9d-4ce6-bd96-9ecfa02dca31',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '92'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 119
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 119ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:31:42'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f131672050b43e80940ae',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'c0a1d0ca-7cce-481f-874d-6e5ce1a6ca2a',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '92'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f131672050b43e80940ae',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 352
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f131672050b43e80940ae 200 352ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:32:11'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f131672050b43e80940ae',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '20fc70ae-39c4-408d-80e9-e084e8c379a4',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '95'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f131672050b43e80940ae',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 350
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f131672050b43e80940ae 200 350ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:32:40'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f131672050b43e80940ae',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '5eaa4b0a-d944-4cdb-b405-64c3bf2a4d03',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '149'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f131672050b43e80940ae',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 349
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f131672050b43e80940ae 200 349ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:33:01'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f131672050b43e80940ae',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '558e87e3-755c-4a02-8ed5-b70e94de0663',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '110'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f131672050b43e80940ae',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 340
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f131672050b43e80940ae 200 340ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:33:21'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f131672050b43e80940ae',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '00220523-977c-488a-bd2d-867b9a1fa1f1',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '141'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f131672050b43e80940ae',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 366
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f131672050b43e80940ae 200 366ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:33:43'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '55d8d8ab-7183-4d42-b10b-867a650194e5',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 227
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 227ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:34:00'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a7013d79-e4f7-47e1-b7fb-53d987eb25ab',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '181'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 155
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 155ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:50:45'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f131672050b43e80940ae',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '6d46750b-fb00-437d-9eab-a2bf900f37e9',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '140'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f131672050b43e80940ae',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 125
+  },
+  level: 'warn',
+  message: 'POST /content/create-sublesson/673f131672050b43e80940ae 404 125ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:52:10'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f178da97a548eb482af9b',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'f4f52247-176e-4260-ad2c-3dbb203810b6',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '140'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f178da97a548eb482af9b',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 360
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f178da97a548eb482af9b 200 360ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:52:19'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '149ae2fa-00b6-4d2e-b124-683912da8f9a',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 236
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 236ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:52:22'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f178da97a548eb482af9b',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'cf478179-fd50-4fa5-9cdb-cbd5b6497558',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '124'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f178da97a548eb482af9b',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 360
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f178da97a548eb482af9b 200 360ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:56:24'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f178da97a548eb482af9b',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a7ac4824-cee2-41a1-a6e0-4670f731b6da',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '176'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f178da97a548eb482af9b',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 408
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f178da97a548eb482af9b 200 408ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:56:57'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f178da97a548eb482af9b',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '9d4d0782-f443-47da-81df-9ac1e198edfe',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '269'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f178da97a548eb482af9b',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 342
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f178da97a548eb482af9b 200 342ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:58:13'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '14204312-4c29-40db-853a-166ffffe4cbe',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '169'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 126
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 126ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:58:53'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'c0951105-0369-4239-8a3e-c47964baf05b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 232
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 232ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 14:59:15'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '2b9c3d6f-7a3e-4961-a8fa-7b8af896fecd',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '154'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 337
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1974a97a548eb482afb0 200 337ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:00:50'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '4f786a85-6f73-4080-ab02-1758f19a4a98',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 230
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 230ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:00:53'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'feb144f6-5bf4-4cab-9cc0-2735a5b23733',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '180'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 346
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1974a97a548eb482afb0 200 346ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:01:44'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '92cf8189-2180-458c-800b-8cc7c3e04429',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '266'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 353
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1974a97a548eb482afb0 200 353ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:02:22'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a632e6e2-8b2e-40d0-877b-b380d734ceb0',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '194'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1974a97a548eb482afb0',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 337
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1974a97a548eb482afb0 200 337ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:02:50'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGF0YSI6eyJfaWQiOiI2NmVlYjM2OWQwOTUzYzgwNTY2N2M5MWYiLCJ1c2VybmFtZSI6Imhvc3NlaW51dXUiLCJyb2xlIjoyLCJzdXNwZW5kIjpmYWxzZSwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJwaWN0dXJlUHJvZmlsZSI6Imh0dHBzOi8vY2RuLnNwaWRlci1jcnlwdG9ib3Quc2l0ZS9wcm9maWxlcy9lMTI4MTZlNmNiMWJlNzlhZWYyNTVkM2YxMGUzZDEwYzFjLnBuZyIsImxlYWRlcnMiOlsiNjZkMDZkYTU0YzZlNTQxMDc4ZDM0ZjFhIiwiNjZmYjA4N2U5YjcxYTJkNzZiYmFjNzY4IiwiNjZjNmUyYzBlMjI2NDNlMTllZDJmZmNkIl19LCJpYXQiOjE3Mjk5NzU1MzMsImV4cCI6MTczMDAxODczM30.bV0Ux96f62YQSyKXgTOtSmdZOy8cm6QO0hHetyW_M9g',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '0ec49659-4001-458e-a058-780a68c61f49',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '154'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 115
+  },
+  level: 'info',
+  message: 'POST /content/create-lesson 200 115ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:03:32'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1a8ca97a548eb482afc6',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'ab01c005-2325-437d-b797-5cbb393a2452',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '134'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1a8ca97a548eb482afc6',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 382
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1a8ca97a548eb482afc6 200 382ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:05:22'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1a8ca97a548eb482afc6',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '13fb9184-ebab-42b6-be57-f094adf27ae9',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '154'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1a8ca97a548eb482afc6',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 344
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1a8ca97a548eb482afc6 200 344ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:06:08'
+}
+{
+  meta: {
+    req: {
+      url: '/content/create-sublesson/673f1a8ca97a548eb482afc6',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '7a4f40b6-559a-4a3d-8840-37c8b02c4c21',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '190'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/content/create-sublesson/673f1a8ca97a548eb482afc6',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 336
+  },
+  level: 'info',
+  message: 'POST /content/create-sublesson/673f1a8ca97a548eb482afc6 200 336ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:06:50'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'fb64434b-e19a-416d-aa3a-8ede70cd9f7b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 225
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 225ms',
+  label: 'right meow!',
+  timestamp: '2024-11-21 15:06:53'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY1NDg5LCJleHAiOjE3MzIzNjkwODl9.tDMYJ74VhAUBHS6asjtFyOJdcLW5Qmnl5LpwwTfousQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '09c52351-0572-4e8a-9eac-aa1127e18524',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 401 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 401 4ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 16:08:20'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY1NDg5LCJleHAiOjE3MzIzNjkwODl9.tDMYJ74VhAUBHS6asjtFyOJdcLW5Qmnl5LpwwTfousQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '1af9063d-eb73-4720-89f0-4fbb7aa5fa81',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 6
+  },
+  level: 'warn',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 404 6ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 16:09:36'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY1NDg5LCJleHAiOjE3MzIzNjkwODl9.tDMYJ74VhAUBHS6asjtFyOJdcLW5Qmnl5LpwwTfousQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '531a51cd-4b17-418a-8ea9-5df888966d1d',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 404 4ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 16:09:47'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY1NDg5LCJleHAiOjE3MzIzNjkwODl9.tDMYJ74VhAUBHS6asjtFyOJdcLW5Qmnl5LpwwTfousQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'ffd49419-703a-4382-81a2-877eaa7f7c44',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 214
+  },
+  level: 'info',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 200 214ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 16:10:23'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY1NDg5LCJleHAiOjE3MzIzNjkwODl9.tDMYJ74VhAUBHS6asjtFyOJdcLW5Qmnl5LpwwTfousQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'e5766789-8e0d-45f4-8d73-8db8da75c4da',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 992
+  },
+  level: 'info',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 200 992ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 17:05:58'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY1NDg5LCJleHAiOjE3MzIzNjkwODl9.tDMYJ74VhAUBHS6asjtFyOJdcLW5Qmnl5LpwwTfousQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '9fa4e5b7-4924-4ddc-b712-aa41bfd4ead9',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 401 },
+    responseTime: 5
+  },
+  level: 'warn',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 401 5ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 17:08:28'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '7d8efc15-486a-4d1b-adb3-03091af03e24',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1033
+  },
+  level: 'info',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 200 1033ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 17:11:04'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'aa8f4792-6b14-4eb4-8802-604dea738410',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1129
+  },
+  level: 'info',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 200 1129ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 17:11:45'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '85243210-c8f4-44e8-b053-44da3673c449',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1154
+  },
+  level: 'info',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 200 1154ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 17:12:29'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'b6c5cbdf-0601-4a75-b5ee-3836f0b0bfeb',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 951
+  },
+  level: 'info',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 200 951ms',
+  label: 'right meow!',
+  timestamp: '2024-11-23 17:13:35'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '72cbcc3a-1192-4c95-8177-7a81f98efc2b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 401 },
+    responseTime: 6
+  },
+  level: 'warn',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 401 6ms',
+  label: 'right meow!',
+  timestamp: '2024-11-24 17:04:19'
+}
+{
+  meta: {
+    req: {
+      url: '/content/seen-content/673f1b51a97a548eb482afd1',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '046bd514-7229-4050-93e4-a99fbc6227d6',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/content/seen-content/673f1b51a97a548eb482afd1',
+      query: {}
+    },
+    res: { statusCode: 401 },
+    responseTime: 7
+  },
+  level: 'warn',
+  message: 'PUT /content/seen-content/673f1b51a97a548eb482afd1 401 7ms',
+  label: 'right meow!',
+  timestamp: '2024-11-24 17:12:36'
+}
+{
+  meta: {
+    req: {
+      url: '/content/get-lessons',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '09d4c3df-556c-4a04-88e2-d353b246f037',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/content/get-lessons',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 245
+  },
+  level: 'info',
+  message: 'GET /content/get-lessons 200 245ms',
+  label: 'right meow!',
+  timestamp: '2024-11-24 17:14:18'
+}
