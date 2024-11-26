@@ -156,8 +156,9 @@ export default class adminController {
     }
 
     async updateContent(req: any, res: any, next: any) {
-        const content = await contentModel.findById(req.params.contentId).populate('subLesson')
-        await content?.updateOne(req.body)
+        const content = await contentModel.findById(req.params.contentId)
+        const finalData = {...content , ...req.body}
+        await content?.updateOne(finalData)
         await content?.save()
         await cacher.reset()
         return next(new response(req, res, 'get specific content', 200, null, content))

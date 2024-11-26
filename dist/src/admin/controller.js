@@ -161,8 +161,9 @@ class adminController {
     }
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield content_1.default.findById(req.params.contentId).populate('subLesson');
-            yield (content === null || content === void 0 ? void 0 : content.updateOne(req.body));
+            const content = yield content_1.default.findById(req.params.contentId);
+            const finalData = Object.assign(Object.assign({}, content), req.body);
+            yield (content === null || content === void 0 ? void 0 : content.updateOne(finalData));
             yield (content === null || content === void 0 ? void 0 : content.save());
             yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, content));
