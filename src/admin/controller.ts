@@ -48,7 +48,7 @@ export default class adminController {
         if (!sublesson) {
             return next(new response(req, res, 'create content', 404, 'this lesson is not exist', null))
         }
-        const data = {...req.body , subLesson: sublesson._id}
+        const data = { ...req.body, subLesson: sublesson._id }
         const content = await contentModel.create(data)
 
         await subLessonModel.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } })
@@ -63,7 +63,7 @@ export default class adminController {
         if (!lesson) {
             return next(new response(req, res, 'create new level', 404, 'this lesson is not defined on database', null))
         }
-        const level = { number: req.body.number , reward: req.body.reward, lesson: lesson._id }
+        const level = { number: req.body.number, reward: req.body.reward, lesson: lesson._id }
         const existLevelNumber = await levelModel.findOne({ number: req.body.number })
         if (existLevelNumber) {
             const lesss = await levelModel.find({ number: { $gt: req.body.number } })
@@ -87,7 +87,7 @@ export default class adminController {
 
 
 
-    
+
     async deleteLevel(req: any, res: any, next: any) {
         const level = await levelModel.findById(req.params.levelId)
         if (!level) {
@@ -113,6 +113,7 @@ export default class adminController {
         if (!level) {
             return next(new response(req, res, 'create content', 404, 'this level is not defined on database', null))
         }
+        req.body.trueOption -= 1
         const data = { ...req.body, level: level._id }
         const question = await questionModel.create(data)
         await level.updateOne({ $addToSet: { questions: question._id } })
@@ -123,20 +124,42 @@ export default class adminController {
 
 
     async getLevels(req: any, res: any, next: any) {
-        const level = await levelModel.find()
-        return next(new response(req, res, 'get levels', 200, null, level))
+        let cacheData = await cacher.getter('admin-getLevels')
+        let finalData;
+        if (cacheData){
+            console.log('read throw cache . . .')
+            finalData = cacheData;
+        }else{
+            console.log('cache is empty . . .')
+            finalData = await levelModel.find()
+            await cacher.setter('admin-getLevels' , finalData)
+        }
+        return next(new response(req, res, 'get levels', 200, null, finalData))
     }
 
 
     async getContent(req: any, res: any, next: any) {
-        const content = await contentModel.findById(req.params.contentId).populate('subLesson')
-        return next(new response(req, res, 'get specific content', 200, null, content))
+        let cacheData = await cacher.getter(`admin-getContent-${req.params.contentId}`)
+        let finalData;
+        if (cacheData){
+            console.log('read throw cache . . .')
+            finalData = cacheData
+        }else{
+            console.log('cache is empty . . .')
+            finalData = await contentModel.findById(req.params.contentId).populate('subLesson')
+            if (!finalData){
+                return next(new response(req, res, 'get specific content', 404, 'this content is not exist on database', null))
+            }
+            await cacher.setter(`admin-getContent-${req.params.contentId}` , finalData)
+        }
+        return next(new response(req, res, 'get specific content', 200, null, finalData))
     }
 
     async updateContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId).populate('subLesson')
         await content?.updateOne(req.body)
         await content?.save()
+        await cacher.reset()
         return next(new response(req, res, 'get specific content', 200, null, content))
     }
 
@@ -144,6 +167,7 @@ export default class adminController {
         const lesson = await lessonModel.findById(req.params.lessonId).populate('subLesson')
         await lesson?.updateOne(req.body)
         await lesson?.save()
+        await cacher.reset()
         return next(new response(req, res, 'get specific content', 200, null, lesson))
     }
 
@@ -151,44 +175,47 @@ export default class adminController {
         const sublesson = await subLessonModel.findById(req.params.sublessonId).populate('subLesson')
         await sublesson?.updateOne(req.body)
         await sublesson?.save()
+        await cacher.reset()
         return next(new response(req, res, 'get specific content', 200, null, sublesson))
     }
 
 
     async getSubLesson(req: any, res: any, next: any) {
-        let cacheData = await cacher.getter('admin-getSubLesson')
+        let cacheData = await cacher.getter(`admin-getSubLesson-${req.params.sublessonId}`)
         let subLesson;
         if (cacheData) {
             console.log('read throw cach . . .')
-            if (cacheData[req.params.sublesson]) {
-                console.log('read throw cach . . .')
-                subLesson = cacheData[req.params.sublesson]
-            } else {
-                console.log('cache is empty . . .')
-                subLesson = await subLessonModel.findById(req.params.sublesson).populate('contents').populate('lesson')
-                cacheData[req.params.sublesson] = subLesson
-                await cacher.setter('admin-getSubLesson', cacheData)
-            }
+            subLesson = cacheData
         } else {
             console.log('cache is empty . . .')
-            subLesson = await subLessonModel.findById(req.params.sublesson).populate('contents').populate('lesson')
-            cacheData = {}
-            cacheData[req.params.sublesson] = subLesson
-            await cacher.setter('admin-getSubLesson', cacheData)
+            subLesson = await subLessonModel.findById(req.params.sublessonId).populate('contents').populate('lesson')
+            if (!subLesson) {
+                return next(new response(req, res, 'get specific subLesson', 404, 'this sublesson is not exist on database', null))
+            }
+            await cacher.setter(`admin-getSubLesson-${req.params.sublessonId}`, subLesson)
+            
         }
         return next(new response(req, res, 'get specific subLesson', 200, null, subLesson))
     }
 
 
     async getLessons(req: any, res: any, next: any) {
-        const lessons = await lessonModel.find().populate({
-            path: 'sublessons',
-            populate: {
-                path: 'contents',
-                select: 'internalContent',
-            }
-        })
-        return next(new response(req, res, 'get lessons', 200, null, lessons))
+        let cacheData = await cacher.getter('admin-getLessons')
+        let finalData;
+        if (cacheData) {
+            finalData = cacheData;
+        } else {
+            const lessons = await lessonModel.find().populate({
+                path: 'sublessons',
+                populate: {
+                    path: 'contents',
+                    select: 'internalContent',
+                }
+            })
+            await cacher.setter('admin-getLessons', lessons)
+            finalData = lessons
+        }
+        return next(new response(req, res, 'get lessons', 200, null, finalData))
     }
 
 

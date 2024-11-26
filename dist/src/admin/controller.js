@@ -115,6 +115,7 @@ class adminController {
             if (!level) {
                 return next(new responseService_1.response(req, res, 'create content', 404, 'this level is not defined on database', null));
             }
+            req.body.trueOption -= 1;
             const data = Object.assign(Object.assign({}, req.body), { level: level._id });
             const question = yield questions_1.default.create(data);
             yield level.updateOne({ $addToSet: { questions: question._id } });
@@ -125,14 +126,37 @@ class adminController {
     }
     getLevels(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const level = yield level_1.default.find();
-            return next(new responseService_1.response(req, res, 'get levels', 200, null, level));
+            let cacheData = yield cach_1.default.getter('admin-getLevels');
+            let finalData;
+            if (cacheData) {
+                console.log('read throw cache . . .');
+                finalData = cacheData;
+            }
+            else {
+                console.log('cache is empty . . .');
+                finalData = yield level_1.default.find();
+                yield cach_1.default.setter('admin-getLevels', finalData);
+            }
+            return next(new responseService_1.response(req, res, 'get levels', 200, null, finalData));
         });
     }
     getContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield content_1.default.findById(req.params.contentId).populate('subLesson');
-            return next(new responseService_1.response(req, res, 'get specific content', 200, null, content));
+            let cacheData = yield cach_1.default.getter(`admin-getContent-${req.params.contentId}`);
+            let finalData;
+            if (cacheData) {
+                console.log('read throw cache . . .');
+                finalData = cacheData;
+            }
+            else {
+                console.log('cache is empty . . .');
+                finalData = yield content_1.default.findById(req.params.contentId).populate('subLesson');
+                if (!finalData) {
+                    return next(new responseService_1.response(req, res, 'get specific content', 404, 'this content is not exist on database', null));
+                }
+                yield cach_1.default.setter(`admin-getContent-${req.params.contentId}`, finalData);
+            }
+            return next(new responseService_1.response(req, res, 'get specific content', 200, null, finalData));
         });
     }
     updateContent(req, res, next) {
@@ -140,6 +164,7 @@ class adminController {
             const content = yield content_1.default.findById(req.params.contentId).populate('subLesson');
             yield (content === null || content === void 0 ? void 0 : content.updateOne(req.body));
             yield (content === null || content === void 0 ? void 0 : content.save());
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, content));
         });
     }
@@ -148,6 +173,7 @@ class adminController {
             const lesson = yield lesson_1.default.findById(req.params.lessonId).populate('subLesson');
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne(req.body));
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.save());
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, lesson));
         });
     }
@@ -156,46 +182,48 @@ class adminController {
             const sublesson = yield subLesson_1.default.findById(req.params.sublessonId).populate('subLesson');
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(req.body));
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, sublesson));
         });
     }
     getSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            let cacheData = yield cach_1.default.getter('admin-getSubLesson');
+            let cacheData = yield cach_1.default.getter(`admin-getSubLesson-${req.params.sublessonId}`);
             let subLesson;
             if (cacheData) {
                 console.log('read throw cach . . .');
-                if (cacheData[req.params.sublesson]) {
-                    console.log('read throw cach . . .');
-                    subLesson = cacheData[req.params.sublesson];
-                }
-                else {
-                    console.log('cache is empty . . .');
-                    subLesson = yield subLesson_1.default.findById(req.params.sublesson).populate('contents').populate('lesson');
-                    cacheData[req.params.sublesson] = subLesson;
-                    yield cach_1.default.setter('admin-getSubLesson', cacheData);
-                }
+                subLesson = cacheData;
             }
             else {
                 console.log('cache is empty . . .');
-                subLesson = yield subLesson_1.default.findById(req.params.sublesson).populate('contents').populate('lesson');
-                cacheData = {};
-                cacheData[req.params.sublesson] = subLesson;
-                yield cach_1.default.setter('admin-getSubLesson', cacheData);
+                subLesson = yield subLesson_1.default.findById(req.params.sublessonId).populate('contents').populate('lesson');
+                if (!subLesson) {
+                    return next(new responseService_1.response(req, res, 'get specific subLesson', 404, 'this sublesson is not exist on database', null));
+                }
+                yield cach_1.default.setter(`admin-getSubLesson-${req.params.sublessonId}`, subLesson);
             }
             return next(new responseService_1.response(req, res, 'get specific subLesson', 200, null, subLesson));
         });
     }
     getLessons(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const lessons = yield lesson_1.default.find().populate({
-                path: 'sublessons',
-                populate: {
-                    path: 'contents',
-                    select: 'internalContent',
-                }
-            });
-            return next(new responseService_1.response(req, res, 'get lessons', 200, null, lessons));
+            let cacheData = yield cach_1.default.getter('admin-getLessons');
+            let finalData;
+            if (cacheData) {
+                finalData = cacheData;
+            }
+            else {
+                const lessons = yield lesson_1.default.find().populate({
+                    path: 'sublessons',
+                    populate: {
+                        path: 'contents',
+                        select: 'internalContent',
+                    }
+                });
+                yield cach_1.default.setter('admin-getLessons', lessons);
+                finalData = lessons;
+            }
+            return next(new responseService_1.response(req, res, 'get lessons', 200, null, finalData));
         });
     }
 }

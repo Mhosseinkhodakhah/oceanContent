@@ -20,7 +20,7 @@ adminRouter.post('/update-content/:contentId', adminAuth, controller.updateConte
 adminRouter.post('/update-lesson/:lessonId', adminAuth, controller.updateLesson);
 adminRouter.post('/update-subLesson/:subLessonId', adminAuth, controller.updateSubLesson);
 adminRouter.get('/get-lessons', adminAuth, controller.getLessons);
-adminRouter.get('/get-sublessons', adminAuth, controller.getSubLesson);
-adminRouter.get('/get-content', adminAuth, controller.getContent);
+adminRouter.get('/get-sublessons/:sublessonId', adminAuth, controller.getSubLesson);
+adminRouter.get('/get-content/:contentId', adminAuth, controller.getContent);
 adminRouter.get('/get-levels', adminAuth, controller.getLevels);
 exports.default = adminRouter;
