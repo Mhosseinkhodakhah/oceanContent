@@ -34,7 +34,8 @@ class contentController {
                         populate: {
                             path: 'contents',
                             select: 'internalContent',
-                        }
+                        },
+                        select: ['-name', '-aName']
                     }).select(['-name', '-aName']);
                     break;
                 case 'arabic':
@@ -43,7 +44,8 @@ class contentController {
                         populate: {
                             path: 'contents',
                             select: 'internalContent',
-                        }
+                        },
+                        select: ['-name', '-eName']
                     }).select(['-name', '-eName']);
                     break;
                 case 'persian':
@@ -52,7 +54,8 @@ class contentController {
                         populate: {
                             path: 'contents',
                             select: 'internalContent',
-                        }
+                        },
+                        select: ['-aname', '-eName']
                     }).select(['-aName', '-eName']);
                     break;
                 default:
