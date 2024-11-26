@@ -98,10 +98,8 @@ export default class adminController {
         await lesson?.updateOne({ $pull: { levels: level._id } })
         await lesson?.save()
         await level.deleteOne()
-        await level.save()
         for (let i = 0; i < uppersLevels.length; i++) {
-            const newNumber = uppersLevels[i].number -= 1
-            await uppersLevels[i].updateOne({ number: newNumber })
+            uppersLevels[i].number -= 1
             await uppersLevels[i].save()
         }
         await cacher.reset()

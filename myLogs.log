@@ -3303,3 +3303,29 @@
   label: 'right meow!',
   timestamp: '2024-11-26 11:13:26'
 }
+{
+  meta: {
+    req: {
+      url: '/delete-level/6745b97f937b3f0a79e05bcf',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InN1cGVyQWRtaW4iLCJmaXJzdE5hbWUiOiJhbGlyZXphIiwibGFzdE5hbWUiOiJwb3VyVmFoaWQiLCJyb2xlIjoxLCJpYXQiOjE3MzI2MjE2NjIsImV4cCI6MTczMjY2NDg2Mn0.drQi31hCQaxzOLegITQ-laisvOD6vSojKZ9kfYTg-bA',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'd33a1ca6-fb0b-461d-a6af-f6979c131b01',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-level/6745b97f937b3f0a79e05bcf',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 176
+  },
+  level: 'warn',
+  message: 'DELETE /delete-level/6745b97f937b3f0a79e05bcf 404 176ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 15:40:41'
+}

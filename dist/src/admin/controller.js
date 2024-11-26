@@ -101,10 +101,8 @@ class adminController {
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne({ $pull: { levels: level._id } }));
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.save());
             yield level.deleteOne();
-            yield level.save();
             for (let i = 0; i < uppersLevels.length; i++) {
-                const newNumber = uppersLevels[i].number -= 1;
-                yield uppersLevels[i].updateOne({ number: newNumber });
+                uppersLevels[i].number -= 1;
                 yield uppersLevels[i].save();
             }
             yield cach_1.default.reset();
