@@ -25,13 +25,40 @@ const connection = new connection_1.default();
 class contentController {
     getLessons(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const lessons = yield lesson_1.default.find().populate({
-                path: 'sublessons',
-                populate: {
-                    path: 'contents',
-                    select: 'internalContent',
-                }
-            });
+            const language = req.params.lang;
+            let lessons;
+            switch (language) {
+                case 'english':
+                    lessons = yield lesson_1.default.find().populate({
+                        path: 'sublessons',
+                        populate: {
+                            path: 'contents',
+                            select: 'internalContent',
+                        }
+                    }).select(['-name', '-aName']);
+                    break;
+                case 'arabic':
+                    lessons = yield lesson_1.default.find().populate({
+                        path: 'sublessons',
+                        populate: {
+                            path: 'contents',
+                            select: 'internalContent',
+                        }
+                    }).select(['-name', '-eName']);
+                    break;
+                case 'persian':
+                    lessons = yield lesson_1.default.find().populate({
+                        path: 'sublessons',
+                        populate: {
+                            path: 'contents',
+                            select: 'internalContent',
+                        }
+                    }).select(['-aName', '-eName']);
+                    break;
+                default:
+                    lessons = 'please send the language . . .';
+                    break;
+            }
             return next(new responseService_1.response(req, res, 'get lessons', 200, null, lessons));
         });
     }

@@ -9,7 +9,7 @@ const auth = new middleWare().auth
 const router = Router()
 
 
-router.get('/get-lessons' , controller.getLessons)
+router.get('/get-lessons/:lang' , controller.getLessons)
 
 router.get('/get-sublesson/:sublesson' , controller.getSubLesson)
 

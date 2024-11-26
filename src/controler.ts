@@ -20,15 +20,46 @@ export default class contentController {
 
 
     async getLessons(req: any, res: any, next: any) {
-        const lessons = await lessonModel.find().populate({
-            path: 'sublessons',
-            populate: {
-                path: 'contents',
-                select: 'internalContent',
-            }
-        })
-        return next(new response(req, res, 'get lessons', 200, null, lessons))
+        const language = req.params.lang;
+        let lessons;
+        switch (language) {
+            case 'english':
+                lessons = await lessonModel.find().populate({
+                    path: 'sublessons',
+                    populate: {
+                        path: 'contents',
+                        select: 'internalContent',
+                    }
+                }).select(['-name', '-aName'])
+                break;
+            case 'arabic':
+                lessons = await lessonModel.find().populate({
+                    path: 'sublessons',
+                    populate: {
+                        path: 'contents',
+                        select: 'internalContent',
+                    }
+                }).select(['-name', '-eName'])
+                break;
+            case 'persian':
+                lessons = await lessonModel.find().populate({
+                    path: 'sublessons',
+                    populate: {
+                        path: 'contents',
+                        select: 'internalContent',
+                    }
+                }).select(['-aName', '-eName'])
+                break;
+
+            default:
+                lessons = 'please send the language . . .'
+                break;
+        }
+
+        return next(new response(req, res, 'get lessons', 200, null , lessons))
     }
+
+
 
 
     async getSubLesson(req: any, res: any, next: any) {

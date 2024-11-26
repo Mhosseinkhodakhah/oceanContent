@@ -9,7 +9,7 @@ const middleware_1 = __importDefault(require("./middleware/middleware"));
 const controller = new controler_1.default();
 const auth = new middleware_1.default().auth;
 const router = (0, express_1.Router)();
-router.get('/get-lessons', controller.getLessons);
+router.get('/get-lessons/:lang', controller.getLessons);
 router.get('/get-sublesson/:sublesson', controller.getSubLesson);
 router.get('/get-content/:contentId', controller.getContent);
 router.put('/seen-content/:contentId', auth, controller.seenContent);
