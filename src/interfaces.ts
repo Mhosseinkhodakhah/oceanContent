@@ -13,8 +13,12 @@ export interface lessonDB {
 
 
 export interface questionDB {
-    questionForm:string,
-    options: string[],
+    questionForm : string,
+    eQuestionForm : string,
+    aQuestionForm : string,
+    options : string[],
+    eOptions : string[],
+    aOptions : string[],
     trueOption: number,
     time: number,
     level: any,

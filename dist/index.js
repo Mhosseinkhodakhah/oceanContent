@@ -63,6 +63,6 @@ const port = process.env.PORT || 5001;
 app.listen(port, () => {
     console.log('content server is running successfully . . .');
 });
-app.use('/content', router_1.default);
-app.use('/content/interservice', router_2.default);
+app.use('/app', router_1.default);
+app.use('/app/interservice', router_2.default);
 app.use('/', router_3.default);

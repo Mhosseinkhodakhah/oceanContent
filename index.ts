@@ -93,8 +93,8 @@ app.listen(port , ()=>{
     console.log('content server is running successfully . . .')
 })
 
-app.use('/content' , router)
+app.use('/app' , router)
 
-app.use('/content/interservice' , interservice)
+app.use('/app/interservice' , interservice)
 
 app.use('/' , adminRouter)

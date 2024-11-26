@@ -19,6 +19,7 @@ const subLesson_1 = __importDefault(require("../DB/models/subLesson"));
 const content_1 = __importDefault(require("../DB/models/content"));
 const level_1 = __importDefault(require("../DB/models/level"));
 const questions_1 = __importDefault(require("../DB/models/questions"));
+const cach_1 = __importDefault(require("../service/cach"));
 class adminController {
     createLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -27,6 +28,7 @@ class adminController {
                 return next(new responseService_1.response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null));
             }
             yield lesson_1.default.create(req.body);
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'create lesson', 200, null, 'new lesson create successfully'));
         });
     }
@@ -43,6 +45,7 @@ class adminController {
             const subData = Object.assign(Object.assign({}, req.body), { lesson: existance._id });
             const subLesson = yield subLesson_1.default.create(subData);
             const lesson = yield lesson_1.default.findByIdAndUpdate(req.params.lesson, { $push: { sublessons: subLesson._id } });
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'create subLesson', 200, null, 'new subLesson create successfully'));
         });
     }
@@ -54,6 +57,7 @@ class adminController {
             }
             const content = yield content_1.default.create({ internalContent: req.body.internalContent, subLesson: sublesson._id });
             yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } });
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'create content', 200, null, content));
         });
     }
@@ -81,6 +85,7 @@ class adminController {
             const levelCreation = yield level_1.default.create(level);
             yield lesson.updateOne({ $addToSet: { levels: levelCreation._id } });
             yield lesson.save();
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'create new level', 200, null, 'new level creation successfully'));
         });
     }
@@ -101,6 +106,7 @@ class adminController {
                 yield uppersLevels[i].updateOne({ number: newNumber });
                 yield uppersLevels[i].save();
             }
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'deleting level', 200, null, 'level deleted successfully'));
         });
     }
@@ -114,16 +120,14 @@ class adminController {
             const question = yield questions_1.default.create(data);
             yield level.updateOne({ $addToSet: { questions: question._id } });
             yield level.save();
+            yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'create question', 200, null, 'question created successfully!'));
         });
     }
     getLevels(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            let userId = req.user.id;
-            const closedLevels = yield lesson_1.default.find({ seen: { $ne: userId } }).populate('levels').select('levels');
-            const unPasseedLevels = yield lesson_1.default.find({ $and: [{ seen: { $in: userId } }, { paasedQuize: { $ne: userId } }] }).populate('levels').select('levels');
-            const passedLevels = yield lesson_1.default.find({ $and: [{ seen: { $in: userId } }, { paasedQuize: { $in: userId } }] }).populate('levels').select('levels');
-            return next(new responseService_1.response(req, res, 'get levels', 200, null, { closedLevels: closedLevels, unPasseedLevels: unPasseedLevels, passedLevels: passedLevels }));
+            const level = yield level_1.default.find();
+            return next(new responseService_1.response(req, res, 'get levels', 200, null, level));
         });
     }
     getContent(req, res, next) {
@@ -132,10 +136,55 @@ class adminController {
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, content));
         });
     }
+    updateContent(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const content = yield content_1.default.findById(req.params.contentId).populate('subLesson');
+            yield (content === null || content === void 0 ? void 0 : content.updateOne(req.body));
+            yield (content === null || content === void 0 ? void 0 : content.save());
+            return next(new responseService_1.response(req, res, 'get specific content', 200, null, content));
+        });
+    }
+    updateLesson(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const lesson = yield lesson_1.default.findById(req.params.lessonId).populate('subLesson');
+            yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne(req.body));
+            yield (lesson === null || lesson === void 0 ? void 0 : lesson.save());
+            return next(new responseService_1.response(req, res, 'get specific content', 200, null, lesson));
+        });
+    }
+    updateSubLesson(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const sublesson = yield subLesson_1.default.findById(req.params.sublessonId).populate('subLesson');
+            yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(req.body));
+            yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
+            return next(new responseService_1.response(req, res, 'get specific content', 200, null, sublesson));
+        });
+    }
     getSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sublesson = yield subLesson_1.default.findById(req.params.sublesson).populate('contents').populate('lesson');
-            return next(new responseService_1.response(req, res, 'get specific subLesson', 200, null, sublesson));
+            let cacheData = yield cach_1.default.getter('admin-getSubLesson');
+            let subLesson;
+            if (cacheData) {
+                console.log('read throw cach . . .');
+                if (cacheData[req.params.sublesson]) {
+                    console.log('read throw cach . . .');
+                    subLesson = cacheData[req.params.sublesson];
+                }
+                else {
+                    console.log('cache is empty . . .');
+                    subLesson = yield subLesson_1.default.findById(req.params.sublesson).populate('contents').populate('lesson');
+                    cacheData[req.params.sublesson] = subLesson;
+                    yield cach_1.default.setter('admin-getSubLesson', cacheData);
+                }
+            }
+            else {
+                console.log('cache is empty . . .');
+                subLesson = yield subLesson_1.default.findById(req.params.sublesson).populate('contents').populate('lesson');
+                cacheData = {};
+                cacheData[req.params.sublesson] = subLesson;
+                yield cach_1.default.setter('admin-getSubLesson', cacheData);
+            }
+            return next(new responseService_1.response(req, res, 'get specific subLesson', 200, null, subLesson));
         });
     }
     getLessons(req, res, next) {

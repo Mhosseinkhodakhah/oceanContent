@@ -10,11 +10,15 @@ import levelModel from "./DB/models/level";
 import questionModel from "./DB/models/questions";
 import { level } from "winston";
 import interConnection from "./interservice/connection";
+import internalCache from "./service/cach";
+import cacher from "./service/cach";
 
 
 const services = new contentService()
 
 const connection = new interConnection()
+
+
 
 export default class contentController {
 
@@ -22,59 +26,126 @@ export default class contentController {
     async getLessons(req: any, res: any, next: any) {
         const language = req.params.lang;
         let lessons;
-        switch (language) {
-            case 'english':
-                lessons = await lessonModel.find().populate({
-                    path: 'sublessons',
-                    populate: {
-                        path: 'contents',
-                        select: 'internalContent',
-                    },
-                    select : ['-name' , '-aName']
-                }).select(['-name', '-aName'])
-                break;
-            case 'arabic':
-                lessons = await lessonModel.find().populate({
-                    path: 'sublessons',
-                    populate: {
-                        path: 'contents',
-                        select: 'internalContent',
-                    },
-                    select : ['-name' , '-eName']
-                }).select(['-name', '-eName'])
-                break;
-            case 'persian':
-                lessons = await lessonModel.find().populate({
-                    path: 'sublessons',
-                    populate: {
-                        path: 'contents',
-                        select: 'internalContent',
-                    },
-                    select : ['-aname' , '-eName']
-                }).select(['-aName', '-eName'])
-                break;
+        let allLessons = await cacher.getter('getLessons')
+        if (!allLessons) {                                       // when cache was not exist . . .
+            console.log('cache was empty . . .')
+            const data = await services.makeReadyData()
+            await cacher.setter('getLessons', data)
+            switch (language) {
+                case 'english':
+                    lessons = data.english
+                    break;
+                case 'arabic':
+                    lessons = data.arabic
+                    break;
+                case 'persian':
+                    lessons = data.persian
+                    break;
 
-            default:
-                lessons = 'please send the language . . .'
-                break;
+                default:
+                    return next(new response(req, res, 'get lessons', 400, 'please select a language on params', null))
+                    break;
+            }
+        } else {
+            console.log('read throw cache . . .')                                      // when cache exist 
+            switch (language) {
+                case 'english':
+                    lessons = allLessons.english
+                    break;
+                case 'arabic':
+                    lessons = allLessons.arabic
+                    break;
+                case 'persian':
+                    lessons = allLessons.persian
+                    break;
+
+                default:
+                    return next(new response(req, res, 'get lessons', 400, 'please select a language on params', null))
+                    break;
+            }
         }
-
-        return next(new response(req, res, 'get lessons', 200, null , lessons))
+        return next(new response(req, res, 'get lessons', 200, null, lessons))
     }
-
 
 
 
     async getSubLesson(req: any, res: any, next: any) {
-        const sublesson = await subLessonModel.findById(req.params.sublesson).populate('contents').populate('lesson')
+        const language = req.params.lang;
+        let sublesson;
+        let allSubs = await cacher.getter('getSubLesson')
+        if (allSubs) {
+            if (!allSubs[req.params.sublessonId]) {
+                console.log('cache is empty . . .')
+                const data = await services.readySubLessonsData(req.params.sublessonId)
+                allSubs[req.params.sublessonId] = data
+                await cacher.setter('getSubLesson', allSubs)
+                switch (language) {
+                    case 'english':
+                        sublesson = data.english
+                        break;
+                    case 'arabic':
+                        sublesson = data.arabic
+                        break;
+                    case 'persian':
+                        sublesson = data.persian
+                        break;
+
+                    default:
+                        return next(new response(req, res, 'get specific subLesson', 400, 'select language on params please', null))
+                        break;
+                }
+            } else {
+                switch (language) {
+                    case 'english':
+                        sublesson = allSubs[req.params.sublessonId].english
+                        break;
+                    case 'arabic':
+                        sublesson = allSubs[req.params.sublessonId].arabic
+                        break;
+                    case 'persian':
+                        sublesson = allSubs[req.params.sublessonId].persian
+                        break;
+
+                    default:
+                        return next(new response(req, res, 'get specific subLesson', 400, 'select language on params please', null))
+                        break;
+                }
+            }
+        } else {
+            console.log('cache is empty . . .')
+            const data = await services.readySubLessonsData(req.params.sublessonId)
+            console.log('asdf')
+            allSubs = {}
+            allSubs[req.params.sublessonId] = data
+            console.log('ffff')
+            await cacher.setter('getSubLesson', allSubs)
+            switch (language) {
+                case 'english':
+                    sublesson = data.english
+                    break;
+                case 'arabic':
+                    sublesson = data.arabic
+                    break;
+                case 'persian':
+                    sublesson = data.persian
+                    break;
+
+                default:
+                    return next(new response(req, res, 'get specific subLesson', 400, 'select language on params please', null))
+                    break;
+            }
+        }
         return next(new response(req, res, 'get specific subLesson', 200, null, sublesson))
     }
+
+
 
 
     async getContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId).populate('subLesson')
         return next(new response(req, res, 'get specific content', 200, null, content))
     }
+
 
 
     async seenContent(req: any, res: any, next: any) {
@@ -84,14 +155,37 @@ export default class contentController {
     }
 
 
+
+
     async getLevels(req: any, res: any, next: any) {
         let userId = req.user.id;
-        const closedLevels = await lessonModel.find({ seen: { $ne: userId } }).populate('levels').select('levels')
-        const unPasseedLevels = await lessonModel.find({ $and: [{ seen: { $in: userId } }, { paasedQuize: { $ne: userId } }] }).populate('levels').select('levels')
-        const passedLevels = await lessonModel.find({ $and: [{ seen: { $in: userId } }, { paasedQuize: { $in: userId } }] }).populate('levels').select('levels')
+        let levels;
+        let userLevels = await cacher.getter('getLevels')                 // get all levels data from cache
+        if (userLevels) {                       // cache is exist
+            if (!userLevels[userId]) {           // but this userslevel is not exist
+                console.log('cache is not exist . . .')
+                const data = await services.readyLevelsData(userId)     // make the levels ready for this user
+                userLevels[userId] = data                                      // add new userLevels to cache data
+                await cacher.setter('getLevels' , userLevels)                    // cache heat the new data
+                levels = data                                                   
+            } else {                                // this userLevels are exist on cache
+                console.log('cache is ready . . .')
+                levels = userLevels[userId]                 
+            }
+        } else {                                    // if cache was totaly empty
+            console.log('cache is empty . .. .')
+            const data = await services.readyLevelsData(userId)         // make this userlevels dat a for cache
+            userLevels = {}                                         // make structure of cache data
+            userLevels[userId] = data                           // add this userLevels to cachData
+            await cacher.setter('getLevels' , userLevels)
+            levels = data
+        }
 
-        return next(new response(req, res, 'get levels', 200, null, { closedLevels: closedLevels, unPasseedLevels: unPasseedLevels, passedLevels: passedLevels }))
+        return next(new response(req, res, 'get levels', 200, null, levels))
     }
+
+
+
 
     async openLevel(req: any, res: any, next: any) {
         let userId = req.user.id;
@@ -103,6 +197,8 @@ export default class contentController {
         const questiotns = await questionModel.find({ $and: [{ level: level?._id }, { passedUser: { $ne: userId } }] }).limit(10)
         return next(new response(req, res, 'open level', 200, null, { questions: questiotns }))
     }
+
+
 
 
     //! needs to review
@@ -135,7 +231,9 @@ export default class contentController {
         }
     }
 
-
+    async refreshCache(){
+        await cacher.reset()
+    }
 
 
 }

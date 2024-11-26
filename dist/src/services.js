@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const content_1 = __importDefault(require("./DB/models/content"));
 const lesson_1 = __importDefault(require("./DB/models/lesson"));
+const level_1 = __importDefault(require("./DB/models/level"));
 const subLesson_1 = __importDefault(require("./DB/models/subLesson"));
 const connection_1 = __importDefault(require("./interservice/connection"));
 const connection = new connection_1.default();
@@ -36,6 +37,73 @@ class contentService {
                     }
                 }
             }
+        });
+    }
+    /**
+     * this module seprate a languages for caching all lessons data
+     */
+    makeReadyData() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const english = yield lesson_1.default.find().populate({
+                path: 'sublessons',
+                populate: {
+                    path: 'contents',
+                    select: 'internalContent',
+                },
+                select: ['-Name', '-aName']
+            }).select(['-Name', '-aName']);
+            const arabic = yield lesson_1.default.find().populate({
+                path: 'sublessons',
+                populate: {
+                    path: 'contents',
+                    select: 'internalContent',
+                },
+                select: ['-Name', '-eName']
+            }).select(['-Name', '-eName']);
+            const persian = yield lesson_1.default.find().populate({
+                path: 'sublessons',
+                populate: {
+                    path: 'contents',
+                    select: 'internalContent',
+                },
+                select: ['-eName', '-aName']
+            }).select(['-eName', '-aName']);
+            return { persian: persian, arabic: arabic, english: english };
+        });
+    }
+    /**
+     * this mudule seprate data based on the languages for caching just sublessons data
+     */
+    readySubLessonsData(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const asub = yield subLesson_1.default.findById(id).select(['-eName', '-name']);
+            const esub = yield subLesson_1.default.findById(id).select(['-aName', '-name']);
+            const sub = yield subLesson_1.default.findById(id).select(['-aName', '-eName']);
+            return { persian: sub, english: esub, arabic: asub };
+        });
+    }
+    /**
+     * this mudule seprate data based on the languages for caching just sublessons data
+     */
+    readyLevelsData(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const all = yield level_1.default.find().populate('lesson');
+            let allLevels = [];
+            for (let i = 0; i < all.length; i++) {
+                const level = all[i].toObject();
+                let newData;
+                if (level.lesson.passedQuize.includes(id)) {
+                    newData = Object.assign(Object.assign({}, level), { mode: 2 }); // passed the quize
+                }
+                else if (level.lesson.seen.includes(id)) {
+                    newData = Object.assign(Object.assign({}, level), { mode: 1 }); // open but didnt passed the quize
+                }
+                else {
+                    newData = Object.assign(Object.assign({}, level), { mode: 0 }); // open but didnt passed the quize
+                }
+                allLevels.push(newData);
+            }
+            return allLevels;
         });
     }
 }

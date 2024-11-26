@@ -11,9 +11,9 @@ const router = Router()
 
 router.get('/get-lessons/:lang' , controller.getLessons)
 
-router.get('/get-sublesson/:sublesson' , controller.getSubLesson)
+router.get('/get-sublesson/:sublessonId/:lang' , controller.getSubLesson)
 
-router.get('/get-content/:contentId' , controller.getContent)
+router.get('/get-content/:contentId/:lang' , controller.getContent)
 
 router.put('/seen-content/:contentId' , auth , controller.seenContent)
 
@@ -23,4 +23,4 @@ router.get('/open-level/:number' , auth , controller.openLevel)
 
 router.put('/answer-question' , auth , controller.answer)
 
-export default router
+export default router;

@@ -26,7 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const questionsSchema = new mongoose_1.Schema({
     questionForm: { type: String, require: true },
+    eQuestionForm: { type: String, require: true },
+    aQuestionForm: { type: String, require: true },
     options: [String],
+    eOptions: [String],
+    aOptions: [String],
     trueOption: { type: Number },
     time: { type: Number },
     level: { type: mongoose_1.default.Types.ObjectId, ref: 'levels' },

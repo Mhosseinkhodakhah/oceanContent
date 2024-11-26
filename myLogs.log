@@ -2290,3 +2290,1016 @@
   label: 'right meow!',
   timestamp: '2024-11-24 17:14:18'
 }
+{
+  meta: {
+    req: {
+      url: '/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '61644598-245a-47f2-8e6d-bf2d218e3c69',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'GET /get-lessons/persian 404 4ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:08:51'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '04122af8-122b-4452-b27e-75f80229176d',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 6
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 6ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:09:00'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '63218c0b-d734-45aa-acdd-729897c9c361',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 3ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:10:21'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '7ffe6d5b-cb0a-4d72-9706-7c52b10c390b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 4
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 4ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:10:55'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'f471b7a2-6cc6-45a9-909e-6b4d7a68cdcb',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2268
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 2268ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:28:37'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '0135686e-954a-43fb-af9d-686396442dfc',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 15356
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 15356ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:29:21'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '6d55f999-9d40-443b-9fc1-570603cb80fa',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 22
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 22ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:29:30'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '9b1d23ff-3d19-4357-86dc-f9cbae3daeb9',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 20
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 20ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:29:42'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '1d9f06ae-f7c1-48b1-adb0-740172f1c981',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 20
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 20ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:29:43'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '625571a1-c59f-4280-ae15-3520b3f23980',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 31
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 31ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:29:45'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-sublesson/673f1afaa97a548eb482afc9/persian',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '0e10aad8-a375-4d0c-8bfa-ed1a5e846080',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-sublesson/673f1afaa97a548eb482afc9/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 299
+  },
+  level: 'info',
+  message: 'GET /app/get-sublesson/673f1afaa97a548eb482afc9/persian 200 299ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:45:56'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-sublesson/673f1afaa97a548eb482afc9/english',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '21860182-a63e-4f10-9b50-23fdd4e3c058',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-sublesson/673f1afaa97a548eb482afc9/english',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 6599
+  },
+  level: 'info',
+  message: 'GET /app/get-sublesson/673f1afaa97a548eb482afc9/english 200 6599ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 09:46:23'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-sublesson/673f1afaa97a548eb482afc9/english',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '17975c3d-ba39-4d83-9cd8-8abf4c013825',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-sublesson/673f1afaa97a548eb482afc9/english',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 950
+  },
+  level: 'info',
+  message: 'GET /app/get-sublesson/673f1afaa97a548eb482afc9/english 200 950ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:04:30'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-sublesson/673f1afaa97a548eb482afc9/english',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'b5a802ec-7035-4a28-80d2-43da4b78577a',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-sublesson/673f1afaa97a548eb482afc9/english',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 3
+  },
+  level: 'info',
+  message: 'GET /app/get-sublesson/673f1afaa97a548eb482afc9/english 200 3ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:04:37'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a24df479-a7a6-4c38-8f46-1c251661890b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 145
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 145ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:32'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '50fcec49-0d46-4502-b31b-c8db25dcc107',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 2ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:41'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '2d5f49e8-01ba-44f0-91dd-cb571cc7e063',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 2ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:48'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'bc0480c8-1bf4-4c02-8842-d453b9587f3b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 2ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:49'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '2b30cd56-0112-40d1-854e-ef851f08888f',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 2ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:50'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '25a190cf-d26a-4e60-9097-6f92b2a6e270',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 2ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:54'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjA1MDk5LCJleHAiOjE3MzI2MDg2OTl9.qQc-vZgCh0V03hw-aogT2SHWjgDcE0Qv_FhJiBpCtNQ',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'a7fc826a-a22c-494d-95c2-3858ee295b82',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 2
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 2ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 10:42:58'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '47b39b78-bbdd-4544-af2f-999ecebb7800',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1607
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 1607ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:04:48'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'c88037d9-b77a-458e-82f4-510c5f85aafb',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 14
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 14ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:04:51'
+}
+{
+  meta: {
+    req: {
+      url: '/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '390c0a65-b640-4aae-a7fa-6f70b92943e2',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '111'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 22
+  },
+  level: 'info',
+  message: 'POST /create-lesson 200 22ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:04:56'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '30cd996c-c365-4bb2-ad5a-a5af1147970c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 15
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 15ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:05:18'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '5b58aeec-6296-4b03-bd22-a21eb49c04b7',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 18296
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 18296ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:09:32'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '3da13e4f-9749-4716-9e60-65ad286e715f',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 13
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 13ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:09:35'
+}
+{
+  meta: {
+    req: {
+      url: '/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '01199acb-4b1f-4216-859c-96cde86f636c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '111'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 47
+  },
+  level: 'info',
+  message: 'POST /create-lesson 200 47ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:09:40'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'f690ba78-eca7-4219-a656-baf3d0422da6',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 6328
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 6328ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:11:32'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '5a5ce4c8-b467-431f-8687-8e53c74e0c89',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 18
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 18ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:11:32'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '46ae67f5-c851-44e0-8b06-71f95758084c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 15
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 15ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:11:35'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'd3778e00-4026-42bc-98f0-3df69c79f1b4',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1563
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 1563ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:11:56'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '56dc5030-793f-408a-9d0a-c24d0e69aaab',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 12
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 12ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:11:58'
+}
+{
+  meta: {
+    req: {
+      url: '/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '666ed21b-f7b1-4388-9fa7-294db20aa831',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '111'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 14
+  },
+  level: 'info',
+  message: 'POST /create-lesson 200 14ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:12:05'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '6a42941b-0042-42af-8808-76eb2bf80bcb',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 10279
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 10279ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:12:20'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '5d894aac-10cd-4e06-9257-c31d9782c963',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 1576
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 1576ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:13:20'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '3f9b4401-accc-412c-8b1e-a8d1056ad330',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 14
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 14ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:13:23'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'ec742566-8e13-4f23-8c30-9c645fbe2d0c',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 14
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 14ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:13:25'
+}
+{
+  meta: {
+    req: {
+      url: '/app/get-lessons/persian',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyMzY5MTE0LCJleHAiOjE3MzIzNzI3MTR9.-6IS274jaGEoUN-ffzoHgEykQ9BffRhqgVktvSSzTkM',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'b36f1980-6695-4ed9-9b99-c3274c87bb14',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-lessons/persian',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 17
+  },
+  level: 'info',
+  message: 'GET /app/get-lessons/persian 200 17ms',
+  label: 'right meow!',
+  timestamp: '2024-11-26 11:13:26'
+}

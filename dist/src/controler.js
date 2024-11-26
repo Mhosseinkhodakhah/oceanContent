@@ -15,11 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const services_1 = __importDefault(require("./services"));
 const responseService_1 = require("./service/responseService");
 const lesson_1 = __importDefault(require("./DB/models/lesson"));
-const subLesson_1 = __importDefault(require("./DB/models/subLesson"));
 const content_1 = __importDefault(require("./DB/models/content"));
 const level_1 = __importDefault(require("./DB/models/level"));
 const questions_1 = __importDefault(require("./DB/models/questions"));
 const connection_1 = __importDefault(require("./interservice/connection"));
+const cach_1 = __importDefault(require("./service/cach"));
 const services = new services_1.default();
 const connection = new connection_1.default();
 class contentController {
@@ -27,47 +27,112 @@ class contentController {
         return __awaiter(this, void 0, void 0, function* () {
             const language = req.params.lang;
             let lessons;
-            switch (language) {
-                case 'english':
-                    lessons = yield lesson_1.default.find().populate({
-                        path: 'sublessons',
-                        populate: {
-                            path: 'contents',
-                            select: 'internalContent',
-                        },
-                        select: ['-name', '-aName']
-                    }).select(['-name', '-aName']);
-                    break;
-                case 'arabic':
-                    lessons = yield lesson_1.default.find().populate({
-                        path: 'sublessons',
-                        populate: {
-                            path: 'contents',
-                            select: 'internalContent',
-                        },
-                        select: ['-name', '-eName']
-                    }).select(['-name', '-eName']);
-                    break;
-                case 'persian':
-                    lessons = yield lesson_1.default.find().populate({
-                        path: 'sublessons',
-                        populate: {
-                            path: 'contents',
-                            select: 'internalContent',
-                        },
-                        select: ['-aname', '-eName']
-                    }).select(['-aName', '-eName']);
-                    break;
-                default:
-                    lessons = 'please send the language . . .';
-                    break;
+            let allLessons = yield cach_1.default.getter('getLessons');
+            if (!allLessons) { // when cache was not exist . . .
+                console.log('cache was empty . . .');
+                const data = yield services.makeReadyData();
+                yield cach_1.default.setter('getLessons', data);
+                switch (language) {
+                    case 'english':
+                        lessons = data.english;
+                        break;
+                    case 'arabic':
+                        lessons = data.arabic;
+                        break;
+                    case 'persian':
+                        lessons = data.persian;
+                        break;
+                    default:
+                        return next(new responseService_1.response(req, res, 'get lessons', 400, 'please select a language on params', null));
+                        break;
+                }
+            }
+            else {
+                console.log('read throw cache . . .'); // when cache exist 
+                switch (language) {
+                    case 'english':
+                        lessons = allLessons.english;
+                        break;
+                    case 'arabic':
+                        lessons = allLessons.arabic;
+                        break;
+                    case 'persian':
+                        lessons = allLessons.persian;
+                        break;
+                    default:
+                        return next(new responseService_1.response(req, res, 'get lessons', 400, 'please select a language on params', null));
+                        break;
+                }
             }
             return next(new responseService_1.response(req, res, 'get lessons', 200, null, lessons));
         });
     }
     getSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sublesson = yield subLesson_1.default.findById(req.params.sublesson).populate('contents').populate('lesson');
+            const language = req.params.lang;
+            let sublesson;
+            let allSubs = yield cach_1.default.getter('getSubLesson');
+            if (allSubs) {
+                if (!allSubs[req.params.sublessonId]) {
+                    console.log('cache is empty . . .');
+                    const data = yield services.readySubLessonsData(req.params.sublessonId);
+                    allSubs[req.params.sublessonId] = data;
+                    yield cach_1.default.setter('getSubLesson', allSubs);
+                    switch (language) {
+                        case 'english':
+                            sublesson = data.english;
+                            break;
+                        case 'arabic':
+                            sublesson = data.arabic;
+                            break;
+                        case 'persian':
+                            sublesson = data.persian;
+                            break;
+                        default:
+                            return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'select language on params please', null));
+                            break;
+                    }
+                }
+                else {
+                    switch (language) {
+                        case 'english':
+                            sublesson = allSubs[req.params.sublessonId].english;
+                            break;
+                        case 'arabic':
+                            sublesson = allSubs[req.params.sublessonId].arabic;
+                            break;
+                        case 'persian':
+                            sublesson = allSubs[req.params.sublessonId].persian;
+                            break;
+                        default:
+                            return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'select language on params please', null));
+                            break;
+                    }
+                }
+            }
+            else {
+                console.log('cache is empty . . .');
+                const data = yield services.readySubLessonsData(req.params.sublessonId);
+                console.log('asdf');
+                allSubs = {};
+                allSubs[req.params.sublessonId] = data;
+                console.log('ffff');
+                yield cach_1.default.setter('getSubLesson', allSubs);
+                switch (language) {
+                    case 'english':
+                        sublesson = data.english;
+                        break;
+                    case 'arabic':
+                        sublesson = data.arabic;
+                        break;
+                    case 'persian':
+                        sublesson = data.persian;
+                        break;
+                    default:
+                        return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'select language on params please', null));
+                        break;
+                }
+            }
             return next(new responseService_1.response(req, res, 'get specific subLesson', 200, null, sublesson));
         });
     }
@@ -87,10 +152,30 @@ class contentController {
     getLevels(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             let userId = req.user.id;
-            const closedLevels = yield lesson_1.default.find({ seen: { $ne: userId } }).populate('levels').select('levels');
-            const unPasseedLevels = yield lesson_1.default.find({ $and: [{ seen: { $in: userId } }, { paasedQuize: { $ne: userId } }] }).populate('levels').select('levels');
-            const passedLevels = yield lesson_1.default.find({ $and: [{ seen: { $in: userId } }, { paasedQuize: { $in: userId } }] }).populate('levels').select('levels');
-            return next(new responseService_1.response(req, res, 'get levels', 200, null, { closedLevels: closedLevels, unPasseedLevels: unPasseedLevels, passedLevels: passedLevels }));
+            let levels;
+            let userLevels = yield cach_1.default.getter('getLevels'); // get all levels data from cache
+            if (userLevels) { // cache is exist
+                if (!userLevels[userId]) { // but this userslevel is not exist
+                    console.log('cache is not exist . . .');
+                    const data = yield services.readyLevelsData(userId); // make the levels ready for this user
+                    userLevels[userId] = data; // add new userLevels to cache data
+                    yield cach_1.default.setter('getLevels', userLevels); // cache heat the new data
+                    levels = data;
+                }
+                else { // this userLevels are exist on cache
+                    console.log('cache is ready . . .');
+                    levels = userLevels[userId];
+                }
+            }
+            else { // if cache was totaly empty
+                console.log('cache is empty . .. .');
+                const data = yield services.readyLevelsData(userId); // make this userlevels dat a for cache
+                userLevels = {}; // make structure of cache data
+                userLevels[userId] = data; // add this userLevels to cachData
+                yield cach_1.default.setter('getLevels', userLevels);
+                levels = data;
+            }
+            return next(new responseService_1.response(req, res, 'get levels', 200, null, levels));
         });
     }
     openLevel(req, res, next) {
@@ -135,6 +220,11 @@ class contentController {
             else {
                 return next(new responseService_1.response(req, res, 'answer questions', 200, null, { message: 'sorry! you cant pass this level! please review the lesson and try again' }));
             }
+        });
+    }
+    refreshCache() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield cach_1.default.reset();
         });
     }
 }
