@@ -166,22 +166,24 @@ class adminController {
             yield (content === null || content === void 0 ? void 0 : content.updateOne(finalData));
             yield (content === null || content === void 0 ? void 0 : content.save());
             yield cach_1.default.reset();
-            return next(new responseService_1.response(req, res, 'get specific content', 200, null, content));
+            return next(new responseService_1.response(req, res, 'update content by admin', 200, null, content));
         });
     }
     updateLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const lesson = yield lesson_1.default.findById(req.params.lessonId).populate('subLesson');
-            yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne(req.body));
+            const finalData = Object.assign(Object.assign({}, (lesson === null || lesson === void 0 ? void 0 : lesson.toObject())), req.body);
+            yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne(finalData));
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.save());
             yield cach_1.default.reset();
-            return next(new responseService_1.response(req, res, 'get specific content', 200, null, lesson));
+            return next(new responseService_1.response(req, res, 'update lesson by admin', 200, null, lesson));
         });
     }
     updateSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const sublesson = yield subLesson_1.default.findById(req.params.sublessonId).populate('subLesson');
-            yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(req.body));
+            const finalData = Object.assign(Object.assign({}, (sublesson === null || sublesson === void 0 ? void 0 : sublesson.toObject())), req.body);
+            yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(finalData));
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
             yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, sublesson));

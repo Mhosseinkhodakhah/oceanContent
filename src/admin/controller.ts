@@ -162,20 +162,22 @@ export default class adminController {
         await content?.updateOne(finalData)
         await content?.save()
         await cacher.reset()
-        return next(new response(req, res, 'get specific content', 200, null, content))
+        return next(new response(req, res, 'update content by admin', 200, null, content))
     }
 
     async updateLesson(req: any, res: any, next: any) {
         const lesson = await lessonModel.findById(req.params.lessonId).populate('subLesson')
-        await lesson?.updateOne(req.body)
+        const finalData = {...(lesson?.toObject()) , ...req.body}
+        await lesson?.updateOne(finalData)
         await lesson?.save()
         await cacher.reset()
-        return next(new response(req, res, 'get specific content', 200, null, lesson))
+        return next(new response(req, res, 'update lesson by admin', 200, null, lesson))
     }
 
     async updateSubLesson(req: any, res: any, next: any) {
         const sublesson = await subLessonModel.findById(req.params.sublessonId).populate('subLesson')
-        await sublesson?.updateOne(req.body)
+        const finalData = {...(sublesson?.toObject()) , ...req.body}
+        await sublesson?.updateOne(finalData)
         await sublesson?.save()
         await cacher.reset()
         return next(new response(req, res, 'get specific content', 200, null, sublesson))
