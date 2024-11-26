@@ -15,7 +15,7 @@ adminRouter.post('/create-sublesson/:lesson' , subLessonRole , adminAuth , contr
 
 adminRouter.post('/create-content/:sublesson' , adminAuth ,controller.createContent)
 
-adminRouter.post('/create-level/:lesson' , adminAuth , controller.creteNewLevel )
+adminRouter.post('/create-level/:lessonId' , adminAuth , controller.creteNewLevel )
 
 adminRouter.delete('/delete-level' , adminAuth , controller.deleteLevel)
 

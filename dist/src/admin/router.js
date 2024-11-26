@@ -13,7 +13,7 @@ const controller = new controller_1.default();
 adminRouter.post('/create-lesson', validators_1.lessonRole, adminAuth, controller.createLesson);
 adminRouter.post('/create-sublesson/:lesson', validators_1.subLessonRole, adminAuth, controller.createSublesson);
 adminRouter.post('/create-content/:sublesson', adminAuth, controller.createContent);
-adminRouter.post('/create-level/:lesson', adminAuth, controller.creteNewLevel);
+adminRouter.post('/create-level/:lessonId', adminAuth, controller.creteNewLevel);
 adminRouter.delete('/delete-level', adminAuth, controller.deleteLevel);
 adminRouter.post('/create-questions/:levelId', adminAuth, controller.createQuestion);
 adminRouter.post('/update-content/:contentId', adminAuth, controller.updateContent);

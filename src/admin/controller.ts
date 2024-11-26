@@ -50,7 +50,7 @@ export default class adminController {
         }
         const data = {...req.body , subLesson: sublesson._id}
         const content = await contentModel.create(data)
-        
+
         await subLessonModel.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } })
         await cacher.reset()
         return next(new response(req, res, 'create content', 200, null, content))
@@ -63,7 +63,7 @@ export default class adminController {
         if (!lesson) {
             return next(new response(req, res, 'create new level', 404, 'this lesson is not defined on database', null))
         }
-        const level = { number: req.body.number, reward: req.body.reward, lesson: lesson._id }
+        const level = { number: req.body.number , reward: req.body.reward, lesson: lesson._id }
         const existLevelNumber = await levelModel.findOne({ number: req.body.number })
         if (existLevelNumber) {
             const lesss = await levelModel.find({ number: { $gt: req.body.number } })
@@ -86,6 +86,8 @@ export default class adminController {
     }
 
 
+
+    
     async deleteLevel(req: any, res: any, next: any) {
         const level = await levelModel.findById(req.params.levelId)
         if (!level) {
