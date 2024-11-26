@@ -55,7 +55,8 @@ class adminController {
             if (!sublesson) {
                 return next(new responseService_1.response(req, res, 'create content', 404, 'this lesson is not exist', null));
             }
-            const content = yield content_1.default.create({ internalContent: req.body.internalContent, subLesson: sublesson._id });
+            const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id });
+            const content = yield content_1.default.create(data);
             yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } });
             yield cach_1.default.reset();
             return next(new responseService_1.response(req, res, 'create content', 200, null, content));

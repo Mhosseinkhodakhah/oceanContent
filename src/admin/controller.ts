@@ -48,9 +48,9 @@ export default class adminController {
         if (!sublesson) {
             return next(new response(req, res, 'create content', 404, 'this lesson is not exist', null))
         }
-
-        const content = await contentModel.create({ internalContent: req.body.internalContent, subLesson: sublesson._id })
-
+        const data = {...req.body , subLesson: sublesson._id}
+        const content = await contentModel.create(data)
+        
         await subLessonModel.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } })
         await cacher.reset()
         return next(new response(req, res, 'create content', 200, null, content))
