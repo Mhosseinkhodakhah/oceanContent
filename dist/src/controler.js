@@ -145,7 +145,7 @@ class contentController {
     seenContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const content = yield content_1.default.findByIdAndUpdate(req.params.contentId, { $addToSet: { seen: req.user.id } });
-            yield services.checkSeen(req.params.contentId, req.user.id);
+            yield services.checkSeen(content === null || content === void 0 ? void 0 : content.subLesson, req.user.id);
             return next(new responseService_1.response(req, res, 'seen content', 200, null, 'content seen by user!'));
         });
     }

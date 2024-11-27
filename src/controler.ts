@@ -150,7 +150,7 @@ export default class contentController {
 
     async seenContent(req: any, res: any, next: any) {
         const content = await contentModel.findByIdAndUpdate(req.params.contentId, { $addToSet: { seen: req.user.id } })
-        await services.checkSeen(req.params.contentId, req.user.id)
+        await services.checkSeen(content?.subLesson, req.user.id)
         return next(new response(req, res, 'seen content', 200, null, 'content seen by user!'))
     }
 
