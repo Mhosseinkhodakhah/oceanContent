@@ -3329,3 +3329,29 @@
   label: 'right meow!',
   timestamp: '2024-11-26 15:40:41'
 }
+{
+  meta: {
+    req: {
+      url: '/app/get-levels',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDFiOGRkMDAwZmQyZjljZWU0N2EyOSIsImVtYWlsIjoidCIsImZ1bGxOYW1lIjoidCIsImNvdW50cnkiOiJ0IiwibGFuZ3VhZ2UiOiJ0IiwiaWF0IjoxNzMyNjk4MTQ0LCJleHAiOjE3MzI3MDE3NDR9.csra6ZJatoomQ4rwsDHEL1T2Q7G59iDQY88TEgDV7TI',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '8c633303-9f11-4ed6-830e-cc3aa13501d6',
+        host: 'localhost:9000',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/app/get-levels',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 283
+  },
+  level: 'info',
+  message: 'GET /app/get-levels 200 283ms',
+  label: 'right meow!',
+  timestamp: '2024-11-27 12:39:09'
+}

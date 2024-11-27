@@ -91,8 +91,9 @@ class contentService {
             let allLevels = [];
             for (let i = 0; i < all.length; i++) {
                 const level = all[i].toObject();
+                console.log(level.lesson.paasedQuize);
                 let newData;
-                if (level.lesson.passedQuize.includes(id)) {
+                if (level.lesson.paasedQuize.includes(id)) {
                     newData = Object.assign(Object.assign({}, level), { mode: 2 }); // passed the quize
                 }
                 else if (level.lesson.seen.includes(id)) {

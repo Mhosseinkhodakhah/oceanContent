@@ -151,6 +151,7 @@ class contentController {
     }
     getLevels(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log('its hereee');
             let userId = req.user.id;
             let levels;
             let userLevels = yield cach_1.default.getter('getLevels'); // get all levels data from cache

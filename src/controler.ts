@@ -158,6 +158,7 @@ export default class contentController {
 
 
     async getLevels(req: any, res: any, next: any) {
+        console.log('its hereee')
         let userId = req.user.id;
         let levels;
         let userLevels = await cacher.getter('getLevels')                 // get all levels data from cache
