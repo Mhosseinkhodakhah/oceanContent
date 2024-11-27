@@ -3409,3 +3409,57 @@
   label: 'right meow!',
   timestamp: '2024-11-27 14:02:36'
 }
+{
+  meta: {
+    req: {
+      url: '/app/seen-content/6745b86a5a0d76006c7e0b86',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDRlNGM3OGNjY2I0YWVjNWI1YTIwYyIsImVtYWlsIjoidDIiLCJmdWxsTmFtZSI6InQyIiwiY291bnRyeSI6InQyIiwibGFuZ3VhZ2UiOiJ0MiIsImlhdCI6MTczMjcwNTczNCwiZXhwIjoxNzMyNzA5MzM0fQ.t_4YchG0Xg38-HZ3zplb1-TVoxLi7SAQ5kv1_6lBJe8',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': '893cf579-b02c-434e-9d19-3fe44984de16',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/app/seen-content/6745b86a5a0d76006c7e0b86',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 857
+  },
+  level: 'info',
+  message: 'PUT /app/seen-content/6745b86a5a0d76006c7e0b86 200 857ms',
+  label: 'right meow!',
+  timestamp: '2024-11-27 14:41:54'
+}
+{
+  meta: {
+    req: {
+      url: '/app/seen-content/6745b86a5a0d76006c7e0b86',
+      headers: {
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDRlNGM3OGNjY2I0YWVjNWI1YTIwYyIsImVtYWlsIjoidDIiLCJmdWxsTmFtZSI6InQyIiwiY291bnRyeSI6InQyIiwibGFuZ3VhZ2UiOiJ0MiIsImlhdCI6MTczMjcwNTczNCwiZXhwIjoxNzMyNzA5MzM0fQ.t_4YchG0Xg38-HZ3zplb1-TVoxLi7SAQ5kv1_6lBJe8',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'bb655ee9-7838-4533-ba5f-cb1ecb042f81',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/app/seen-content/6745b86a5a0d76006c7e0b86',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 798
+  },
+  level: 'info',
+  message: 'PUT /app/seen-content/6745b86a5a0d76006c7e0b86 200 798ms',
+  label: 'right meow!',
+  timestamp: '2024-11-27 14:43:01'
+}

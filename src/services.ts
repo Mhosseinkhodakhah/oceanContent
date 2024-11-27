@@ -11,21 +11,23 @@ export default class contentService {
 
     async checkSeen(id: string, userId: string) {
         const contents = await contentModel.find({ subLesson: id })
-        const seenContents = await contentModel.find({ $and: [{ subLesson: id }, { seen: { $in: userId } }] })
-        console.log(id)
+        const seenContents = await contentModel.find({ $and: [{ subLesson: id } , { seen : { $in: userId } }] })
+        console.log(contents.length , seenContents.length)
+        
         const sublesson = await subLessonModel.findById(id)
         let lessonId = sublesson?.lesson
-        console.log(sublesson)
-        console.log(lessonId)
+        
         if (contents.length == seenContents.length) {
-            await subLessonModel.findByIdAndUpdate(id, { $push: { seen: userId } })
-            const sublessons = await subLessonModel.find({ lesson: lessonId })
-            const seenSubLessons = await subLessonModel.find({ $and: [{ lesson: id }, { seen: {$in : userId } }] })
+           
+            await subLessonModel.findByIdAndUpdate(id, { $addToSet: { seen: userId } })
+            const sublessons = await subLessonModel.find({ lesson : lessonId })
+            const seenSubLessons = await subLessonModel.find({ $and: [{ lesson: lessonId }, { seen: {$in : userId } }] })
             if (sublessons.length == seenSubLessons.length) {
+                console.log('here passed . . .')
                 const seenLesson = await lessonModel.findByIdAndUpdate(lessonId , { $addToSet: { seen: userId } })
                 const rewardResponse = await connection.putReward(userId, seenLesson?.reward, `finished ${seenLesson?.name} Lesson`)
                 if (rewardResponse.success) {
-                    await lessonModel.findByIdAndUpdate(lessonId, { rewarded: true })
+                    await lessonModel.findByIdAndUpdate(lessonId, { rewarded: true }) 
                 }
             }
         }

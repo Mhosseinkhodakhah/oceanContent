@@ -23,16 +23,15 @@ class contentService {
         return __awaiter(this, void 0, void 0, function* () {
             const contents = yield content_1.default.find({ subLesson: id });
             const seenContents = yield content_1.default.find({ $and: [{ subLesson: id }, { seen: { $in: userId } }] });
-            console.log(id);
+            console.log(contents.length, seenContents.length);
             const sublesson = yield subLesson_1.default.findById(id);
             let lessonId = sublesson === null || sublesson === void 0 ? void 0 : sublesson.lesson;
-            console.log(sublesson);
-            console.log(lessonId);
             if (contents.length == seenContents.length) {
-                yield subLesson_1.default.findByIdAndUpdate(id, { $push: { seen: userId } });
+                yield subLesson_1.default.findByIdAndUpdate(id, { $addToSet: { seen: userId } });
                 const sublessons = yield subLesson_1.default.find({ lesson: lessonId });
-                const seenSubLessons = yield subLesson_1.default.find({ $and: [{ lesson: id }, { seen: { $in: userId } }] });
+                const seenSubLessons = yield subLesson_1.default.find({ $and: [{ lesson: lessonId }, { seen: { $in: userId } }] });
                 if (sublessons.length == seenSubLessons.length) {
+                    console.log('here passed . . .');
                     const seenLesson = yield lesson_1.default.findByIdAndUpdate(lessonId, { $addToSet: { seen: userId } });
                     const rewardResponse = yield connection.putReward(userId, seenLesson === null || seenLesson === void 0 ? void 0 : seenLesson.reward, `finished ${seenLesson === null || seenLesson === void 0 ? void 0 : seenLesson.name} Lesson`);
                     if (rewardResponse.success) {
