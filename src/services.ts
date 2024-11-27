@@ -17,7 +17,7 @@ export default class contentService {
         if (contents.length == seenContents.length) {
             await subLessonModel.findByIdAndUpdate(id, { $push: { seen: userId } })
             const sublessons = await subLessonModel.find({ lesson: lessonId })
-            const seenSubLessons = await subLessonModel.find({ $and: [{ lesson: id }, { $in: { seen: userId } }] })
+            const seenSubLessons = await subLessonModel.find({ $and: [{ lesson: id }, { seen: {$in : userId } }] })
             if (sublessons.length == seenSubLessons.length) {
                 const seenLesson = await lessonModel.findByIdAndUpdate(lessonId, { $push: { seen: userId } })
                 const rewardResponse = await connection.putReward(userId, seenLesson?.reward, `finished ${seenLesson?.name} Lesson`)

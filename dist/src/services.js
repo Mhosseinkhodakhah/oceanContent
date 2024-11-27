@@ -28,7 +28,7 @@ class contentService {
             if (contents.length == seenContents.length) {
                 yield subLesson_1.default.findByIdAndUpdate(id, { $push: { seen: userId } });
                 const sublessons = yield subLesson_1.default.find({ lesson: lessonId });
-                const seenSubLessons = yield subLesson_1.default.find({ $and: [{ lesson: id }, { $in: { seen: userId } }] });
+                const seenSubLessons = yield subLesson_1.default.find({ $and: [{ lesson: id }, { seen: { $in: userId } }] });
                 if (sublessons.length == seenSubLessons.length) {
                     const seenLesson = yield lesson_1.default.findByIdAndUpdate(lessonId, { $push: { seen: userId } });
                     const rewardResponse = yield connection.putReward(userId, seenLesson === null || seenLesson === void 0 ? void 0 : seenLesson.reward, `finished ${seenLesson === null || seenLesson === void 0 ? void 0 : seenLesson.name} Lesson`);
