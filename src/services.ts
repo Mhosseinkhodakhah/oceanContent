@@ -45,8 +45,8 @@ export default class contentService {
                 path: 'contents',
                 select: 'internalContent',
             },
-            select: ['-Name', '-aName']
-        }).select(['-Name', '-aName'])
+            select: ['-name', '-aName']
+        }).select(['-name', '-aName'])
 
         const arabic = await lessonModel.find().populate({
             path: 'sublessons',
@@ -54,8 +54,8 @@ export default class contentService {
                 path: 'contents',
                 select: 'internalContent',
             },
-            select: ['-Name', '-eName']
-        }).select(['-Name', '-eName'])
+            select: ['-name', '-eName']
+        }).select(['-name', '-eName'])
 
         const persian = await lessonModel.find().populate({
             path: 'sublessons',
@@ -73,9 +73,9 @@ export default class contentService {
      * this mudule seprate data based on the languages for caching just sublessons data
      */
     async readySubLessonsData(id :any){
-        const asub = await subLessonModel.findById(id).select(['-eName' , '-name'])
-        const esub = await subLessonModel.findById(id).select(['-aName' , '-name'])
-        const sub = await subLessonModel.findById(id).select(['-aName' , '-eName'])
+        const asub = await subLessonModel.findById(id).populate('contents').select(['-eName' , '-name'])
+        const esub = await subLessonModel.findById(id).populate('contents').select(['-aName' , '-name'])
+        const sub = await subLessonModel.findById(id).populate('contents').select(['-aName' , '-eName'])
         return {persian : sub , english : esub , arabic : asub}
     }
 

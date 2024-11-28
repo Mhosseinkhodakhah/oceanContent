@@ -52,16 +52,16 @@ class contentService {
                     path: 'contents',
                     select: 'internalContent',
                 },
-                select: ['-Name', '-aName']
-            }).select(['-Name', '-aName']);
+                select: ['-name', '-aName']
+            }).select(['-name', '-aName']);
             const arabic = yield lesson_1.default.find().populate({
                 path: 'sublessons',
                 populate: {
                     path: 'contents',
                     select: 'internalContent',
                 },
-                select: ['-Name', '-eName']
-            }).select(['-Name', '-eName']);
+                select: ['-name', '-eName']
+            }).select(['-name', '-eName']);
             const persian = yield lesson_1.default.find().populate({
                 path: 'sublessons',
                 populate: {
@@ -78,9 +78,9 @@ class contentService {
      */
     readySubLessonsData(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const asub = yield subLesson_1.default.findById(id).select(['-eName', '-name']);
-            const esub = yield subLesson_1.default.findById(id).select(['-aName', '-name']);
-            const sub = yield subLesson_1.default.findById(id).select(['-aName', '-eName']);
+            const asub = yield subLesson_1.default.findById(id).populate('contents').select(['-eName', '-name']);
+            const esub = yield subLesson_1.default.findById(id).populate('contents').select(['-aName', '-name']);
+            const sub = yield subLesson_1.default.findById(id).populate('contents').select(['-aName', '-eName']);
             return { persian: sub, english: esub, arabic: asub };
         });
     }

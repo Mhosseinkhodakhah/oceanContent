@@ -10,7 +10,7 @@ const lessonSchema = new Schema<lessonDB>({
     aName : {type : String},
     number : {type : Number},
     sublessons : [{type : mongoose.Types.ObjectId , ref : 'subLessons'}],
-    reward : {type : Number},
+    reward : {type : Number , default : 100},
     seen:[String],
     rewarded :{type : Boolean , default : false},
     levels : [{type : mongoose.Types.ObjectId , ref : 'levels'}],
