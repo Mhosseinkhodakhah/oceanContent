@@ -223,9 +223,10 @@ class contentController {
             }
         });
     }
-    refreshCache() {
+    getAllContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield cach_1.default.reset();
+            const contents = yield content_1.default.find();
+            return next(new responseService_1.response(req, res, 'get contents', 200, null, contents));
         });
     }
 }

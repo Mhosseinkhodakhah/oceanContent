@@ -16,4 +16,5 @@ router.put('/seen-content/:contentId', auth, controller.seenContent);
 router.get('/get-levels', auth, controller.getLevels);
 router.get('/open-level/:number', auth, controller.openLevel);
 router.put('/answer-question', auth, controller.answer);
+router.get('/get-contents', auth, controller.getAllContent);
 exports.default = router;

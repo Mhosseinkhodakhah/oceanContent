@@ -23,4 +23,6 @@ router.get('/open-level/:number' , auth , controller.openLevel)
 
 router.put('/answer-question' , auth , controller.answer)
 
+router.get('/get-contents' , auth , controller.getAllContent)
+
 export default router;

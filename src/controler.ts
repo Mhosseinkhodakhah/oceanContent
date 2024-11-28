@@ -232,8 +232,11 @@ export default class contentController {
         }
     }
 
-    async refreshCache(){
-        await cacher.reset()
+
+
+    async getAllContent(req: any, res: any, next: any){
+        const contents = await contentModel.find()
+        return next (new response(req , res , 'get contents' , 200 , null , contents))
     }
 
 
