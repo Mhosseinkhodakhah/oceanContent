@@ -43,7 +43,7 @@ export default class contentService {
             path: 'sublessons',
             populate: {
                 path: 'contents',
-                select: 'internalContent',
+                select: 'internalContent.title',
             },
             select: ['-name', '-aName']
         }).select(['-name', '-aName'])
