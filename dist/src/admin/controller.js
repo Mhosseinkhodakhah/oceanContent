@@ -49,16 +49,43 @@ class adminController {
             return next(new responseService_1.response(req, res, 'create subLesson', 200, null, 'new subLesson create successfully'));
         });
     }
+    createTitle(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const sublesson = yield subLesson_1.default.findById(req.params.sublessonId);
+            if (!sublesson) {
+                return next(new responseService_1.response(req, res, 'create title', 404, 'this sublesson is not exist on database', null));
+            }
+            yield sublesson.updateOne({ $addToSet: { subLessons: req.body } });
+            return next(new responseService_1.response(req, res, 'create title', 200, null, 'the title created successfulle'));
+        });
+    }
     createContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sublesson = yield subLesson_1.default.findById(req.params.sublesson);
-            if (!sublesson) {
-                return next(new responseService_1.response(req, res, 'create content', 404, 'this lesson is not exist', null));
+            let sublesson;
+            sublesson = yield subLesson_1.default.findById(req.params.sublesson);
+            if (sublesson) {
+                const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id });
+                const content = yield content_1.default.create(data);
+                yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { content: content._id });
+                yield cach_1.default.reset();
+                return next(new responseService_1.response(req, res, 'create content', 200, null, content));
             }
-            const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id });
+            sublesson = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.sublesson });
+            console.log('is it here??', sublesson);
+            if (!sublesson) {
+                return next(new responseService_1.response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null));
+            }
+            const data = Object.assign(Object.assign({}, req.body), { subLesson: req.params.sublesson });
             const content = yield content_1.default.create(data);
-            yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } });
+            sublesson.subLessons.forEach(element => {
+                if (element._id == req.params.sublesson) {
+                    element['content'] = content._id;
+                    console.log('new content . . .', element);
+                }
+            });
+            yield sublesson.save();
             yield cach_1.default.reset();
+            console.log('check for last time , , , ,');
             return next(new responseService_1.response(req, res, 'create content', 200, null, content));
         });
     }

@@ -71,71 +71,13 @@ export default class contentController {
 
     async getSubLesson(req: any, res: any, next: any) {
         const language = req.params.lang;
-        let sublesson;
-        let allSubs = await cacher.getter('getSubLesson')
-        if (allSubs) {
-            if (!allSubs[req.params.sublessonId]) {
-                console.log('cache is empty . . .')
-                const data = await services.readySubLessonsData(req.params.sublessonId)
-                allSubs[req.params.sublessonId] = data
-                await cacher.setter('getSubLesson', allSubs)
-                switch (language) {
-                    case 'english':
-                        sublesson = data.english
-                        break;
-                    case 'arabic':
-                        sublesson = data.arabic
-                        break;
-                    case 'persian':
-                        sublesson = data.persian
-                        break;
-
-                    default:
-                        return next(new response(req, res, 'get specific subLesson', 400, 'select language on params please', null))
-                        break;
-                }
-            } else {
-                switch (language) {
-                    case 'english':
-                        sublesson = allSubs[req.params.sublessonId].english
-                        break;
-                    case 'arabic':
-                        sublesson = allSubs[req.params.sublessonId].arabic
-                        break;
-                    case 'persian':
-                        sublesson = allSubs[req.params.sublessonId].persian
-                        break;
-
-                    default:
-                        return next(new response(req, res, 'get specific subLesson', 400, 'select language on params please', null))
-                        break;
-                }
-            }
-        } else {
-            console.log('cache is empty . . .')
-            const data = await services.readySubLessonsData(req.params.sublessonId)
-            console.log('asdf')
-            allSubs = {}
-            allSubs[req.params.sublessonId] = data
-            console.log('ffff')
-            await cacher.setter('getSubLesson', allSubs)
-            switch (language) {
-                case 'english':
-                    sublesson = data.english
-                    break;
-                case 'arabic':
-                    sublesson = data.arabic
-                    break;
-                case 'persian':
-                    sublesson = data.persian
-                    break;
-
-                default:
-                    return next(new response(req, res, 'get specific subLesson', 400, 'select language on params please', null))
-                    break;
-            }
+        let sublessonContent;
+        sublessonContent = await contentModel.findById( req.params.contentId)
+        if (!sublessonContent){
+            return next(new response(req, res, 'get specific subLesson', 400, 'this content is not exist', null))
         }
-        return next(new response(req, res, 'get specific subLesson', 200, null, sublesson))
+
+        return next(new response(req, res, 'get specific subLesson', 200, null, sublessonContent))
     }
 
 

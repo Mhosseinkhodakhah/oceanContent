@@ -36,13 +36,15 @@ export interface levelDB {
 }
 
 export interface subLessonDB {
+
     name: string,
     eName: string,
     aName: string,
     number: number,
     lesson: any,
-    contents: {}[],
+    content: {},
     seen: string[]
+    subLessons : {eName : string , number : number , _id : any , content : any}[]
 }
 
 

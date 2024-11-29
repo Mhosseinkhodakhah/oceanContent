@@ -34,7 +34,6 @@ export default class contentService {
     }
 
 
-
     /**
      * this module seprate a languages for caching all lessons data
      */
@@ -42,8 +41,7 @@ export default class contentService {
         const english = await lessonModel.find().populate({
             path: 'sublessons',
             populate: {
-                path: 'contents',
-                select: 'internalContent.title',
+                path: 'subLessons',
             },
             select: ['-name', '-aName']
         }).select(['-name', '-aName'])
@@ -51,8 +49,7 @@ export default class contentService {
         const arabic = await lessonModel.find().populate({
             path: 'sublessons',
             populate: {
-                path: 'contents',
-                select: 'internalContent',
+                path: 'subLessons',
             },
             select: ['-name', '-eName']
         }).select(['-name', '-eName'])
@@ -60,8 +57,7 @@ export default class contentService {
         const persian = await lessonModel.find().populate({
             path: 'sublessons',
             populate: {
-                path: 'contents',
-                select: 'internalContent',
+                path: 'subLessons',
             },
             select: ['-eName', '-aName']
         }).select(['-eName', '-aName'])
@@ -79,6 +75,7 @@ export default class contentService {
         return {persian : sub , english : esub , arabic : asub}
     }
 
+    
 
     /**
      * this mudule seprate data based on the languages for caching just sublessons data

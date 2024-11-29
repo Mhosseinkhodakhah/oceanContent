@@ -10,7 +10,7 @@ const controller = new controler_1.default();
 const auth = new middleware_1.default().auth;
 const router = (0, express_1.Router)();
 router.get('/get-lessons/:lang', controller.getLessons);
-router.get('/get-sublesson/:sublessonId/:lang', controller.getSubLesson);
+router.get('/get-sublesson/:contentId/:lang', controller.getSubLesson);
 router.get('/get-content/:contentId/:lang', controller.getContent);
 router.put('/seen-content/:contentId', auth, controller.seenContent);
 router.get('/get-levels', auth, controller.getLevels);

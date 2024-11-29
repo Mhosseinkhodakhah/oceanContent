@@ -30,8 +30,15 @@ const subLessonSchema = new mongoose_1.Schema({
     aName: { type: String },
     number: { type: Number },
     lesson: { type: mongoose_1.default.Types.ObjectId, ref: 'lessons' },
-    contents: [{ type: mongoose_1.default.Types.ObjectId, ref: 'contents' }],
-    seen: [String]
+    content: { type: mongoose_1.default.Types.ObjectId, ref: 'contents' },
+    seen: [String],
+    subLessons: [{
+            eName: { type: String },
+            number: { type: Number },
+            // aName : {type:String},
+            // name : {type:String},
+            content: { type: mongoose_1.default.Types.ObjectId, ref: "contents" }
+        }]
 });
 const subLessonModel = (0, mongoose_1.model)('subLessons', subLessonSchema);
 exports.default = subLessonModel;

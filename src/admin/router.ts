@@ -13,7 +13,9 @@ adminRouter.post('/create-lesson' , lessonRole  ,adminAuth ,controller.createLes
 
 adminRouter.post('/create-sublesson/:lesson' , subLessonRole , adminAuth , controller.createSublesson)
 
-adminRouter.post('/create-content/:sublesson' , adminAuth ,controller.createContent)
+adminRouter.post('/create-title/:sublessonId' , controller.createTitle)
+
+adminRouter.post('/create-content/:sublesson'  ,controller.createContent)
 
 adminRouter.post('/create-level/:lessonId' , adminAuth , controller.creteNewLevel )
 

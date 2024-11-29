@@ -70,70 +70,12 @@ class contentController {
     getSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const language = req.params.lang;
-            let sublesson;
-            let allSubs = yield cach_1.default.getter('getSubLesson');
-            if (allSubs) {
-                if (!allSubs[req.params.sublessonId]) {
-                    console.log('cache is empty . . .');
-                    const data = yield services.readySubLessonsData(req.params.sublessonId);
-                    allSubs[req.params.sublessonId] = data;
-                    yield cach_1.default.setter('getSubLesson', allSubs);
-                    switch (language) {
-                        case 'english':
-                            sublesson = data.english;
-                            break;
-                        case 'arabic':
-                            sublesson = data.arabic;
-                            break;
-                        case 'persian':
-                            sublesson = data.persian;
-                            break;
-                        default:
-                            return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'select language on params please', null));
-                            break;
-                    }
-                }
-                else {
-                    switch (language) {
-                        case 'english':
-                            sublesson = allSubs[req.params.sublessonId].english;
-                            break;
-                        case 'arabic':
-                            sublesson = allSubs[req.params.sublessonId].arabic;
-                            break;
-                        case 'persian':
-                            sublesson = allSubs[req.params.sublessonId].persian;
-                            break;
-                        default:
-                            return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'select language on params please', null));
-                            break;
-                    }
-                }
+            let sublessonContent;
+            sublessonContent = yield content_1.default.findById(req.params.contentId);
+            if (!sublessonContent) {
+                return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'this content is not exist', null));
             }
-            else {
-                console.log('cache is empty . . .');
-                const data = yield services.readySubLessonsData(req.params.sublessonId);
-                console.log('asdf');
-                allSubs = {};
-                allSubs[req.params.sublessonId] = data;
-                console.log('ffff');
-                yield cach_1.default.setter('getSubLesson', allSubs);
-                switch (language) {
-                    case 'english':
-                        sublesson = data.english;
-                        break;
-                    case 'arabic':
-                        sublesson = data.arabic;
-                        break;
-                    case 'persian':
-                        sublesson = data.persian;
-                        break;
-                    default:
-                        return next(new responseService_1.response(req, res, 'get specific subLesson', 400, 'select language on params please', null));
-                        break;
-                }
-            }
-            return next(new responseService_1.response(req, res, 'get specific subLesson', 200, null, sublesson));
+            return next(new responseService_1.response(req, res, 'get specific subLesson', 200, null, sublessonContent));
         });
     }
     getContent(req, res, next) {

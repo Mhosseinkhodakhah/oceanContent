@@ -43,18 +43,52 @@ export default class adminController {
     }
 
 
-    async createContent(req: any, res: any, next: any) {
-        const sublesson = await subLessonModel.findById(req.params.sublesson)
-        if (!sublesson) {
-            return next(new response(req, res, 'create content', 404, 'this lesson is not exist', null))
-        }
-        const data = { ...req.body, subLesson: sublesson._id }
-        const content = await contentModel.create(data)
 
-        await subLessonModel.findByIdAndUpdate(req.params.sublesson, { $push: { contents: content._id } })
-        await cacher.reset()
-        return next(new response(req, res, 'create content', 200, null, content))
+    async createTitle(req: any, res: any, next: any){
+        const sublesson = await subLessonModel.findById(req.params.sublessonId)
+        if (!sublesson){
+            return next(new response(req , res, 'create title' , 404 , 'this sublesson is not exist on database' , null))
+        }
+        await sublesson.updateOne({$addToSet : {subLessons : req.body}})
+        return next(new response(req , res , 'create title' , 200 , null , 'the title created successfulle'))
     }
+
+
+    async createContent(req: any, res: any, next: any) {
+        let sublesson;
+        sublesson = await subLessonModel.findById(req.params.sublesson)
+        if (sublesson) {
+            const data = { ...req.body, subLesson: sublesson._id }
+            const content = await contentModel.create(data)
+
+            await subLessonModel.findByIdAndUpdate(req.params.sublesson, { content: content._id })
+            await cacher.reset()
+            return next(new response(req, res, 'create content', 200, null, content))
+        }
+        sublesson = await subLessonModel.findOne({ 'subLessons._id': req.params.sublesson })
+        console.log('is it here??', sublesson)
+        if (!sublesson) {
+            return next(new response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null))
+        }
+        const data = { ...req.body , subLesson: req.params.sublesson }
+        const content = await contentModel.create(data)
+        
+
+        sublesson.subLessons.forEach(element => {
+            if (element._id == req.params.sublesson){
+                element['content'] = content._id
+                console.log('new content . . .' , element)
+            }
+        });
+        await sublesson.save()
+        await cacher.reset()
+        console.log('check for last time , , , ,')
+        return next(new response(req, res, 'create content', 200, null, content))
+
+    }
+
+
+
 
 
 
@@ -126,13 +160,13 @@ export default class adminController {
     async getLevels(req: any, res: any, next: any) {
         let cacheData = await cacher.getter('admin-getLevels')
         let finalData;
-        if (cacheData){
+        if (cacheData) {
             console.log('read throw cache . . .')
             finalData = cacheData;
-        }else{
+        } else {
             console.log('cache is empty . . .')
             finalData = await levelModel.find()
-            await cacher.setter('admin-getLevels' , finalData)
+            await cacher.setter('admin-getLevels', finalData)
         }
         return next(new response(req, res, 'get levels', 200, null, finalData))
     }
@@ -141,16 +175,16 @@ export default class adminController {
     async getContent(req: any, res: any, next: any) {
         let cacheData = await cacher.getter(`admin-getContent-${req.params.contentId}`)
         let finalData;
-        if (cacheData){
+        if (cacheData) {
             console.log('read throw cache . . .')
             finalData = cacheData
-        }else{
+        } else {
             console.log('cache is empty . . .')
             finalData = await contentModel.findById(req.params.contentId).populate('subLesson')
-            if (!finalData){
+            if (!finalData) {
                 return next(new response(req, res, 'get specific content', 404, 'this content is not exist on database', null))
             }
-            await cacher.setter(`admin-getContent-${req.params.contentId}` , finalData)
+            await cacher.setter(`admin-getContent-${req.params.contentId}`, finalData)
         }
         return next(new response(req, res, 'get specific content', 200, null, finalData))
     }
@@ -158,7 +192,7 @@ export default class adminController {
     async updateContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
 
-        const finalData = {...(content?.toObject()) , ...req.body}
+        const finalData = { ...(content?.toObject()), ...req.body }
         await content?.updateOne(finalData)
         await content?.save()
         await cacher.reset()
@@ -167,7 +201,7 @@ export default class adminController {
 
     async updateLesson(req: any, res: any, next: any) {
         const lesson = await lessonModel.findById(req.params.lessonId).populate('subLesson')
-        const finalData = {...(lesson?.toObject()) , ...req.body}
+        const finalData = { ...(lesson?.toObject()), ...req.body }
         await lesson?.updateOne(finalData)
         await lesson?.save()
         await cacher.reset()
@@ -176,7 +210,7 @@ export default class adminController {
 
     async updateSubLesson(req: any, res: any, next: any) {
         const sublesson = await subLessonModel.findById(req.params.sublessonId).populate('subLesson')
-        const finalData = {...(sublesson?.toObject()) , ...req.body}
+        const finalData = { ...(sublesson?.toObject()), ...req.body }
         await sublesson?.updateOne(finalData)
         await sublesson?.save()
         await cacher.reset()
@@ -197,7 +231,7 @@ export default class adminController {
                 return next(new response(req, res, 'get specific subLesson', 404, 'this sublesson is not exist on database', null))
             }
             await cacher.setter(`admin-getSubLesson-${req.params.sublessonId}`, subLesson)
-            
+
         }
         return next(new response(req, res, 'get specific subLesson', 200, null, subLesson))
     }

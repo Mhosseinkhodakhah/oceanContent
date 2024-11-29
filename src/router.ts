@@ -11,7 +11,7 @@ const router = Router()
 
 router.get('/get-lessons/:lang' , controller.getLessons)
 
-router.get('/get-sublesson/:sublessonId/:lang' , controller.getSubLesson)
+router.get('/get-sublesson/:contentId/:lang' , controller.getSubLesson)
 
 router.get('/get-content/:contentId/:lang' , controller.getContent)
 
