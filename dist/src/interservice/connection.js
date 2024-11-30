@@ -25,5 +25,18 @@ class interConnection {
             return response;
         });
     }
+    resetCache() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const rawResponse = yield fetch(`http://localhost:5003/interservice/reset-cache`, {
+                method: 'PATCH',
+                headers: {
+                    Accept: "*/*",
+                    "Content-Type": "application/json",
+                },
+            });
+            const response = yield rawResponse.json();
+            return response;
+        });
+    }
 }
 exports.default = interConnection;
