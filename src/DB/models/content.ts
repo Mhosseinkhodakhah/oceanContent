@@ -16,10 +16,10 @@ const contentSchema = new Schema<content>({
     aPictures : [String],
     
     seen:[String],
-    
+
     subLesson : { type: mongoose.Types.ObjectId , ref: 'subLessons' }
 
-})
+},{timestamps:true})
 
 
 
