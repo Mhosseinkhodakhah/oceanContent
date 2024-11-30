@@ -30,7 +30,8 @@ class adminController {
                 return next(new responseService_1.response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null));
             }
             yield lesson_1.default.create(req.body);
-            yield connection.resetCache();
+            const h = yield connection.resetCache();
+            console.log(h);
             return next(new responseService_1.response(req, res, 'create lesson', 200, null, 'new lesson create successfully'));
         });
     }

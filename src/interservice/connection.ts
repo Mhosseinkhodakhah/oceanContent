@@ -19,14 +19,14 @@ export default class interConnection {
     }
 
     async resetCache() {
-        const rawResponse = await fetch(`http://localhost:5003/interservice/reset-cache`, {
-            method: 'PATCH',
+        const rawResponse = await fetch(`http://localhost:5003/app/interservice/reset-cache`, {
+            method: 'PUT',
             headers: {
                 Accept: "*/*",
                 "Content-Type": "application/json",
             },
-        })
-        
+        }) 
+
         const response = await rawResponse.json()
         return response;
     }

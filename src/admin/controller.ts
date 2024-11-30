@@ -24,8 +24,8 @@ export default class adminController {
             return next(new response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null))
         }
         await lessonModel.create(req.body)
-        
-        await connection.resetCache()
+        const h = await connection.resetCache()
+        console.log(h)
         return next(new response(req, res, 'create lesson', 200, null, 'new lesson create successfully'))
     }
 
@@ -240,7 +240,7 @@ export default class adminController {
             await cacher.setter(`admin-getSubLesson-${req.params.sublessonId}`, subLesson)
 
         }
-        
+
         return next(new response(req, res, 'get specific subLesson', 200, null, subLesson))
     }
 

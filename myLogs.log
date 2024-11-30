@@ -3682,3 +3682,31 @@
   label: 'right meow!',
   timestamp: '2024-11-29 15:50:26'
 }
+{
+  meta: {
+    req: {
+      url: '/create-lesson',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InN1cGVyQWRtaW4iLCJmaXJzdE5hbWUiOiJhbGlyZXphIiwibGFzdE5hbWUiOiJwb3VyVmFoaWQiLCJyb2xlIjoxLCJpYXQiOjE3MzI5NjMyMTEsImV4cCI6MTczMzAwNjQxMX0.1pyfc1xbw_DrxhE0MiWEc-iJyHmAVIAJaf2WjRPlqKg',
+        'user-agent': 'PostmanRuntime/7.42.0',
+        accept: '*/*',
+        'postman-token': 'd4a81a1d-eb29-40f1-892b-0a5be08b6e24',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '208'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/create-lesson',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 260
+  },
+  level: 'info',
+  message: 'POST /create-lesson 200 260ms',
+  label: 'right meow!',
+  timestamp: '2024-11-30 14:37:06'
+}
