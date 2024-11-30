@@ -7,8 +7,12 @@ import levelModel from "../DB/models/level"
 import questionModel from "../DB/models/questions"
 import internalCache from "../service/cach"
 import cacher from "../service/cach"
+import interConnection from "../interservice/connection"
 
 
+
+
+const connection = new interConnection()
 
 
 export default class adminController {
@@ -20,7 +24,8 @@ export default class adminController {
             return next(new response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null))
         }
         await lessonModel.create(req.body)
-        await cacher.reset()
+        
+        await connection.resetCache()
         return next(new response(req, res, 'create lesson', 200, null, 'new lesson create successfully'))
     }
 
@@ -38,7 +43,8 @@ export default class adminController {
         const subData = { ...req.body, lesson: existance._id }
         const subLesson = await subLessonModel.create(subData)
         const lesson = await lessonModel.findByIdAndUpdate(req.params.lesson, { $push: { sublessons: subLesson._id } })
-        await cacher.reset()
+        
+        await connection.resetCache()
         return next(new response(req, res, 'create subLesson', 200, null, 'new subLesson create successfully'))
     }
 
@@ -50,6 +56,7 @@ export default class adminController {
             return next(new response(req , res, 'create title' , 404 , 'this sublesson is not exist on database' , null))
         }
         await sublesson.updateOne({$addToSet : {subLessons : req.body}})
+        await connection.resetCache()
         return next(new response(req , res , 'create title' , 200 , null , 'the title created successfulle'))
     }
 
@@ -62,7 +69,7 @@ export default class adminController {
             const content = await contentModel.create(data)
 
             await subLessonModel.findByIdAndUpdate(req.params.sublesson, { content: content._id })
-            await cacher.reset()
+            
             return next(new response(req, res, 'create content', 200, null, content))
         }
         sublesson = await subLessonModel.findOne({ 'subLessons._id': req.params.sublesson })
@@ -81,7 +88,7 @@ export default class adminController {
             }
         });
         await sublesson.save()
-        await cacher.reset()
+        await connection.resetCache()
         console.log('check for last time , , , ,')
         return next(new response(req, res, 'create content', 200, null, content))
 
@@ -115,7 +122,7 @@ export default class adminController {
         const levelCreation = await levelModel.create(level)
         await lesson.updateOne({ $addToSet: { levels: levelCreation._id } })
         await lesson.save()
-        await cacher.reset()
+        await connection.resetCache()
         return next(new response(req, res, 'create new level', 200, null, 'new level creation successfully'))
     }
 
@@ -136,7 +143,7 @@ export default class adminController {
             uppersLevels[i].number -= 1
             await uppersLevels[i].save()
         }
-        await cacher.reset()
+        await connection.resetCache()
         return next(new response(req, res, 'deleting level', 200, null, 'level deleted successfully'))
     }
 
@@ -152,7 +159,7 @@ export default class adminController {
         const question = await questionModel.create(data)
         await level.updateOne({ $addToSet: { questions: question._id } })
         await level.save()
-        await cacher.reset()
+        await connection.resetCache()
         return next(new response(req, res, 'create question', 200, null, 'question created successfully!'))
     }
 
@@ -195,7 +202,7 @@ export default class adminController {
         const finalData = { ...(content?.toObject()), ...req.body }
         await content?.updateOne(finalData)
         await content?.save()
-        await cacher.reset()
+        await connection.resetCache()
         return next(new response(req, res, 'update content by admin', 200, null, content))
     }
 
@@ -204,7 +211,7 @@ export default class adminController {
         const finalData = { ...(lesson?.toObject()), ...req.body }
         await lesson?.updateOne(finalData)
         await lesson?.save()
-        await cacher.reset()
+        await connection.resetCache()
         return next(new response(req, res, 'update lesson by admin', 200, null, lesson))
     }
 
@@ -213,7 +220,7 @@ export default class adminController {
         const finalData = { ...(sublesson?.toObject()), ...req.body }
         await sublesson?.updateOne(finalData)
         await sublesson?.save()
-        await cacher.reset()
+        await connection.resetCache()
         return next(new response(req, res, 'get specific content', 200, null, sublesson))
     }
 
@@ -233,6 +240,7 @@ export default class adminController {
             await cacher.setter(`admin-getSubLesson-${req.params.sublessonId}`, subLesson)
 
         }
+        
         return next(new response(req, res, 'get specific subLesson', 200, null, subLesson))
     }
 

@@ -20,6 +20,8 @@ const content_1 = __importDefault(require("../DB/models/content"));
 const level_1 = __importDefault(require("../DB/models/level"));
 const questions_1 = __importDefault(require("../DB/models/questions"));
 const cach_1 = __importDefault(require("../service/cach"));
+const connection_1 = __importDefault(require("../interservice/connection"));
+const connection = new connection_1.default();
 class adminController {
     createLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -28,7 +30,7 @@ class adminController {
                 return next(new responseService_1.response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null));
             }
             yield lesson_1.default.create(req.body);
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'create lesson', 200, null, 'new lesson create successfully'));
         });
     }
@@ -45,7 +47,7 @@ class adminController {
             const subData = Object.assign(Object.assign({}, req.body), { lesson: existance._id });
             const subLesson = yield subLesson_1.default.create(subData);
             const lesson = yield lesson_1.default.findByIdAndUpdate(req.params.lesson, { $push: { sublessons: subLesson._id } });
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'create subLesson', 200, null, 'new subLesson create successfully'));
         });
     }
@@ -56,6 +58,7 @@ class adminController {
                 return next(new responseService_1.response(req, res, 'create title', 404, 'this sublesson is not exist on database', null));
             }
             yield sublesson.updateOne({ $addToSet: { subLessons: req.body } });
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'create title', 200, null, 'the title created successfulle'));
         });
     }
@@ -67,7 +70,6 @@ class adminController {
                 const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id });
                 const content = yield content_1.default.create(data);
                 yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { content: content._id });
-                yield cach_1.default.reset();
                 return next(new responseService_1.response(req, res, 'create content', 200, null, content));
             }
             sublesson = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.sublesson });
@@ -84,7 +86,7 @@ class adminController {
                 }
             });
             yield sublesson.save();
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             console.log('check for last time , , , ,');
             return next(new responseService_1.response(req, res, 'create content', 200, null, content));
         });
@@ -113,7 +115,7 @@ class adminController {
             const levelCreation = yield level_1.default.create(level);
             yield lesson.updateOne({ $addToSet: { levels: levelCreation._id } });
             yield lesson.save();
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'create new level', 200, null, 'new level creation successfully'));
         });
     }
@@ -132,7 +134,7 @@ class adminController {
                 uppersLevels[i].number -= 1;
                 yield uppersLevels[i].save();
             }
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'deleting level', 200, null, 'level deleted successfully'));
         });
     }
@@ -147,7 +149,7 @@ class adminController {
             const question = yield questions_1.default.create(data);
             yield level.updateOne({ $addToSet: { questions: question._id } });
             yield level.save();
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'create question', 200, null, 'question created successfully!'));
         });
     }
@@ -192,7 +194,7 @@ class adminController {
             const finalData = Object.assign(Object.assign({}, (content === null || content === void 0 ? void 0 : content.toObject())), req.body);
             yield (content === null || content === void 0 ? void 0 : content.updateOne(finalData));
             yield (content === null || content === void 0 ? void 0 : content.save());
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update content by admin', 200, null, content));
         });
     }
@@ -202,7 +204,7 @@ class adminController {
             const finalData = Object.assign(Object.assign({}, (lesson === null || lesson === void 0 ? void 0 : lesson.toObject())), req.body);
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne(finalData));
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.save());
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update lesson by admin', 200, null, lesson));
         });
     }
@@ -212,7 +214,7 @@ class adminController {
             const finalData = Object.assign(Object.assign({}, (sublesson === null || sublesson === void 0 ? void 0 : sublesson.toObject())), req.body);
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(finalData));
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
-            yield cach_1.default.reset();
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, sublesson));
         });
     }
