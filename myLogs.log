@@ -3710,3 +3710,59 @@
   label: 'right meow!',
   timestamp: '2024-11-30 14:37:06'
 }
+{
+  meta: {
+    req: {
+      url: '/create-content/674af83e9a71244cab35d953',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InN1cGVyQWRtaW4iLCJmaXJzdE5hbWUiOiJhbGlyZXphIiwibGFzdE5hbWUiOiJwb3VyVmFoaWQiLCJyb2xlIjoxLCJpYXQiOjE3MzI5NjMyMTEsImV4cCI6MTczMzAwNjQxMX0.1pyfc1xbw_DrxhE0MiWEc-iJyHmAVIAJaf2WjRPlqKg',
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '0595c35e-94d9-4b64-846d-d858a5ad8eba',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '568'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/create-content/674af83e9a71244cab35d953',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 475
+  },
+  level: 'info',
+  message: 'POST /create-content/674af83e9a71244cab35d953 200 475ms',
+  label: 'right meow!',
+  timestamp: '2024-12-03 18:14:42'
+}
+{
+  meta: {
+    req: {
+      url: '/create-content/674af6b29a71244cab35d931',
+      headers: {
+        'content-type': 'application/json',
+        authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InN1cGVyQWRtaW4iLCJmaXJzdE5hbWUiOiJhbGlyZXphIiwibGFzdE5hbWUiOiJwb3VyVmFoaWQiLCJyb2xlIjoxLCJpYXQiOjE3MzI5NjMyMTEsImV4cCI6MTczMzAwNjQxMX0.1pyfc1xbw_DrxhE0MiWEc-iJyHmAVIAJaf2WjRPlqKg',
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '4ab85db3-f07c-4b53-b1d1-c136f9e1a47f',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '568'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/create-content/674af6b29a71244cab35d931',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 650
+  },
+  level: 'info',
+  message: 'POST /create-content/674af6b29a71244cab35d931 200 650ms',
+  label: 'right meow!',
+  timestamp: '2024-12-03 18:15:13'
+}
