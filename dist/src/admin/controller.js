@@ -71,6 +71,7 @@ class adminController {
                 const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id });
                 const content = yield content_1.default.create(data);
                 yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { content: content._id });
+                yield connection.resetCache();
                 return next(new responseService_1.response(req, res, 'create content', 200, null, content));
             }
             sublesson = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.sublesson });

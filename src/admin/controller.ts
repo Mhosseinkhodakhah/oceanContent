@@ -69,7 +69,7 @@ export default class adminController {
             const content = await contentModel.create(data)
 
             await subLessonModel.findByIdAndUpdate(req.params.sublesson, { content: content._id })
-            
+            await connection.resetCache()
             return next(new response(req, res, 'create content', 200, null, content))
         }
         sublesson = await subLessonModel.findOne({ 'subLessons._id': req.params.sublesson })
