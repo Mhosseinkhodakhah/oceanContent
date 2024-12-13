@@ -10,7 +10,7 @@ const controller_1 = __importDefault(require("./controller"));
 const adminRouter = (0, express_1.Router)();
 const adminAuth = new middleware_1.default().adminAuth;
 const controller = new controller_1.default();
-adminRouter.post('/create-lesson', validators_1.lessonRole, adminAuth, controller.createLesson);
+adminRouter.post('/create-lesson', validators_1.lessonRole, controller.createLesson);
 adminRouter.post('/create-sublesson/:lesson', validators_1.subLessonRole, adminAuth, controller.createSublesson);
 adminRouter.post('/create-title/:sublessonId', controller.createTitle);
 adminRouter.post('/create-content/:sublesson', controller.createContent);

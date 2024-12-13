@@ -7,7 +7,7 @@ import subLessonModel from "./DB/models/subLesson";
 import { lessonDB } from "./interfaces";
 import contentModel from "./DB/models/content";
 import levelModel from "./DB/models/level";
-import questionModel from "./DB/models/questions";
+import questionModel from "./DB/models/question";
 import { level } from "winston";
 import interConnection from "./interservice/connection";
 import internalCache from "./service/cach";

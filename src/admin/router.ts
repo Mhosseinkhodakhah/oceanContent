@@ -9,7 +9,7 @@ const adminAuth = new middleWare().adminAuth
 const controller = new adminController()
 
 
-adminRouter.post('/create-lesson' , lessonRole  ,adminAuth ,controller.createLesson)
+adminRouter.post('/create-lesson' , lessonRole   ,controller.createLesson)
 
 adminRouter.post('/create-sublesson/:lesson' , subLessonRole , adminAuth , controller.createSublesson)
 

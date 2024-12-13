@@ -4,26 +4,36 @@ import lessonModel from "../DB/models/lesson"
 import subLessonModel from "../DB/models/subLesson"
 import contentModel from "../DB/models/content"
 import levelModel from "../DB/models/level"
-import questionModel from "../DB/models/questions"
+import questionModel from "../DB/models/question"
 import internalCache from "../service/cach"
 import cacher from "../service/cach"
 import interConnection from "../interservice/connection"
-
+const { translate } = require('free-translate');
 
 
 
 const connection = new interConnection()
-
-
 export default class adminController {
-
 
     async createLesson(req: any, res: any, next: any) {
         const bodyError = validationResult(req)
         if (!bodyError.isEmpty()) {
             return next(new response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null))
         }
-        await lessonModel.create(req.body)
+        if (!req.body.aName) {          // translation for arabic
+            const translatedText = await translate(req.body.name, { to: 'ar' });
+            req.body.aName = translatedText
+        }
+        if (!req.body.eName) {          // translation for arabic
+            const translatedText = await translate(req.body.name, { to: 'en' });
+            req.body.eName = translatedText
+        }
+        const lesson = await lessonModel.create(req.body)
+        await levelModel.create({
+            number: req.body.number,
+            lesson: lesson._id,
+            reward: 0
+        })
         const h = await connection.resetCache()
         console.log(h)
         return next(new response(req, res, 'create lesson', 200, null, 'new lesson create successfully'))
@@ -43,21 +53,21 @@ export default class adminController {
         const subData = { ...req.body, lesson: existance._id }
         const subLesson = await subLessonModel.create(subData)
         const lesson = await lessonModel.findByIdAndUpdate(req.params.lesson, { $push: { sublessons: subLesson._id } })
-        
+
         await connection.resetCache()
         return next(new response(req, res, 'create subLesson', 200, null, 'new subLesson create successfully'))
     }
 
 
 
-    async createTitle(req: any, res: any, next: any){
+    async createTitle(req: any, res: any, next: any) {
         const sublesson = await subLessonModel.findById(req.params.sublessonId)
-        if (!sublesson){
-            return next(new response(req , res, 'create title' , 404 , 'this sublesson is not exist on database' , null))
+        if (!sublesson) {
+            return next(new response(req, res, 'create title', 404, 'this sublesson is not exist on database', null))
         }
-        await sublesson.updateOne({$addToSet : {subLessons : req.body}})
+        await sublesson.updateOne({ $addToSet: { subLessons: req.body } })
         await connection.resetCache()
-        return next(new response(req , res , 'create title' , 200 , null , 'the title created successfulle'))
+        return next(new response(req, res, 'create title', 200, null, 'the title created successfulle'))
     }
 
 
@@ -77,14 +87,14 @@ export default class adminController {
         if (!sublesson) {
             return next(new response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null))
         }
-        const data = { ...req.body , subLesson: req.params.sublesson }
+        const data = { ...req.body, subLesson: req.params.sublesson }
         const content = await contentModel.create(data)
-        
+
 
         sublesson.subLessons.forEach(element => {
-            if (element._id == req.params.sublesson){
+            if (element._id == req.params.sublesson) {
                 element['content'] = content._id
-                console.log('new content . . .' , element)
+                console.log('new content . . .', element)
             }
         });
         await sublesson.save()

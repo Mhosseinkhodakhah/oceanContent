@@ -18,9 +18,10 @@ const lesson_1 = __importDefault(require("../DB/models/lesson"));
 const subLesson_1 = __importDefault(require("../DB/models/subLesson"));
 const content_1 = __importDefault(require("../DB/models/content"));
 const level_1 = __importDefault(require("../DB/models/level"));
-const questions_1 = __importDefault(require("../DB/models/questions"));
+const question_1 = __importDefault(require("../DB/models/question"));
 const cach_1 = __importDefault(require("../service/cach"));
 const connection_1 = __importDefault(require("../interservice/connection"));
+const { translate } = require('free-translate');
 const connection = new connection_1.default();
 class adminController {
     createLesson(req, res, next) {
@@ -29,7 +30,20 @@ class adminController {
             if (!bodyError.isEmpty()) {
                 return next(new responseService_1.response(req, res, 'create lesson', 400, bodyError['errors'][0].msg, null));
             }
-            yield lesson_1.default.create(req.body);
+            if (!req.body.aName) { // translation for arabic
+                const translatedText = yield translate(req.body.name, { to: 'ar' });
+                req.body.aName = translatedText;
+            }
+            if (!req.body.eName) { // translation for arabic
+                const translatedText = yield translate(req.body.name, { to: 'en' });
+                req.body.eName = translatedText;
+            }
+            const lesson = yield lesson_1.default.create(req.body);
+            yield level_1.default.create({
+                number: req.body.number,
+                lesson: lesson._id,
+                reward: 0
+            });
             const h = yield connection.resetCache();
             console.log(h);
             return next(new responseService_1.response(req, res, 'create lesson', 200, null, 'new lesson create successfully'));
@@ -148,7 +162,7 @@ class adminController {
             }
             req.body.trueOption -= 1;
             const data = Object.assign(Object.assign({}, req.body), { level: level._id });
-            const question = yield questions_1.default.create(data);
+            const question = yield question_1.default.create(data);
             yield level.updateOne({ $addToSet: { questions: question._id } });
             yield level.save();
             yield connection.resetCache();
