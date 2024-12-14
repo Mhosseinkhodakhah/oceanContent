@@ -82,7 +82,7 @@ class adminController {
             let sublesson;
             sublesson = yield subLesson_1.default.findById(req.params.sublesson);
             if (sublesson) {
-                const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id });
+                const data = Object.assign(Object.assign({}, req.body), { subLesson: sublesson._id, state: 0 });
                 const content = yield content_1.default.create(data);
                 yield subLesson_1.default.findByIdAndUpdate(req.params.sublesson, { content: content._id });
                 yield connection.resetCache();
@@ -93,7 +93,7 @@ class adminController {
             if (!sublesson) {
                 return next(new responseService_1.response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null));
             }
-            const data = Object.assign(Object.assign({}, req.body), { subLesson: req.params.sublesson });
+            const data = Object.assign(Object.assign({}, req.body), { subLesson: req.params.sublesson, state: 0 });
             const content = yield content_1.default.create(data);
             sublesson.subLessons.forEach(element => {
                 if (element._id == req.params.sublesson) {

@@ -75,7 +75,7 @@ export default class adminController {
         let sublesson;
         sublesson = await subLessonModel.findById(req.params.sublesson)
         if (sublesson) {
-            const data = { ...req.body, subLesson: sublesson._id }
+            const data = { ...req.body, subLesson: sublesson._id , state : 0 }
             const content = await contentModel.create(data)
 
             await subLessonModel.findByIdAndUpdate(req.params.sublesson, { content: content._id })
@@ -87,7 +87,7 @@ export default class adminController {
         if (!sublesson) {
             return next(new response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null))
         }
-        const data = { ...req.body , subLesson: req.params.sublesson }
+        const data = { ...req.body , subLesson: req.params.sublesson , state : 0 }
         const content = await contentModel.create(data)
 
 
