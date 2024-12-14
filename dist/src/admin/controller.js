@@ -227,7 +227,7 @@ class adminController {
     }
     updateSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sublesson = yield subLesson_1.default.findById(req.params.sublessonId).populate('subLesson');
+            const sublesson = yield subLesson_1.default.findById(req.params.sublessonId);
             const finalData = Object.assign(Object.assign({}, (sublesson === null || sublesson === void 0 ? void 0 : sublesson.toObject())), req.body);
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(finalData));
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
