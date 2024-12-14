@@ -19,15 +19,29 @@ const subLesson_1 = __importDefault(require("./DB/models/subLesson"));
 const connection_1 = __importDefault(require("./interservice/connection"));
 const connection = new connection_1.default();
 class contentService {
+    makeLog(user, title, describtion) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let userLog = {
+                user: {
+                    userName: user === null || user === void 0 ? void 0 : user.userName,
+                    fullName: user === null || user === void 0 ? void 0 : user.fullName,
+                    profile: user === null || user === void 0 ? void 0 : user.profile,
+                },
+                title: `resetPassword`,
+                description: `user ${user === null || user === void 0 ? void 0 : user.email} resetPassword successfully!`
+            };
+            yield connection.putNewLog(userLog);
+        });
+    }
     checkSeen(id, userId) {
         return __awaiter(this, void 0, void 0, function* () {
-            const contents = yield content_1.default.find({ subLesson: id });
-            const seenContents = yield content_1.default.find({ $and: [{ subLesson: id }, { seen: { $in: userId } }] });
-            console.log(contents.length, seenContents.length);
-            const sublesson = yield subLesson_1.default.findById(id);
+            const contents = yield content_1.default.find({ subLesson: id }); // find the content 
+            const seenContents = yield content_1.default.find({ $and: [{ subLesson: id }, { seen: { $in: userId } }] }); // find all seen contents
+            console.log(contents.length, seenContents.length); // log the permenently of the all counts for seen
+            const sublesson = yield subLesson_1.default.findById(id); // find the specific sublesson
             let lessonId = sublesson === null || sublesson === void 0 ? void 0 : sublesson.lesson;
-            if (contents.length == seenContents.length) {
-                yield subLesson_1.default.findByIdAndUpdate(id, { $addToSet: { seen: userId } });
+            if (contents.length == seenContents.length) { // if all contents of that sublesson have been seen successfully
+                yield subLesson_1.default.findByIdAndUpdate(id, { $addToSet: { seen: userId } }); // 
                 const sublessons = yield subLesson_1.default.find({ lesson: lessonId });
                 const seenSubLessons = yield subLesson_1.default.find({ $and: [{ lesson: lessonId }, { seen: { $in: userId } }] });
                 if (sublessons.length == seenSubLessons.length) {

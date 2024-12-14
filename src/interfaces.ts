@@ -26,6 +26,20 @@ export interface questionDB {
 }
 
 
+
+export interface log{
+    user : {
+        userName : string,
+        fullName : string,
+        profile : string,
+    },
+    
+    title : string,
+
+    description : string
+
+}
+
 export interface levelDB {
     number: number,
     rewarded: boolean,
@@ -44,7 +58,7 @@ export interface subLessonDB {
     lesson: any,
     content: {},
     seen: string[]
-    subLessons: { eName: string , name : string , aName : string, number: number, _id: any, content: any }[]
+    subLessons: { eName: string , name : string , aName : string, number: number, _id: any , seen : string[], content: any }[]
 }
 
 
@@ -57,6 +71,7 @@ export interface content {
         eDescribtion: string,
         aDescribtion: string,
     },
+    state : number
 
     pictures?: string[],
     ePictures?: string[],

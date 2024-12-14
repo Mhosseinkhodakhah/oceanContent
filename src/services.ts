@@ -2,6 +2,7 @@ import contentModel from "./DB/models/content";
 import lessonModel from "./DB/models/lesson";
 import levelModel from "./DB/models/level";
 import subLessonModel from "./DB/models/subLesson";
+import { log } from "./interfaces";
 import interConnection from "./interservice/connection";
 
 const connection = new interConnection()
@@ -9,17 +10,32 @@ const connection = new interConnection()
 
 export default class contentService {
 
+
+    async makeLog(user : any , title : string , describtion : string){
+        let userLog:log = {
+            user : {
+                userName : user?.userName,
+                fullName : user?.fullName,
+                profile : user?.profile,
+            },
+            title : `resetPassword`,
+            description : `user ${user?.email} resetPassword successfully!`
+        }
+        await connection.putNewLog(userLog)
+    }
+
+
     async checkSeen(id: string, userId: string) {
-        const contents = await contentModel.find({ subLesson: id })
-        const seenContents = await contentModel.find({ $and: [{ subLesson: id }, { seen: { $in: userId } }] })
-        console.log(contents.length, seenContents.length)
+        const contents = await contentModel.find({ subLesson: id })    // find the content 
+        const seenContents = await contentModel.find({ $and: [{ subLesson: id }, { seen: { $in: userId } }] })   // find all seen contents
+        console.log(contents.length, seenContents.length)     // log the permenently of the all counts for seen
 
-        const sublesson = await subLessonModel.findById(id)
-        let lessonId = sublesson?.lesson
+        const sublesson = await subLessonModel.findById(id)             // find the specific sublesson
+        let lessonId = sublesson?.lesson                        
 
-        if (contents.length == seenContents.length) {
+        if (contents.length == seenContents.length) {           // if all contents of that sublesson have been seen successfully
 
-            await subLessonModel.findByIdAndUpdate(id, { $addToSet: { seen: userId } })
+            await subLessonModel.findByIdAndUpdate(id , { $addToSet: { seen: userId } })         // 
             const sublessons = await subLessonModel.find({ lesson: lessonId })
             const seenSubLessons = await subLessonModel.find({ $and: [{ lesson: lessonId }, { seen: { $in: userId } }] })
             if (sublessons.length == seenSubLessons.length) {

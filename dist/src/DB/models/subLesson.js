@@ -37,6 +37,7 @@ const subLessonSchema = new mongoose_1.Schema({
             aName: { type: String, default: '' },
             name: { type: String, default: '' },
             number: { type: Number },
+            seen: [String],
             content: { type: mongoose_1.default.Types.ObjectId, ref: "contents" }
         }]
 }, { timestamps: true });

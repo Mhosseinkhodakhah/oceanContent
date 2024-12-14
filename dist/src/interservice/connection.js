@@ -38,5 +38,19 @@ class interConnection {
             return response;
         });
     }
+    putNewLog(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const rawResponse = yield fetch(`http://localhost:5010/log/interservice/put-new-log`, {
+                method: 'PUT',
+                headers: {
+                    Accept: "*/*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            });
+            const response = yield rawResponse.json();
+            return response;
+        });
+    }
 }
 exports.default = interConnection;

@@ -87,7 +87,7 @@ export default class adminController {
         if (!sublesson) {
             return next(new response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null))
         }
-        const data = { ...req.body, subLesson: req.params.sublesson }
+        const data = { ...req.body , subLesson: req.params.sublesson }
         const content = await contentModel.create(data)
 
 
