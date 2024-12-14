@@ -39,11 +39,12 @@ class adminController {
                 req.body.eName = translatedText;
             }
             const lesson = yield lesson_1.default.create(req.body);
-            yield level_1.default.create({
+            const firstLevel = yield level_1.default.create({
                 number: req.body.number,
                 lesson: lesson._id,
                 reward: 0
             });
+            yield lesson_1.default.findByIdAndUpdate(lesson._id, { $addToSet: { levels: firstLevel._id } });
             const h = yield connection.resetCache();
             console.log(h);
             return next(new responseService_1.response(req, res, 'create lesson', 200, null, 'new lesson create successfully'));

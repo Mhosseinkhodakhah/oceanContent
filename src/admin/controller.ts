@@ -29,11 +29,12 @@ export default class adminController {
             req.body.eName = translatedText
         }
         const lesson = await lessonModel.create(req.body)
-        await levelModel.create({
+        const firstLevel = await levelModel.create({
             number: req.body.number,
             lesson: lesson._id,
             reward: 0
         })
+        await lessonModel.findByIdAndUpdate(lesson._id , {$addToSet:{levels:firstLevel._id}})
         const h = await connection.resetCache()
         console.log(h)
         return next(new response(req, res, 'create lesson', 200, null, 'new lesson create successfully'))
