@@ -218,7 +218,7 @@ export default class adminController {
     }
 
     async updateLesson(req: any, res: any, next: any) {
-        const lesson = await lessonModel.findById(req.params.lessonId).populate('subLesson')
+        const lesson = await lessonModel.findById(req.params.lessonId).populate('sublessons')
         const finalData = { ...(lesson?.toObject()), ...req.body }
         await lesson?.updateOne(finalData)
         await lesson?.save()
