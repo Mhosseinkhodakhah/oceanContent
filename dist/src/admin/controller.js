@@ -227,12 +227,12 @@ class adminController {
     }
     updateSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const sublesson = yield subLesson_1.default.findById(req.params.sublessonId);
+            const sublesson = yield subLesson_1.default.findById(req.params.subLessonId);
             const finalData = Object.assign(Object.assign({}, (sublesson === null || sublesson === void 0 ? void 0 : sublesson.toObject())), req.body);
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.updateOne(finalData));
             yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
             yield connection.resetCache();
-            return next(new responseService_1.response(req, res, 'get specific content', 200, null, sublesson));
+            return next(new responseService_1.response(req, res, 'update sublessons', 200, null, finalData));
         });
     }
     updateTitle(req, res, next) {
