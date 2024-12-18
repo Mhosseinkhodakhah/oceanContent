@@ -211,6 +211,7 @@ export default class adminController {
     
 
     async updateContent(req: any, res: any, next: any) {
+        console.log( 'body', req.body)
         const content = await contentModel.findById(req.params.contentId)
         let newData = {internalContent : req.body.internalContent}
         // delete req.body.internalContent;
@@ -243,6 +244,7 @@ export default class adminController {
 
     // it has a problemmmmm
     async updateTitle(req: any, res: any, next: any){
+        console.log( 'body', req.body)
         const title = await subLessonModel.findOne({'subLessons._id' : req.params.titleId})
         if (!title){
             return next(new response(req , res , 'update title' , 404 , 'this title is not exist on database' , null))
@@ -250,8 +252,11 @@ export default class adminController {
         let finalData;
         let newTitle = title.toObject()
         for (let i = 0 ; i < title?.subLessons.length ; i++){
-
+            if (title.subLessons[i]._id.toString() == req.params.titleId){
+                title.subLessons[i] = req.body
+            }
         }
+        await title.save()
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 

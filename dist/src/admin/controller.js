@@ -207,6 +207,7 @@ class adminController {
     }
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log('body', req.body);
             const content = yield content_1.default.findById(req.params.contentId);
             let newData = { internalContent: req.body.internalContent };
             // delete req.body.internalContent;
@@ -240,6 +241,7 @@ class adminController {
     // it has a problemmmmm
     updateTitle(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log('body', req.body);
             const title = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.titleId });
             if (!title) {
                 return next(new responseService_1.response(req, res, 'update title', 404, 'this title is not exist on database', null));
@@ -247,7 +249,11 @@ class adminController {
             let finalData;
             let newTitle = title.toObject();
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
+                if (title.subLessons[i]._id.toString() == req.params.titleId) {
+                    title.subLessons[i] = req.body;
+                }
             }
+            yield title.save();
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
         });
     }
