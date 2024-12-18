@@ -23,6 +23,6 @@ adminRouter.post('/update-lesson/:lessonId' , adminAuth , controller.updateLesso
 
 adminRouter.post('/update-subLesson/:subLessonId' , adminAuth , controller.updateSubLesson)
 
-adminRouter.post('/update-title/:titleId' , controller.updateTitle)
+adminRouter.get('/update-title/:titleId' , controller.updateTitle)
 
 export default adminRouter;

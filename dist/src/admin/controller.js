@@ -250,7 +250,7 @@ class adminController {
                 }
             }
             finalData = Object.assign({}, title.toObject());
-            yield title.updateOne(finalData);
+            // await title.updateOne(finalData)
             yield title.save();
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
         });
