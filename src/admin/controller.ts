@@ -209,6 +209,7 @@ export default class adminController {
         return next(new response(req, res, 'get specific content', 200, null, finalData))
     }
     
+
     async updateContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
         
@@ -219,6 +220,7 @@ export default class adminController {
         return next(new response(req, res, 'update content by admin', 200, null, content))
     }
     
+
     async updateLesson(req: any, res: any, next: any) {
         const lesson = await lessonModel.findById(req.params.lessonId).populate('sublessons')
         const finalData = { ...(lesson?.toObject()), ...req.body }
@@ -246,8 +248,9 @@ export default class adminController {
         let newTitle = title.toObject()
         for (let i = 0 ; i < title?.subLessons.length ; i++){
             if ((title.subLessons[i]._id).toString() == req.params.titleId ){
-                console.log('sublessons' , title.subLessons)
-                title.subLessons[i] = {...title.subLessons[i] , ...req.body}
+                let newData ={...title.subLessons[i] , ...req.body}
+                console.log('sublessons' , newData)
+                title.subLessons[i] = newData
                 console.log('after update' , title.subLessons[i])
             }
         }

@@ -245,8 +245,9 @@ class adminController {
             let newTitle = title.toObject();
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
                 if ((title.subLessons[i]._id).toString() == req.params.titleId) {
-                    console.log('sublessons', title.subLessons);
-                    title.subLessons[i] = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
+                    let newData = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
+                    console.log('sublessons', newData);
+                    title.subLessons[i] = newData;
                     console.log('after update', title.subLessons[i]);
                 }
             }
