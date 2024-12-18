@@ -267,6 +267,7 @@ export default class adminController {
     }
 
     async deleteContent(req: any, res: any, next: any){
+        console.log(req.params.contentId)
         const content = await contentModel.findById(req.params.contentId)
         if (!content){
             console.log('no content exist')

@@ -265,6 +265,7 @@ class adminController {
     }
     deleteContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.params.contentId);
             const content = yield content_1.default.findById(req.params.contentId);
             if (!content) {
                 console.log('no content exist');
