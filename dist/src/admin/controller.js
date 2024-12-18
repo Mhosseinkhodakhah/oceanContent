@@ -208,14 +208,15 @@ class adminController {
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('body', req.body);
-            yield content_1.default.findByIdAndUpdate(req.params.titleId, req.body);
+            let fcontent = yield content_1.default.findById(req.params.contentId);
+            yield content_1.default.findByIdAndUpdate(req.params.contentId, req.body);
             // const content = await contentModel.findById(req.params.contentId)
             // let newData = {internalContent : req.body.internalContent}
             // delete req.body.internalContent;
             // const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
             // await content?.updateOne(finalData)
             // await content?.save()
-            let finalData = yield content_1.default.findById(req.params.titleId);
+            let finalData = yield content_1.default.findById(req.params.contentId);
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update content by admin', 200, null, finalData));
         });
@@ -261,7 +262,7 @@ class adminController {
     }
     getAll(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield subLesson_1.default.find();
+            const content = yield content_1.default.find();
             return res.status(200).json({
                 content: content
             });
