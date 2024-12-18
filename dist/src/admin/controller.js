@@ -208,12 +208,14 @@ class adminController {
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('body', req.body);
-            const content = yield content_1.default.findById(req.params.contentId);
-            let newData = { internalContent: req.body.internalContent };
+            yield content_1.default.findByIdAndUpdate(req.params.titleId, req.body);
+            // const content = await contentModel.findById(req.params.contentId)
+            // let newData = {internalContent : req.body.internalContent}
             // delete req.body.internalContent;
-            const finalData = Object.assign(Object.assign(Object.assign({}, (content === null || content === void 0 ? void 0 : content.toObject())), req.body), { internalContent: req.body.internalContent });
-            yield (content === null || content === void 0 ? void 0 : content.updateOne(finalData));
+            // const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
+            // await content?.updateOne(finalData)
             // await content?.save()
+            let finalData = yield content_1.default.findById(req.params.titleId);
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update content by admin', 200, null, finalData));
         });
@@ -255,6 +257,14 @@ class adminController {
             }
             yield title.save();
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
+        });
+    }
+    getAll(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const content = yield subLesson_1.default.find();
+            return res.status(200).json({
+                content: content
+            });
         });
     }
     getSubLesson(req, res, next) {

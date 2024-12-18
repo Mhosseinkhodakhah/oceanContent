@@ -212,12 +212,14 @@ export default class adminController {
 
     async updateContent(req: any, res: any, next: any) {
         console.log( 'body', req.body)
-        const content = await contentModel.findById(req.params.contentId)
-        let newData = {internalContent : req.body.internalContent}
+        await contentModel.findByIdAndUpdate(req.params.titleId , req.body)
+        // const content = await contentModel.findById(req.params.contentId)
+        // let newData = {internalContent : req.body.internalContent}
         // delete req.body.internalContent;
-        const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
-        await content?.updateOne(finalData)
+        // const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
+        // await content?.updateOne(finalData)
         // await content?.save()
+        let finalData = await contentModel.findById(req.params.titleId)
         await connection.resetCache()
         return next(new response(req, res, 'update content by admin', 200, null, finalData))
     }
@@ -258,6 +260,13 @@ export default class adminController {
         }
         await title.save()
         return next(new response(req , res , 'update title' , 200 , null , title))
+    }
+
+    async getAll(req: any, res: any, next: any){
+        const content = await subLessonModel.find()
+        return res.status(200).json({
+            content : content
+        })
     }
 
 

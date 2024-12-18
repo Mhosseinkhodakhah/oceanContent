@@ -18,4 +18,5 @@ adminRouter.post('/update-content/:contentId', adminAuth, controller.updateConte
 adminRouter.post('/update-lesson/:lessonId', adminAuth, controller.updateLesson);
 adminRouter.post('/update-subLesson/:subLessonId', adminAuth, controller.updateSubLesson);
 adminRouter.post('/update-title/:titleId', controller.updateTitle);
+adminRouter.get('/getAll', controller.getAll);
 exports.default = adminRouter;
