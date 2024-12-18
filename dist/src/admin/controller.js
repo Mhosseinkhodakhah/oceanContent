@@ -260,6 +260,7 @@ class adminController {
                 }
             }
             // await title.save()
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
         });
     }
@@ -272,6 +273,7 @@ class adminController {
             }
             yield content_1.default.findByIdAndDelete(req.params.contentId);
             // here you shoud update sublesson . . .
+            yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'delete content', 200, null, content));
         });
     }

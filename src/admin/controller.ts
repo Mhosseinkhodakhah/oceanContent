@@ -263,6 +263,7 @@ export default class adminController {
             }
         }
         // await title.save()
+        await connection.resetCache()
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 
@@ -274,6 +275,7 @@ export default class adminController {
         }
         await contentModel.findByIdAndDelete(req.params.contentId)
         // here you shoud update sublesson . . .
+        await connection.resetCache()
         return next(new response(req , res , 'delete content' , 200 , null , content))
     }
 
