@@ -256,10 +256,10 @@ export default class adminController {
         for (let i = 0 ; i < title?.subLessons.length ; i++){
             if (title.subLessons[i]._id.toString() == req.params.titleId){
                 title.subLessons[i] = req.body
-                await title.updateOne({})
+                // await title.updateOne({})
             }
         }
-        // await title.save()
+        await title.save()
         await connection.resetCache()
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
@@ -277,7 +277,7 @@ export default class adminController {
     }
 
     async getAll(req: any, res: any, next: any){
-        const content = await contentModel.find()
+        const content = await subLessonModel.find()
         return res.status(200).json({
             content : content
         })

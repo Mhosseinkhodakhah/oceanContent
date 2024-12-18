@@ -252,10 +252,10 @@ class adminController {
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
                 if (title.subLessons[i]._id.toString() == req.params.titleId) {
                     title.subLessons[i] = req.body;
-                    yield title.updateOne({});
+                    // await title.updateOne({})
                 }
             }
-            // await title.save()
+            yield title.save();
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
         });
