@@ -209,13 +209,13 @@ class adminController {
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('body', req.body);
-            let fcontent = yield content_1.default.findById(req.params.contentId);
-            yield content_1.default.findByIdAndUpdate(req.params.contentId, req.body);
-            // const content = await contentModel.findById(req.params.contentId)
+            // let fcontent = await contentModel.findById(req.params.contentId)
+            // await contentModel.findByIdAndUpdate(req.params.contentId , req.body)
+            const content = yield content_1.default.findById(req.params.contentId);
             // let newData = {internalContent : req.body.internalContent}
             // delete req.body.internalContent;
             // const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
-            // await content?.updateOne(finalData)
+            yield (content === null || content === void 0 ? void 0 : content.updateOne(req.body));
             // await content?.save()
             let finalData = yield content_1.default.findById(req.params.contentId);
             yield connection.resetCache();

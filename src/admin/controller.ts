@@ -212,13 +212,13 @@ export default class adminController {
     // it has problem
     async updateContent(req: any, res: any, next: any) {
         console.log( 'body', req.body)
-        let fcontent = await contentModel.findById(req.params.contentId)
-        await contentModel.findByIdAndUpdate(req.params.contentId , req.body)
-        // const content = await contentModel.findById(req.params.contentId)
+        // let fcontent = await contentModel.findById(req.params.contentId)
+        // await contentModel.findByIdAndUpdate(req.params.contentId , req.body)
+        const content = await contentModel.findById(req.params.contentId)
         // let newData = {internalContent : req.body.internalContent}
         // delete req.body.internalContent;
         // const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
-        // await content?.updateOne(finalData)
+        await content?.updateOne(req.body)
         // await content?.save()
         let finalData = await contentModel.findById(req.params.contentId)
         await connection.resetCache()
