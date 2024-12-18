@@ -205,6 +205,7 @@ class adminController {
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, finalData));
         });
     }
+    // it has problem
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('body', req.body);
@@ -244,8 +245,9 @@ class adminController {
     // it has a problemmmmm
     updateTitle(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('body', req.body);
+            console.log('body', req.params.titleId);
             const title = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.titleId });
+            console.log('title', title === null || title === void 0 ? void 0 : title.subLessons);
             if (!title) {
                 return next(new responseService_1.response(req, res, 'update title', 404, 'this title is not exist on database', null));
             }
@@ -262,7 +264,7 @@ class adminController {
     }
     getAll(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield content_1.default.find();
+            const content = yield subLesson_1.default.find();
             return res.status(200).json({
                 content: content
             });

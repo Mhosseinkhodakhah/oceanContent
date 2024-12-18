@@ -209,7 +209,7 @@ export default class adminController {
         return next(new response(req, res, 'get specific content', 200, null, finalData))
     }
     
-
+    // it has problem
     async updateContent(req: any, res: any, next: any) {
         console.log( 'body', req.body)
         let fcontent = await contentModel.findById(req.params.contentId)
@@ -247,8 +247,10 @@ export default class adminController {
 
     // it has a problemmmmm
     async updateTitle(req: any, res: any, next: any){
-        console.log( 'body', req.body)
+        console.log( 'body', req.params.titleId)
+
         const title = await subLessonModel.findOne({'subLessons._id' : req.params.titleId})
+        console.log( 'title', title?.subLessons)
         if (!title){
             return next(new response(req , res , 'update title' , 404 , 'this title is not exist on database' , null))
         }
@@ -264,7 +266,7 @@ export default class adminController {
     }
 
     async getAll(req: any, res: any, next: any){
-        const content = await contentModel.find()
+        const content = await subLessonModel.find()
         return res.status(200).json({
             content : content
         })
