@@ -25,6 +25,8 @@ adminRouter.post('/update-subLesson/:subLessonId' , adminAuth , controller.updat
 
 adminRouter.post('/update-title/:titleId' , controller.updateTitle)
 
+adminRouter.delete('/delete-content/contentId' , )
+
 adminRouter.get('/getAll' , controller.getAll)
 
 export default adminRouter;

@@ -256,10 +256,22 @@ class adminController {
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
                 if (title.subLessons[i]._id.toString() == req.params.titleId) {
                     title.subLessons[i] = req.body;
+                    yield title.updateOne({});
                 }
             }
-            yield title.save();
+            // await title.save()
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
+        });
+    }
+    deleteContent(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const content = yield content_1.default.findById(req.params.contentId);
+            if (!content) {
+                console.log('no content exist');
+            }
+            yield content_1.default.findByIdAndDelete(req.pramas.contentId);
+            // here you shoud update sublesson . . .
+            return next(new responseService_1.response(req, res, 'delete content', 200, null, content));
         });
     }
     getAll(req, res, next) {

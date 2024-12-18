@@ -259,10 +259,21 @@ export default class adminController {
         for (let i = 0 ; i < title?.subLessons.length ; i++){
             if (title.subLessons[i]._id.toString() == req.params.titleId){
                 title.subLessons[i] = req.body
+                await title.updateOne({})
             }
         }
-        await title.save()
+        // await title.save()
         return next(new response(req , res , 'update title' , 200 , null , title))
+    }
+
+    async deleteContent(req: any, res: any, next: any){
+        const content = await contentModel.findById(req.params.contentId)
+        if (!content){
+            console.log('no content exist')
+        }
+        await contentModel.findByIdAndDelete(req.pramas.contentId)
+        // here you shoud update sublesson . . .
+        return next(new response(req , res , 'delete content' , 200 , null , content))
     }
 
     async getAll(req: any, res: any, next: any){
