@@ -243,16 +243,15 @@ export default class adminController {
             return next(new response(req , res , 'update title' , 404 , 'this title is not exist on database' , null))
         }
         let finalData;
-        for (let i = 0 ; i < title?.subLessons.length ; i++){
-            if ((title.subLessons[i]._id).toString() == req.params.titleId ){
-                console.log('sublessons' , title.subLessons)
-                title.subLessons[i] = {...title.subLessons[i] , ...req.body}
+        let newTitle = title.toObject()
+        for (let i = 0 ; i < newTitle?.subLessons.length ; i++){
+            if ((newTitle.subLessons[i]._id).toString() == req.params.titleId ){
+                console.log('sublessons' , newTitle.subLessons)
+                newTitle.subLessons[i] = {...title.subLessons[i] , ...req.body}
                 console.log('after update' , title.subLessons[i])
             }
         }
-        finalData = {...title.toObject()}
-        await title.updateOne(finalData)
-        // await title.save()
+        await title.save()
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 
