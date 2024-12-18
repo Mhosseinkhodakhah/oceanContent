@@ -209,17 +209,14 @@ export default class adminController {
         return next(new response(req, res, 'get specific content', 200, null, finalData))
     }
     
-    // it has problem
+    
     async updateContent(req: any, res: any, next: any) {
-        console.log( 'body', req.body)
-        // let fcontent = await contentModel.findById(req.params.contentId)
-        // await contentModel.findByIdAndUpdate(req.params.contentId , req.body)
         const content = await contentModel.findById(req.params.contentId)
-        // let newData = {internalContent : req.body.internalContent}
-        // delete req.body.internalContent;
-        // const finalData = { ...(content?.toObject()) , ...req.body , internalContent : req.body.internalContent}
+        if (!content){
+            return next(new response(req , res , 'update content' , 404 , 'this content is not exist on databse' , null))
+        }
         await content?.updateOne(req.body)
-        // await content?.save()
+        // content.internalContent = req.body.internalContent;
         let finalData = await contentModel.findById(req.params.contentId)
         await connection.resetCache()
         return next(new response(req, res, 'update content by admin', 200, null, finalData))
@@ -280,7 +277,7 @@ export default class adminController {
     }
 
     async getAll(req: any, res: any, next: any){
-        const content = await subLessonModel.find()
+        const content = await contentModel.find()
         return res.status(200).json({
             content : content
         })
