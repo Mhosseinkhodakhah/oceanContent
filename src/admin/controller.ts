@@ -212,9 +212,10 @@ export default class adminController {
 
     async updateContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
-        
-        const finalData = { ...(content?.toObject()), ...req.body }
-        await content?.updateOne(finalData)
+        let updateData = content?.toObject()
+        let updateInternal = {...updateData?.internalContent , ...req.body.internalContent}
+        delete req.body.internalContent;
+        const finalData = { ...(content?.toObject()) , internalContent : updateInternal , ...req.body}
         await content?.save()
         await connection.resetCache()
         return next(new response(req, res, 'update content by admin', 200, null, content))
@@ -238,7 +239,9 @@ export default class adminController {
         await connection.resetCache()
         return next(new response(req, res, 'update sublessons', 200, null, finalData))
     }
-    
+
+
+    // it has a problemmmmm
     async updateTitle(req: any, res: any, next: any){
         const title = await subLessonModel.findOne({'subLessons._id' : req.params.titleId})
         if (!title){
@@ -247,14 +250,8 @@ export default class adminController {
         let finalData;
         let newTitle = title.toObject()
         for (let i = 0 ; i < title?.subLessons.length ; i++){
-            if ((title.subLessons[i]._id).toString() == req.params.titleId ){
-                let newData ={...title.subLessons[i] , ...req.body}
-                console.log('sublessons' , newData)
-                title.subLessons[i] = newData
-                console.log('after update' , title.subLessons[i])
-            }
+
         }
-        await title.save()
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 

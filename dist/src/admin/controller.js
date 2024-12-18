@@ -208,8 +208,10 @@ class adminController {
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const content = yield content_1.default.findById(req.params.contentId);
-            const finalData = Object.assign(Object.assign({}, (content === null || content === void 0 ? void 0 : content.toObject())), req.body);
-            yield (content === null || content === void 0 ? void 0 : content.updateOne(finalData));
+            let updateData = content === null || content === void 0 ? void 0 : content.toObject();
+            let updateInternal = Object.assign(Object.assign({}, updateData === null || updateData === void 0 ? void 0 : updateData.internalContent), req.body.internalContent);
+            delete req.body.internalContent;
+            const finalData = Object.assign(Object.assign(Object.assign({}, (content === null || content === void 0 ? void 0 : content.toObject())), { internalContent: updateInternal }), req.body);
             yield (content === null || content === void 0 ? void 0 : content.save());
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'update content by admin', 200, null, content));
@@ -235,6 +237,7 @@ class adminController {
             return next(new responseService_1.response(req, res, 'update sublessons', 200, null, finalData));
         });
     }
+    // it has a problemmmmm
     updateTitle(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const title = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.titleId });
@@ -244,14 +247,7 @@ class adminController {
             let finalData;
             let newTitle = title.toObject();
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
-                if ((title.subLessons[i]._id).toString() == req.params.titleId) {
-                    let newData = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
-                    console.log('sublessons', newData);
-                    title.subLessons[i] = newData;
-                    console.log('after update', title.subLessons[i]);
-                }
             }
-            yield title.save();
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
         });
     }
