@@ -251,8 +251,8 @@ export default class adminController {
             }
         }
         finalData = {...title.toObject()}
-        // await title.updateOne(finalData)
-        await title.save()
+        await title.updateOne(finalData)
+        // await title.save()
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 
