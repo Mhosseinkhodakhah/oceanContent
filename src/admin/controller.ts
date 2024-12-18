@@ -272,7 +272,7 @@ export default class adminController {
         if (!content){
             console.log('no content exist')
         }
-        await contentModel.findByIdAndDelete(req.pramas.contentId)
+        await contentModel.findByIdAndDelete(req.params.contentId)
         // here you shoud update sublesson . . .
         return next(new response(req , res , 'delete content' , 200 , null , content))
     }

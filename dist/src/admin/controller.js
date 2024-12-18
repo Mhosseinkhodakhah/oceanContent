@@ -270,7 +270,7 @@ class adminController {
             if (!content) {
                 console.log('no content exist');
             }
-            yield content_1.default.findByIdAndDelete(req.pramas.contentId);
+            yield content_1.default.findByIdAndDelete(req.params.contentId);
             // here you shoud update sublesson . . .
             return next(new responseService_1.response(req, res, 'delete content', 200, null, content));
         });
