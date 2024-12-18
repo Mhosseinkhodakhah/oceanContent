@@ -5176,3 +5176,121 @@
   label: 'right meow!',
   timestamp: '2024-12-18 18:58:22'
 }
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        'if-none-match': 'W/"146f-KkwN1QHYYqqVv+1mkOYI64ztaL0"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 203
+  },
+  level: 'info',
+  message: 'GET /getAll 200 203ms',
+  label: 'right meow!',
+  timestamp: '2024-12-18 19:16:50'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'image/avif,image/webp,*/*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 17
+  },
+  level: 'warn',
+  message: 'GET /favicon.ico 404 17ms',
+  label: 'right meow!',
+  timestamp: '2024-12-18 19:16:50'
+}
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        'if-none-match': 'W/"1479-k/Skk/iflmSqYWFZzDsMr8Np8Pg"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 140
+  },
+  level: 'info',
+  message: 'GET /getAll 200 140ms',
+  label: 'right meow!',
+  timestamp: '2024-12-18 19:17:38'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'image/avif,image/webp,*/*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 1
+  },
+  level: 'warn',
+  message: 'GET /favicon.ico 404 1ms',
+  label: 'right meow!',
+  timestamp: '2024-12-18 19:17:38'
+}

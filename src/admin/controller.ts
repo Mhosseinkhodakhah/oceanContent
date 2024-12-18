@@ -258,7 +258,6 @@ export default class adminController {
                 title.subLessons[i].eName = req.body.eName;
                 title.subLessons[i].name = req.body.name;
                 title.subLessons[i].aName = req.body.aName;
-                // await title.updateOne({})
             }
         }
         await title.save()
