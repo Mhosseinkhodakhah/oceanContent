@@ -72,13 +72,15 @@ export default class adminController {
     }
 
 
+    
+    
     async createContent(req: any, res: any, next: any) {
         let sublesson;
         sublesson = await subLessonModel.findById(req.params.sublesson)
         if (sublesson) {
             const data = { ...req.body, subLesson: sublesson._id , state : 0 }
             const content = await contentModel.create(data)
-
+            
             await subLessonModel.findByIdAndUpdate(req.params.sublesson, { content: content._id })
             await connection.resetCache()
             return next(new response(req, res, 'create content', 200, null, content))
@@ -90,8 +92,8 @@ export default class adminController {
         }
         const data = { ...req.body , subLesson: req.params.sublesson , state : 0 }
         const content = await contentModel.create(data)
-
-
+        
+        
         sublesson.subLessons.forEach(element => {
             if (element._id == req.params.sublesson) {
                 element['content'] = content._id
@@ -102,14 +104,14 @@ export default class adminController {
         await connection.resetCache()
         console.log('check for last time , , , ,')
         return next(new response(req, res, 'create content', 200, null, content))
-
+        
     }
+    
 
 
 
-
-
-
+    
+    
     async creteNewLevel(req: any, res: any, next: any) {
         const lesson = await lessonModel.findById(req.params.lessonId)
         if (!lesson) {
@@ -137,9 +139,9 @@ export default class adminController {
         return next(new response(req, res, 'create new level', 200, null, 'new level creation successfully'))
     }
 
-
-
-
+    
+    
+    
     async deleteLevel(req: any, res: any, next: any) {
         const level = await levelModel.findById(req.params.levelId)
         if (!level) {
@@ -157,9 +159,9 @@ export default class adminController {
         await connection.resetCache()
         return next(new response(req, res, 'deleting level', 200, null, 'level deleted successfully'))
     }
-
-
-
+    
+    
+    
     async createQuestion(req: any, res: any, next: any) {
         const level = await levelModel.findById(req.params.levelId)
         if (!level) {
@@ -173,8 +175,8 @@ export default class adminController {
         await connection.resetCache()
         return next(new response(req, res, 'create question', 200, null, 'question created successfully!'))
     }
-
-
+    
+    
     async getLevels(req: any, res: any, next: any) {
         let cacheData = await cacher.getter('admin-getLevels')
         let finalData;
@@ -188,8 +190,8 @@ export default class adminController {
         }
         return next(new response(req, res, 'get levels', 200, null, finalData))
     }
-
-
+    
+    
     async getContent(req: any, res: any, next: any) {
         let cacheData = await cacher.getter(`admin-getContent-${req.params.contentId}`)
         let finalData;
@@ -206,17 +208,17 @@ export default class adminController {
         }
         return next(new response(req, res, 'get specific content', 200, null, finalData))
     }
-
+    
     async updateContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
-
+        
         const finalData = { ...(content?.toObject()), ...req.body }
         await content?.updateOne(finalData)
         await content?.save()
         await connection.resetCache()
         return next(new response(req, res, 'update content by admin', 200, null, content))
     }
-
+    
     async updateLesson(req: any, res: any, next: any) {
         const lesson = await lessonModel.findById(req.params.lessonId).populate('sublessons')
         const finalData = { ...(lesson?.toObject()), ...req.body }
@@ -225,7 +227,7 @@ export default class adminController {
         await connection.resetCache()
         return next(new response(req, res, 'update lesson by admin', 200, null, lesson))
     }
-
+    
     async updateSubLesson(req: any, res: any, next: any) {
         const sublesson = await subLessonModel.findById(req.params.sublessonId)
         const finalData = { ...(sublesson?.toObject()), ...req.body }
@@ -234,8 +236,25 @@ export default class adminController {
         await connection.resetCache()
         return next(new response(req, res, 'get specific content', 200, null, sublesson))
     }
+    
+    async updateTitle(req: any, res: any, next: any){
+        const title = await subLessonModel.findOne({'subLessons._id' : req.params.titleId})
+        if (!title){
+            return next(new response(req , res , 'update title' , 404 , 'this title is not exist on database' , null))
+        }
+        let finalData;
+        for (let i = 0 ; i < title?.subLessons.length ; i++){
+            if (title.subLessons[i]._id == req.params.titleId ){
+                title.subLessons[i] = {...title.subLessons[i] , ...req.body}
+            }
+        }
+        finalData = {...title.toObject()}
+        await title.updateOne(finalData)
+        await title.save()
+        return next(new response(req , res , 'update title' , 200 , null , title))
+    }
 
-
+    
     async getSubLesson(req: any, res: any, next: any) {
         let cacheData = await cacher.getter(`admin-getSubLesson-${req.params.sublessonId}`)
         let subLesson;

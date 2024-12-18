@@ -235,6 +235,24 @@ class adminController {
             return next(new responseService_1.response(req, res, 'get specific content', 200, null, sublesson));
         });
     }
+    updateTitle(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const title = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.titleId });
+            if (!title) {
+                return next(new responseService_1.response(req, res, 'update title', 404, 'this title is not exist on database', null));
+            }
+            let finalData;
+            for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
+                if (title.subLessons[i]._id == req.params.titleId) {
+                    title.subLessons[i] = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
+                }
+            }
+            finalData = Object.assign({}, title.toObject());
+            yield title.updateOne(finalData);
+            yield title.save();
+            return next(new responseService_1.response(req, res, 'update title', 200, null, title));
+        });
+    }
     getSubLesson(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             let cacheData = yield cach_1.default.getter(`admin-getSubLesson-${req.params.sublessonId}`);
