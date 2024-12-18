@@ -212,13 +212,14 @@ export default class adminController {
 
     async updateContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
-        let updateData = content?.toObject()
-        let updateInternal = {...updateData?.internalContent , ...req.body.internalContent}
+        // let updateData = content?.toObject()
+        // let updateInternal = {...updateData?.internalContent , ...req.body.internalContent}
         delete req.body.internalContent;
-        const finalData = { ...(content?.toObject()) , internalContent : updateInternal , ...req.body}
-        await content?.save()
+        const finalData = { ...(content?.toObject()) , ...req.body}
+        await content?.updateOne(finalData)
+        // await content?.save()
         await connection.resetCache()
-        return next(new response(req, res, 'update content by admin', 200, null, content))
+        return next(new response(req, res, 'update content by admin', 200, null, finalData))
     }
     
 
