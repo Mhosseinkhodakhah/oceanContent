@@ -243,10 +243,10 @@ class adminController {
             }
             let finalData;
             let newTitle = title.toObject();
-            for (let i = 0; i < (newTitle === null || newTitle === void 0 ? void 0 : newTitle.subLessons.length); i++) {
-                if ((newTitle.subLessons[i]._id).toString() == req.params.titleId) {
-                    console.log('sublessons', newTitle.subLessons);
-                    newTitle.subLessons[i] = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
+            for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
+                if ((title.subLessons[i]._id).toString() == req.params.titleId) {
+                    console.log('sublessons', title.subLessons);
+                    title.subLessons[i] = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
                     console.log('after update', title.subLessons[i]);
                 }
             }

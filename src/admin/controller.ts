@@ -244,10 +244,10 @@ export default class adminController {
         }
         let finalData;
         let newTitle = title.toObject()
-        for (let i = 0 ; i < newTitle?.subLessons.length ; i++){
-            if ((newTitle.subLessons[i]._id).toString() == req.params.titleId ){
-                console.log('sublessons' , newTitle.subLessons)
-                newTitle.subLessons[i] = {...title.subLessons[i] , ...req.body}
+        for (let i = 0 ; i < title?.subLessons.length ; i++){
+            if ((title.subLessons[i]._id).toString() == req.params.titleId ){
+                console.log('sublessons' , title.subLessons)
+                title.subLessons[i] = {...title.subLessons[i] , ...req.body}
                 console.log('after update' , title.subLessons[i])
             }
         }
