@@ -251,7 +251,9 @@ class adminController {
             let newTitle = title.toObject();
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
                 if (title.subLessons[i]._id.toString() == req.params.titleId) {
-                    title.subLessons[i] = req.body;
+                    title.subLessons[i].eName = req.body.eName;
+                    title.subLessons[i].name = req.body.name;
+                    title.subLessons[i].aName = req.body.aName;
                     // await title.updateOne({})
                 }
             }
@@ -275,7 +277,7 @@ class adminController {
     }
     getAll(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield content_1.default.find();
+            const content = yield subLesson_1.default.find();
             return res.status(200).json({
                 content: content
             });

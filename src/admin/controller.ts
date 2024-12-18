@@ -255,7 +255,9 @@ export default class adminController {
         let newTitle = title.toObject()
         for (let i = 0 ; i < title?.subLessons.length ; i++){
             if (title.subLessons[i]._id.toString() == req.params.titleId){
-                title.subLessons[i] = req.body
+                title.subLessons[i].eName = req.body.eName;
+                title.subLessons[i].name = req.body.name;
+                title.subLessons[i].aName = req.body.aName;
                 // await title.updateOne({})
             }
         }
