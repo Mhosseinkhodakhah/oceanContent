@@ -243,8 +243,10 @@ class adminController {
             }
             let finalData;
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
-                if (title.subLessons[i]._id == req.params.titleId) {
+                if ((title.subLessons[i]._id).toString() == req.params.titleId) {
+                    console.log('sublessons', title.subLessons);
                     title.subLessons[i] = Object.assign(Object.assign({}, title.subLessons[i]), req.body);
+                    console.log('after update', title.subLessons[i]);
                 }
             }
             finalData = Object.assign({}, title.toObject());

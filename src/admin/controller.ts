@@ -244,8 +244,10 @@ export default class adminController {
         }
         let finalData;
         for (let i = 0 ; i < title?.subLessons.length ; i++){
-            if (title.subLessons[i]._id == req.params.titleId ){
+            if ((title.subLessons[i]._id).toString() == req.params.titleId ){
+                console.log('sublessons' , title.subLessons)
                 title.subLessons[i] = {...title.subLessons[i] , ...req.body}
+                console.log('after update' , title.subLessons[i])
             }
         }
         finalData = {...title.toObject()}
@@ -254,7 +256,7 @@ export default class adminController {
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 
-    
+
     async getSubLesson(req: any, res: any, next: any) {
         let cacheData = await cacher.getter(`admin-getSubLesson-${req.params.sublessonId}`)
         let subLesson;
