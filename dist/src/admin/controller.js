@@ -208,10 +208,9 @@ class adminController {
     updateContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const content = yield content_1.default.findById(req.params.contentId);
-            // let updateData = content?.toObject()
-            // let updateInternal = {...updateData?.internalContent , ...req.body.internalContent}
+            let newData = { internalContent: req.body.internalContent };
             delete req.body.internalContent;
-            const finalData = Object.assign(Object.assign({}, (content === null || content === void 0 ? void 0 : content.toObject())), req.body);
+            const finalData = Object.assign(Object.assign(Object.assign({}, (content === null || content === void 0 ? void 0 : content.toObject())), req.body), { internalContent: req.body.internalContent });
             yield (content === null || content === void 0 ? void 0 : content.updateOne(finalData));
             // await content?.save()
             yield connection.resetCache();
