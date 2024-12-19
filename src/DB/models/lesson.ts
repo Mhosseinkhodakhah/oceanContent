@@ -18,6 +18,13 @@ const lessonSchema = new Schema<lessonDB>({
 },{timestamps:true})
 
 
+// lessonSchema.pre('save', function(next) {
+//     // do stuff
+//     next();
+//   });
+
+
+
 const lessonModel = model<lessonDB>('lessons' , lessonSchema)
 
 export default lessonModel;

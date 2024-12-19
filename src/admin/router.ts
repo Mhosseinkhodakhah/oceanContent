@@ -23,9 +23,15 @@ adminRouter.post('/update-lesson/:lessonId' , adminAuth , controller.updateLesso
 
 adminRouter.post('/update-subLesson/:subLessonId' , adminAuth , controller.updateSubLesson)
 
-adminRouter.post('/update-title/:titleId' , controller.updateTitle)
+adminRouter.post('/update-title/:titleId' , adminAuth ,controller.updateTitle)
 
-adminRouter.delete('/delete-content/:contentId' , controller.deleteContent)
+adminRouter.delete('/delete-subLesson/:subLessonId',adminAuth , controller.deleteSublesson)
+
+adminRouter.delete('/delete-lesson/:lessonId' , adminAuth ,controller.deleteLesson)
+
+adminRouter.delete('/delete-content/:contentId' , adminAuth ,controller.deleteContent)
+
+adminRouter.delete('/delete-title/:titleId' , adminAuth ,controller.deleteTitle)
 
 adminRouter.get('/getAll' , controller.getAll)
 

@@ -36,5 +36,9 @@ const lessonSchema = new mongoose_1.Schema({
     levels: [{ type: mongoose_1.default.Types.ObjectId, ref: 'levels' }],
     paasedQuize: [String],
 }, { timestamps: true });
+// lessonSchema.pre('save', function(next) {
+//     // do stuff
+//     next();
+//   });
 const lessonModel = (0, mongoose_1.model)('lessons', lessonSchema);
 exports.default = lessonModel;

@@ -247,8 +247,6 @@ class adminController {
             if (!title) {
                 return next(new responseService_1.response(req, res, 'update title', 404, 'this title is not exist on database', null));
             }
-            let finalData;
-            let newTitle = title.toObject();
             for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
                 if (title.subLessons[i]._id.toString() == req.params.titleId) {
                     title.subLessons[i].eName = req.body.eName;
@@ -261,6 +259,25 @@ class adminController {
             return next(new responseService_1.response(req, res, 'update title', 200, null, title));
         });
     }
+    deleteTitle(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.params.titleId);
+            let title = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.titleId });
+            if (title) {
+                for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
+                    if ((title === null || title === void 0 ? void 0 : title.subLessons[i]._id.toString()) == req.params.titleId) {
+                        if (title.subLessons[i].content) {
+                            yield content_1.default.findByIdAndDelete(title.subLessons[i].content);
+                        }
+                        title === null || title === void 0 ? true : delete title.subLessons[i];
+                    }
+                }
+                title.save();
+                yield connection.resetCache();
+                return next(new responseService_1.response(req, res, 'delete title ', 200, null, title));
+            }
+        });
+    }
     deleteContent(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.params.contentId);
@@ -268,10 +285,76 @@ class adminController {
             if (!content) {
                 console.log('no content exist');
             }
+            if ((content === null || content === void 0 ? void 0 : content.state) == 0) {
+                let sublesson = yield subLesson_1.default.findOne({ 'subLessons._id': content.subLesson });
+                sublesson === null || sublesson === void 0 ? void 0 : sublesson.subLessons.forEach((elem) => {
+                    if (elem._id == content.subLesson) {
+                        elem.content = null;
+                        // elem.set('content' , null)
+                    }
+                });
+                yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
+            }
+            else if ((content === null || content === void 0 ? void 0 : content.state) == 1) {
+                let sublesson = yield subLesson_1.default.findById(content.subLesson);
+                sublesson === null || sublesson === void 0 ? void 0 : sublesson.set('content', null);
+                sublesson === null || sublesson === void 0 ? void 0 : sublesson.save();
+            }
             yield content_1.default.findByIdAndDelete(req.params.contentId);
             // here you shoud update sublesson . . .
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'delete content', 200, null, content));
+        });
+    }
+    deleteSublesson(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.params.subLessonId);
+            const subLesson = yield subLesson_1.default.findById(req.params.subLessonId);
+            if (!subLesson) {
+                console.log('no content exist');
+            }
+            if (subLesson === null || subLesson === void 0 ? void 0 : subLesson.lesson) {
+                let lesson = yield lesson_1.default.findById(subLesson.lesson);
+                yield (lesson === null || lesson === void 0 ? void 0 : lesson.updateOne({ $pull: { sublessons: subLesson._id } }));
+            }
+            if (subLesson === null || subLesson === void 0 ? void 0 : subLesson.content) {
+                yield content_1.default.findByIdAndDelete(subLesson.content);
+            }
+            if (subLesson === null || subLesson === void 0 ? void 0 : subLesson.subLessons.length) {
+                for (let i = 0; i < (subLesson === null || subLesson === void 0 ? void 0 : subLesson.subLessons.length); i++) {
+                    yield content_1.default.deleteMany({ subLesson: subLesson.subLessons[i]._id });
+                }
+            }
+            yield (subLesson === null || subLesson === void 0 ? void 0 : subLesson.deleteOne());
+            yield connection.resetCache();
+            return next(new responseService_1.response(req, res, 'delete content', 200, null, subLesson));
+        });
+    }
+    deleteLesson(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(req.params.lessonId);
+            const lesson = yield lesson_1.default.findById(req.params.lessonId);
+            if (!lesson) {
+                console.log('no content exist');
+            }
+            if (lesson === null || lesson === void 0 ? void 0 : lesson.sublessons.length) {
+                let subLessons = yield subLesson_1.default.find({ lesson: lesson._id });
+                for (let i = 0; i < subLessons.length; i++) {
+                    if (subLessons[i].content) {
+                        yield content_1.default.findByIdAndDelete(subLessons[i].content);
+                    }
+                    if (subLessons[i].subLessons.length) {
+                        for (let j = 0; j < subLessons[i].subLessons.length; j++) {
+                            yield content_1.default.deleteMany({ subLesson: subLessons[i].subLessons[j] });
+                        }
+                    }
+                    // here we should delete all sublessons contents . . .
+                }
+                yield subLesson_1.default.deleteMany({ lesson: lesson._id });
+            }
+            yield (lesson === null || lesson === void 0 ? void 0 : lesson.deleteOne());
+            yield connection.resetCache();
+            return next(new responseService_1.response(req, res, 'delete content', 200, null, lesson));
         });
     }
     getAll(req, res, next) {

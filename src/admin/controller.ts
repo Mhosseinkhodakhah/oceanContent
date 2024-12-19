@@ -251,8 +251,6 @@ export default class adminController {
         if (!title){
             return next(new response(req , res , 'update title' , 404 , 'this title is not exist on database' , null))
         }
-        let finalData;
-        let newTitle = title.toObject()
         for (let i = 0 ; i < title?.subLessons.length ; i++){
             if (title.subLessons[i]._id.toString() == req.params.titleId){
                 title.subLessons[i].eName = req.body.eName;
@@ -265,11 +263,48 @@ export default class adminController {
         return next(new response(req , res , 'update title' , 200 , null , title))
     }
 
+
+
+    async deleteTitle(req: any, res: any, next: any){
+        console.log(req.params.titleId)
+        let title = await subLessonModel.findOne({'subLessons._id' : req.params.titleId})
+        if (title){
+            for (let i = 0 ; i < title?.subLessons.length ; i++){
+                if (title?.subLessons[i]._id.toString() == req.params.titleId){
+                    if (title.subLessons[i].content){
+                        await contentModel.findByIdAndDelete(title.subLessons[i].content)
+                    }
+                    delete title?.subLessons[i]
+                }
+            }
+            title.save()
+            await connection.resetCache()
+            return next(new response(req , res , 'delete title ' , 200 , null , title))
+        }
+    }
+
+
+
+
     async deleteContent(req: any, res: any, next: any){
         console.log(req.params.contentId)
         const content = await contentModel.findById(req.params.contentId)
         if (!content){
             console.log('no content exist')
+        }
+        if (content?.state == 0){
+            let sublesson = await subLessonModel.findOne({ 'subLessons._id' : content.subLesson })
+            sublesson?.subLessons.forEach((elem:any)=>{
+                if (elem._id == content.subLesson){
+                    elem.content = null
+                    // elem.set('content' , null)
+                }
+            })
+            await sublesson?.save()
+        }else if(content?.state == 1){
+            let sublesson = await subLessonModel.findById(content.subLesson)
+            sublesson?.set('content' , null)
+            sublesson?.save()
         }
         await contentModel.findByIdAndDelete(req.params.contentId)
         // here you shoud update sublesson . . .
@@ -277,12 +312,69 @@ export default class adminController {
         return next(new response(req , res , 'delete content' , 200 , null , content))
     }
 
+
+
+    async deleteSublesson(req: any, res: any, next: any){
+        console.log(req.params.subLessonId)
+        const subLesson = await subLessonModel.findById(req.params.subLessonId)
+        if (!subLesson){
+            console.log('no content exist')
+        }
+        if (subLesson?.lesson){
+            let lesson = await lessonModel.findById(subLesson.lesson)
+            await lesson?.updateOne({$pull : {sublessons : subLesson._id}})
+        }
+        if (subLesson?.content){
+            await contentModel.findByIdAndDelete(subLesson.content)
+        }
+        if (subLesson?.subLessons.length){
+            for (let i = 0 ; i < subLesson?.subLessons.length ; i++){
+                    await contentModel.deleteMany({subLesson : subLesson.subLessons[i]._id})
+            }
+        }
+        await subLesson?.deleteOne()
+        await connection.resetCache()
+        return next(new response(req , res , 'delete content' , 200 , null , subLesson))
+    }
+
+
+    
+    async deleteLesson(req: any, res: any, next: any){
+        console.log(req.params.lessonId)
+        const lesson = await lessonModel.findById(req.params.lessonId)
+        if (!lesson){
+            console.log('no content exist')
+        }
+        if (lesson?.sublessons.length){
+            let subLessons = await subLessonModel.find({lesson : lesson._id})
+            for (let i = 0 ;i<subLessons.length; i++){
+                if (subLessons[i].content){
+                    await contentModel.findByIdAndDelete(subLessons[i].content)
+                }
+                if (subLessons[i].subLessons.length){
+                    for (let j = 0 ; j < subLessons[i].subLessons.length ; j++){
+                        await contentModel.deleteMany({subLesson : subLessons[i].subLessons[j]})
+                    }
+                }
+                // here we should delete all sublessons contents . . .
+            }
+            
+            await subLessonModel.deleteMany({lesson : lesson._id})
+        }
+        await lesson?.deleteOne()
+        await connection.resetCache()
+        return next(new response(req , res , 'delete content' , 200 , null , lesson))
+    }
+
+
     async getAll(req: any, res: any, next: any){
         const content = await subLessonModel.find()
         return res.status(200).json({
             content : content
         })
     }
+
+    
 
 
     async getSubLesson(req: any, res: any, next: any) {
