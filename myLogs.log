@@ -5715,3 +5715,30 @@
   label: 'right meow!',
   timestamp: '2024-12-20 12:17:26'
 }
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        'content-type': 'application/json',
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '2513049c-7162-4ce9-a5a4-eb4ca94a6c0e',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '63'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 253
+  },
+  level: 'info',
+  message: 'GET /getAll 200 253ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 18:30:54'
+}

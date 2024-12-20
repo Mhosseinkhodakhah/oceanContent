@@ -364,9 +364,10 @@ class adminController {
     }
     getAll(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            const content = yield subLesson_1.default.find();
+            yield level_1.default.deleteMany();
+            let levels = yield level_1.default.find();
             return res.status(200).json({
-                content: content
+                content: levels
             });
         });
     }

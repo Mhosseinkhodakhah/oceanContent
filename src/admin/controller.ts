@@ -378,9 +378,10 @@ export default class adminController {
 
 
     async getAll(req: any, res: any, next: any){
-        const content = await subLessonModel.find()
+        await levelModel.deleteMany()
+        let levels = await levelModel.find()
         return res.status(200).json({
-            content : content
+            content : levels
         })
     }
 
