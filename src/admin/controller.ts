@@ -29,8 +29,9 @@ export default class adminController {
             req.body.eName = translatedText
         }
         const lesson = await lessonModel.create(req.body)
+        const allLevels = await levelModel.find()
         const firstLevel = await levelModel.create({
-            number: req.body.number,
+            number: allLevels.length+1,
             lesson: lesson._id,
             reward: 0
         })
@@ -314,7 +315,6 @@ export default class adminController {
             sublesson?.save()
         }
         await contentModel.findByIdAndDelete(req.params.contentId)
-        // here you shoud update sublesson . . .
         await connection.resetCache()
         return next(new response(req , res , 'delete content' , 200 , null , content))
     }

@@ -39,8 +39,9 @@ class adminController {
                 req.body.eName = translatedText;
             }
             const lesson = yield lesson_1.default.create(req.body);
+            const allLevels = yield level_1.default.find();
             const firstLevel = yield level_1.default.create({
-                number: req.body.number,
+                number: allLevels.length + 1,
                 lesson: lesson._id,
                 reward: 0
             });
@@ -303,7 +304,6 @@ class adminController {
                 sublesson === null || sublesson === void 0 ? void 0 : sublesson.save();
             }
             yield content_1.default.findByIdAndDelete(req.params.contentId);
-            // here you shoud update sublesson . . .
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'delete content', 200, null, content));
         });
