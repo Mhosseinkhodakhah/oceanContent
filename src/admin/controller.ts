@@ -368,6 +368,9 @@ export default class adminController {
             
             await subLessonModel.deleteMany({lesson : lesson._id})
         }
+        if (lesson?.levels.length){
+            await levelModel.deleteMany({lesson : lesson._id})
+        }
         await lesson?.deleteOne()
         await connection.resetCache()
         return next(new response(req , res , 'delete content' , 200 , null , lesson))

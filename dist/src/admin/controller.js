@@ -354,6 +354,9 @@ class adminController {
                 }
                 yield subLesson_1.default.deleteMany({ lesson: lesson._id });
             }
+            if (lesson === null || lesson === void 0 ? void 0 : lesson.levels.length) {
+                yield level_1.default.deleteMany({ lesson: lesson._id });
+            }
             yield (lesson === null || lesson === void 0 ? void 0 : lesson.deleteOne());
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'delete content', 200, null, lesson));
