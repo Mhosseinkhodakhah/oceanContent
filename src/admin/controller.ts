@@ -301,18 +301,13 @@ export default class adminController {
             console.log('no content exist')
         }
         if (content?.state == 0){
-            let sublesson = await subLessonModel.findOne({ 'subLessons._id' : content.subLesson })
-            sublesson?.subLessons.forEach((elem:any)=>{
-                if (elem._id == content.subLesson){
-                    elem.content = null
-                    // elem.set('content' , null)
-                }
-            })
-            await sublesson?.save()
+            console.log('title')
+            let sublesson = await subLessonModel.findOneAndUpdate({ 'subLessons._id' : content.subLesson },{$set:{"subLessons.$.content" : null}})
         }else if(content?.state == 1){
+            console.log('sublesson')
             let sublesson = await subLessonModel.findById(content.subLesson)
             sublesson?.set('content' , null)
-            sublesson?.save()
+            await sublesson?.save()
         }
         await contentModel.findByIdAndDelete(req.params.contentId)
         await connection.resetCache()

@@ -289,19 +289,14 @@ class adminController {
                 console.log('no content exist');
             }
             if ((content === null || content === void 0 ? void 0 : content.state) == 0) {
-                let sublesson = yield subLesson_1.default.findOne({ 'subLessons._id': content.subLesson });
-                sublesson === null || sublesson === void 0 ? void 0 : sublesson.subLessons.forEach((elem) => {
-                    if (elem._id == content.subLesson) {
-                        elem.content = null;
-                        // elem.set('content' , null)
-                    }
-                });
-                yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
+                console.log('title');
+                let sublesson = yield subLesson_1.default.findOneAndUpdate({ 'subLessons._id': content.subLesson }, { $set: { "subLessons.$.content": null } });
             }
             else if ((content === null || content === void 0 ? void 0 : content.state) == 1) {
+                console.log('sublesson');
                 let sublesson = yield subLesson_1.default.findById(content.subLesson);
                 sublesson === null || sublesson === void 0 ? void 0 : sublesson.set('content', null);
-                sublesson === null || sublesson === void 0 ? void 0 : sublesson.save();
+                yield (sublesson === null || sublesson === void 0 ? void 0 : sublesson.save());
             }
             yield content_1.default.findByIdAndDelete(req.params.contentId);
             yield connection.resetCache();
