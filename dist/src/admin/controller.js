@@ -261,21 +261,23 @@ class adminController {
     }
     deleteTitle(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(req.params.titleId);
             let title = yield subLesson_1.default.findOne({ 'subLessons._id': req.params.titleId });
-            if (title) {
-                for (let i = 0; i < (title === null || title === void 0 ? void 0 : title.subLessons.length); i++) {
-                    if ((title === null || title === void 0 ? void 0 : title.subLessons[i]._id.toString()) == req.params.titleId) {
-                        if (title.subLessons[i].content) {
-                            yield content_1.default.findByIdAndDelete(title.subLessons[i].content);
-                        }
-                        title === null || title === void 0 ? true : delete title.subLessons[i];
-                    }
-                }
-                title.save();
-                yield connection.resetCache();
-                return next(new responseService_1.response(req, res, 'delete title ', 200, null, title));
+            // console.log(title)                
+            if (!title) {
+                return next(new responseService_1.response(req, res, 'delete title', 404, 'this title is not exist on database', null));
             }
+            let finalData = title.toObject();
+            let specificTitle = finalData.subLessons.find((elem) => {
+                if (elem._id == req.params.titleId) {
+                    return elem;
+                }
+            });
+            if (specificTitle === null || specificTitle === void 0 ? void 0 : specificTitle.content) {
+                yield content_1.default.findByIdAndDelete(specificTitle === null || specificTitle === void 0 ? void 0 : specificTitle.content);
+            }
+            yield title.updateOne({ $pull: { subLessons: { _id: req.params.titleId } } });
+            yield connection.resetCache();
+            return next(new responseService_1.response(req, res, 'delete title ', 200, null, title));
         });
     }
     deleteContent(req, res, next) {

@@ -5294,3 +5294,424 @@
   label: 'right meow!',
   timestamp: '2024-12-18 19:17:38'
 }
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        'if-none-match': 'W/"14a2-Y07lF+mYRJphEMY3AiLqwM2yt8c"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 194
+  },
+  level: 'info',
+  message: 'GET /getAll 200 194ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:37:42'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'image/avif,image/webp,*/*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 17
+  },
+  level: 'warn',
+  message: 'GET /favicon.ico 404 17ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:37:42'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/:titleId',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'curl/8.5.0',
+        accept: '*/*'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/:titleId',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 9
+  },
+  level: 'warn',
+  message: 'GET /delete-title/:titleId 404 9ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:39:55'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/:titleId',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'curl/8.5.0',
+        accept: '*/*'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/:titleId',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'GET /delete-title/:titleId 404 4ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:40:05'
+}
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        'if-none-match': 'W/"ffe-BsqBXfO9XvKF+s+iMJBLv8RC1qo"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 825
+  },
+  level: 'info',
+  message: 'GET /getAll 200 825ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:47:53'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'image/avif,image/webp,*/*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 15
+  },
+  level: 'warn',
+  message: 'GET /favicon.ico 404 15ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:47:53'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/6762eb21220004d84d1b1511',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '5f8c5732-fe0c-4b13-9ec9-afc1e429f30b',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/6762eb21220004d84d1b1511',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 154
+  },
+  level: 'warn',
+  message: 'DELETE /delete-title/6762eb21220004d84d1b1511 404 154ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:48:07'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675bfd68700d5d56a89efabc',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '5dcdc56f-9706-4f0f-add1-a99fc9bd36ec',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675bfd68700d5d56a89efabc',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 178
+  },
+  level: 'warn',
+  message: 'DELETE /delete-title/675bfd68700d5d56a89efabc 404 178ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:49:38'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675bfecd700d5d56a89efacb',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '3f122523-c249-4d0a-b339-2c79ef9909cc',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675bfecd700d5d56a89efacb',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 115
+  },
+  level: 'warn',
+  message: 'DELETE /delete-title/675bfecd700d5d56a89efacb 404 115ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:49:55'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675bff0e700d5d56a89efacf',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '6c0b6506-0418-41f9-ada7-b1c619e5060e',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675bff0e700d5d56a89efacf',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 310
+  },
+  level: 'info',
+  message: 'DELETE /delete-title/675bff0e700d5d56a89efacf 200 310ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:50:27'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675bffb8700d5d56a89efada',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': 'c27da2f6-6e2a-4872-af64-6a6faf38c961',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675bffb8700d5d56a89efada',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 467
+  },
+  level: 'info',
+  message: 'DELETE /delete-title/675bffb8700d5d56a89efada 200 467ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 11:52:55'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675c00c3700d5d56a89efaea',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': 'f04c62da-3fe5-42f7-8b9d-f51d975ffae0',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675c00c3700d5d56a89efaea',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 317
+  },
+  level: 'info',
+  message: 'DELETE /delete-title/675c00c3700d5d56a89efaea 200 317ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 12:13:33'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675c00c3700d5d56a89efaea',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '329d08f7-8a37-429a-a6cb-2687dd29b984',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675c00c3700d5d56a89efaea',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 349
+  },
+  level: 'info',
+  message: 'DELETE /delete-title/675c00c3700d5d56a89efaea 200 349ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 12:14:18'
+}
+{
+  meta: {
+    req: {
+      url: '/delete-title/675c00c3700d5d56a89efaea',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': 'c77a7eff-e726-4764-a415-bfc597c1dc64',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive'
+      },
+      method: 'DELETE',
+      httpVersion: '1.1',
+      originalUrl: '/delete-title/675c00c3700d5d56a89efaea',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 350
+  },
+  level: 'info',
+  message: 'DELETE /delete-title/675c00c3700d5d56a89efaea 200 350ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 12:17:20'
+}
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'upgrade-insecure-requests': '1',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': '?1',
+        'if-none-match': 'W/"f4f-Sa6tut/5iljvfcQzsKbPdO0AjX8"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 137
+  },
+  level: 'info',
+  message: 'GET /getAll 200 137ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 12:17:26'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:5001',
+        'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0',
+        accept: 'image/avif,image/webp,*/*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'sec-fetch-dest': 'image',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 11
+  },
+  level: 'warn',
+  message: 'GET /favicon.ico 404 11ms',
+  label: 'right meow!',
+  timestamp: '2024-12-20 12:17:26'
+}

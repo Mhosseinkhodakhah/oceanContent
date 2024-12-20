@@ -266,21 +266,28 @@ export default class adminController {
 
 
     async deleteTitle(req: any, res: any, next: any){
-        console.log(req.params.titleId)
+       
         let title = await subLessonModel.findOne({'subLessons._id' : req.params.titleId})
-        if (title){
-            for (let i = 0 ; i < title?.subLessons.length ; i++){
-                if (title?.subLessons[i]._id.toString() == req.params.titleId){
-                    if (title.subLessons[i].content){
-                        await contentModel.findByIdAndDelete(title.subLessons[i].content)
-                    }
-                    delete title?.subLessons[i]
-                }
-            }
-            title.save()
-            await connection.resetCache()
-            return next(new response(req , res , 'delete title ' , 200 , null , title))
+        // console.log(title)                
+        if (!title){
+            return next(new response(req , res , 'delete title' , 404 , 'this title is not exist on database' , null))
         }
+        let finalData = title.toObject()
+
+        let specificTitle = finalData.subLessons.find((elem:any)=>{
+            if (elem._id == req.params.titleId){
+                return elem
+            }
+        })
+
+        if (specificTitle?.content) {
+            await contentModel.findByIdAndDelete(specificTitle?.content)
+        }
+                    
+        await title.updateOne({ $pull: { subLessons: { _id: req.params.titleId } } })
+        await connection.resetCache()
+        return next(new response(req, res, 'delete title ', 200, null, title))
+
     }
 
 
@@ -383,7 +390,7 @@ export default class adminController {
         if (cacheData) {
             console.log('read throw cach . . .')
             subLesson = cacheData
-        } else {
+        } else {  
             console.log('cache is empty . . .')
             subLesson = await subLessonModel.findById(req.params.sublessonId).populate('contents').populate('lesson')
             if (!subLesson) {

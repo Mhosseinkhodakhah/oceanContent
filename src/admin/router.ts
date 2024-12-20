@@ -31,7 +31,7 @@ adminRouter.delete('/delete-lesson/:lessonId' , adminAuth ,controller.deleteLess
 
 adminRouter.delete('/delete-content/:contentId' , adminAuth ,controller.deleteContent)
 
-adminRouter.delete('/delete-title/:titleId' , adminAuth ,controller.deleteTitle)
+adminRouter.delete('/delete-title/:titleId' ,adminAuth ,controller.deleteTitle)
 
 adminRouter.get('/getAll' , controller.getAll)
 
