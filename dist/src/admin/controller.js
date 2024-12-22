@@ -95,9 +95,9 @@ class adminController {
             if (!sublesson) {
                 return next(new responseService_1.response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null));
             }
-            const data = Object.assign(Object.assign({}, req.body), { subLesson: req.params.sublesson, state: 0 });
+            const data = Object.assign(Object.assign({}, req.body), { subLesson: req.params.sublesson, state: 1 });
             const content = yield content_1.default.create(data);
-            sublesson.subLessons.forEach(element => {
+            sublesson.subLessons.forEach((element) => {
                 if (element._id == req.params.sublesson) {
                     element['content'] = content._id;
                     console.log('new content . . .', element);
@@ -288,11 +288,11 @@ class adminController {
             if (!content) {
                 console.log('no content exist');
             }
-            if ((content === null || content === void 0 ? void 0 : content.state) == 0) {
+            if ((content === null || content === void 0 ? void 0 : content.state) == 1) {
                 console.log('title');
                 let sublesson = yield subLesson_1.default.findOneAndUpdate({ 'subLessons._id': content.subLesson }, { $set: { "subLessons.$.content": null } });
             }
-            else if ((content === null || content === void 0 ? void 0 : content.state) == 1) {
+            else if ((content === null || content === void 0 ? void 0 : content.state) == 0) {
                 console.log('sublesson');
                 let sublesson = yield subLesson_1.default.findById(content.subLesson);
                 sublesson === null || sublesson === void 0 ? void 0 : sublesson.set('content', null);
@@ -359,10 +359,9 @@ class adminController {
     }
     getAll(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield level_1.default.deleteMany();
-            let levels = yield level_1.default.find();
+            let lesson = yield content_1.default.find();
             return res.status(200).json({
-                content: levels
+                content: lesson
             });
         });
     }

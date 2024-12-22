@@ -39,7 +39,7 @@ const subLessonSchema = new mongoose_1.Schema({
             number: { type: Number },
             seen: [String],
             content: { type: mongoose_1.default.Types.ObjectId, ref: "contents" }
-        }]
+        }],
 }, { timestamps: true });
 const subLessonModel = (0, mongoose_1.model)('subLessons', subLessonSchema);
 exports.default = subLessonModel;

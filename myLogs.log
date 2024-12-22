@@ -5742,3 +5742,137 @@
   label: 'right meow!',
   timestamp: '2024-12-20 18:30:54'
 }
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        connection: 'keep-alive',
+        'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en-US,en;q=0.9,fa;q=0.8'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 176
+  },
+  level: 'info',
+  message: 'GET /getAll 200 176ms',
+  label: 'right meow!',
+  timestamp: '2024-12-22 14:52:42'
+}
+{
+  meta: {
+    req: {
+      url: '/favicon.ico',
+      headers: {
+        host: 'localhost:5001',
+        connection: 'keep-alive',
+        'sec-ch-ua-platform': '"Linux"',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+        'sec-fetch-site': 'same-origin',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-dest': 'image',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en-US,en;q=0.9,fa;q=0.8'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/favicon.ico',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'GET /favicon.ico 404 4ms',
+  label: 'right meow!',
+  timestamp: '2024-12-22 14:52:42'
+}
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en-US,en;q=0.9,fa;q=0.8',
+        'if-none-match': 'W/"39c-pAyJaHbnTrajYjf1oLYhZwzEql8"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 404
+  },
+  level: 'info',
+  message: 'GET /getAll 200 404ms',
+  label: 'right meow!',
+  timestamp: '2024-12-22 14:53:24'
+}
+{
+  meta: {
+    req: {
+      url: '/getAll',
+      headers: {
+        host: 'localhost:5001',
+        connection: 'keep-alive',
+        'cache-control': 'max-age=0',
+        'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'sec-fetch-site': 'none',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-user': '?1',
+        'sec-fetch-dest': 'document',
+        'accept-encoding': 'gzip, deflate, br, zstd',
+        'accept-language': 'en-US,en;q=0.9,fa;q=0.8',
+        'if-none-match': 'W/"c0e-q81674+ye5MviSXiwS5JX6vrGy8"'
+      },
+      method: 'GET',
+      httpVersion: '1.1',
+      originalUrl: '/getAll',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 258
+  },
+  level: 'info',
+  message: 'GET /getAll 200 258ms',
+  label: 'right meow!',
+  timestamp: '2024-12-22 14:54:21'
+}

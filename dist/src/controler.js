@@ -27,7 +27,8 @@ class contentController {
             yield services.makeLog(req.user, `seen content`, `seen content ${content === null || content === void 0 ? void 0 : content.internalContent.title}`);
             let subLesson;
             if ((content === null || content === void 0 ? void 0 : content.state) == 1) {
-                subLesson = yield subLesson_1.default.findOne({ 'subLessons._id': content === null || content === void 0 ? void 0 : content.subLesson });
+                console.log('its title . . .');
+                subLesson = yield subLesson_1.default.findOneAndUpdate({ 'subLessons._id': content === null || content === void 0 ? void 0 : content.subLesson });
                 subLesson === null || subLesson === void 0 ? void 0 : subLesson.subLessons.forEach(element => {
                     if (element._id == (content === null || content === void 0 ? void 0 : content.subLesson)) {
                         element['seen'].push(req.user.id);
@@ -81,6 +82,7 @@ class contentController {
                     }
                 }
             }
+            console.log(content);
             yield connection.resetCache();
             return next(new responseService_1.response(req, res, 'seen content', 200, null, 'content seen by user!'));
         });

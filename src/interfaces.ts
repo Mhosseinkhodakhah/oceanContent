@@ -50,7 +50,6 @@ export interface levelDB {
 }
 
 export interface subLessonDB {
-
     name: string,
     eName: string,
     aName: string,

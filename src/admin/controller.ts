@@ -91,11 +91,11 @@ export default class adminController {
         if (!sublesson) {
             return next(new response(req, res, 'creating content', 404, 'this sublesson is not exist on database', null))
         }
-        const data = { ...req.body , subLesson: req.params.sublesson , state : 0 }
+        const data = { ...req.body , subLesson: req.params.sublesson , state : 1 }
         const content = await contentModel.create(data)
         
         
-        sublesson.subLessons.forEach(element => {
+        sublesson.subLessons.forEach((element:any) => {
             if (element._id == req.params.sublesson) {
                 element['content'] = content._id
                 console.log('new content . . .', element)
@@ -300,10 +300,10 @@ export default class adminController {
         if (!content){
             console.log('no content exist')
         }
-        if (content?.state == 0){
+        if (content?.state == 1){
             console.log('title')
             let sublesson = await subLessonModel.findOneAndUpdate({ 'subLessons._id' : content.subLesson },{$set:{"subLessons.$.content" : null}})
-        }else if(content?.state == 1){
+        }else if(content?.state == 0){
             console.log('sublesson')
             let sublesson = await subLessonModel.findById(content.subLesson)
             sublesson?.set('content' , null)
@@ -373,10 +373,9 @@ export default class adminController {
 
 
     async getAll(req: any, res: any, next: any){
-        await levelModel.deleteMany()
-        let levels = await levelModel.find()
+        let lesson = await contentModel.find()
         return res.status(200).json({
-            content : levels
+            content : lesson
         })
     }
 

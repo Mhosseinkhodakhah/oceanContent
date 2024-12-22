@@ -18,7 +18,7 @@ const subLessonSchema = new Schema<subLessonDB>({
         number : {type:Number},
         seen : [String],
         content:{type : mongoose.Types.ObjectId , ref : "contents"}
-    }]
+    }],
 },{timestamps:true})
 
 

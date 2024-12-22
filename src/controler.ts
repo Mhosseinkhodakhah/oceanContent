@@ -28,7 +28,8 @@ export default class contentController {
         await services.makeLog(req.user , `seen content` , `seen content ${content?.internalContent.title}`)
         let subLesson;
         if (content?.state == 1) {
-            subLesson = await subLessonModel.findOne({ 'subLessons._id': content?.subLesson })
+            console.log('its title . . .')
+            subLesson = await subLessonModel.findOneAndUpdate({ 'subLessons._id': content?.subLesson })
             subLesson?.subLessons.forEach(element => {
                 if (element._id == content?.subLesson) {
                     element['seen'].push(req.user.id)
@@ -82,6 +83,7 @@ export default class contentController {
                 }
             }
         }
+        console.log(content)
         await connection.resetCache()
         return next(new response(req, res, 'seen content', 200, null, 'content seen by user!'))
     }
