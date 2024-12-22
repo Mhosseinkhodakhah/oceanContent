@@ -63,7 +63,7 @@ export default class contentController {
             })
             if (lesson?.sublessons.length == allLessonSeen){
                 await lesson.updateOne({$addToSet:{seen : req.user.id}})
-                const rewardResponse = await connection.putReward(req.user.id, lesson?.reward, `finished ${lesson?.number} Lesson`)
+                const rewardResponse = await connection.putReward(req.user.id, lesson?.reward, `finished lesson ${lesson?.number}`)
                 await services.makeLog(req.user , `seen content` , `seen all content of lesson ${lesson?.number}`)
                 if (rewardResponse.success) {
                     await lesson.updateOne({$addToSet:{rewarded : req.user.id}})
@@ -83,7 +83,7 @@ export default class contentController {
             })
             if (lesson?.sublessons.length == allLessonSeen){
                 await lesson.updateOne({$addToSet:{seen : req.user.id}})
-                const rewardResponse = await connection.putReward(req.user.id, lesson?.reward, `finished ${lesson?.number} Lesson`)
+                const rewardResponse = await connection.putReward(req.user.id, lesson?.reward, `finished lesson ${lesson?.number}`)
                 await services.makeLog(req.user , `seen content` , `seen all content of lesson ${lesson?.number}`)
                 if (rewardResponse.success) {
                     await lesson.updateOne({$addToSet:{rewarded : req.user.id}})
