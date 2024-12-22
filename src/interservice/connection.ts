@@ -48,6 +48,9 @@ export default class interConnection {
         const response = await rawResponse.json()
         const response2 = await rawResponse2.json()
         const response3 = await rawResponse3.json()
+        console.log(response)
+        console.log(response2)
+        console.log(response3)
         return response;
     }
 
