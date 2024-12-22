@@ -30,7 +30,7 @@ export default class contentController {
         if (content?.state == 1) {
             console.log('its title . . .')
             subLesson = await subLessonModel.findOne({ 'subLessons._id': content?.subLesson })
-            subLesson?.subLessons.forEach(element => {
+            subLesson?.subLessons.forEach((element : any) => {
                 if (element._id == content?.subLesson) {
                     element['seen'].push(req.user.id)
                     console.log('sublesson seen successfully . . .' , element['seen'])
@@ -40,7 +40,7 @@ export default class contentController {
             console.log('update the sublesson')
             await services.makeLog(req.user , `seen content` , `seen all content of subLesson ${subLesson?.name}`)
             let allSublessonsSeen =0;
-            subLesson?.subLessons.forEach(element => {
+            subLesson?.subLessons.forEach((element:any) => {
                 if (element.seen.includes(req.user.id)) {
                     allSublessonsSeen++;
                 }
@@ -86,7 +86,7 @@ export default class contentController {
             }
         }
         console.log(content)
-        content.updateOne({ $addToSet: { seen: req.user.id } })
+        await content.updateOne({ $addToSet: { seen: req.user.id } })
         await connection.resetCache()
         return next(new response(req, res, 'seen content', 200, null, 'content seen by user!'))
     }
