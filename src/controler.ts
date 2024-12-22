@@ -95,7 +95,5 @@ export default class contentController {
         await connection.resetCache()
         return next(new response(req, res, 'seen content', 200, null, 'content seen by user!'))
     }
-
-
-
+    
 }

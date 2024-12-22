@@ -350,12 +350,11 @@ export default class adminController {
         if (lesson?.sublessons.length){
             let subLessons = await subLessonModel.find({lesson : lesson._id})
             for (let i = 0 ;i<subLessons.length; i++){
-                if (subLessons[i].content){
-                    await contentModel.findByIdAndDelete(subLessons[i].content)
-                }
-                if (subLessons[i].subLessons.length){
-                    for (let j = 0 ; j < subLessons[i].subLessons.length ; j++){
-                        await contentModel.deleteMany({subLesson : subLessons[i].subLessons[j]})
+                let firstSubLessons = subLessons[i]
+                    await contentModel.deleteMany({subLesson : firstSubLessons._id})
+                if (firstSubLessons.subLessons.length){
+                    for (let j = 0 ; j < firstSubLessons.subLessons.length ; j++){
+                        await contentModel.deleteMany({subLesson : firstSubLessons.subLessons[j]._id})
                     }
                 }
                 // here we should delete all sublessons contents . . .
