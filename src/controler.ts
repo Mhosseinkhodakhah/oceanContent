@@ -24,7 +24,7 @@ export default class contentController {
 
 
     async seenContent(req: any, res: any, next: any) {
-        const content = await contentModel.findByIdAndUpdate(req.params.contentId, { $addToSet: { seen: req.user.id } })
+        const content = await contentModel.findById(req.params.contentId)
         await services.makeLog(req.user , `seen content` , `seen content ${content?.internalContent.title}`)
         let subLesson;
         if (content?.state == 1) {
@@ -37,6 +37,7 @@ export default class contentController {
                 }
             });
             await subLesson?.save()
+            console.log('update the sublesson')
             await services.makeLog(req.user , `seen content` , `seen all content of subLesson ${subLesson?.name}`)
             let allSublessonsSeen =0;
             subLesson?.subLessons.forEach(element => {
@@ -47,6 +48,7 @@ export default class contentController {
             if (allSublessonsSeen == subLesson?.subLessons.length){                        // if all sublessons seen in level 1
                 await subLesson?.updateOne({$addToSet:{seen : req.user.id}})
             }
+            console.log('update the second sublessons')
             let lesson = await lessonModel.findById(subLesson?.lesson).populate('sublessons')
             let allLessonSeen=0;
             lesson?.sublessons.forEach((element:any)=>{
@@ -62,7 +64,7 @@ export default class contentController {
                     await lesson.updateOne({$addToSet:{rewarded : req.user.id}})
                 }
             }
-
+            console.log('update the lesson')
         } else if(content?.state == 0) {
             subLesson = await subLessonModel.findById(content?.subLesson)
             await subLesson?.updateOne({$addToSet:{seen : req.user.id}})
@@ -84,6 +86,7 @@ export default class contentController {
             }
         }
         console.log(content)
+        content.updateOne({ $addToSet: { seen: req.user.id } })
         await connection.resetCache()
         return next(new response(req, res, 'seen content', 200, null, 'content seen by user!'))
     }
