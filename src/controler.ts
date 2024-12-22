@@ -34,7 +34,8 @@ export default class contentController {
             console.log('its title . . .')
             subLesson = await subLessonModel.findOne({ 'subLessons._id': content?.subLesson })
             subLesson?.subLessons.forEach((element : any) => {
-                if (element._id == content?.subLesson) {
+                console.log('element' , element)
+                if (element._id.toString() == content?.subLesson) {
                     console.log('check the fucking entery')
                     element.seen.push(req.user.id)
                     console.log('sublesson seen successfully . . .' , element['seen'])
