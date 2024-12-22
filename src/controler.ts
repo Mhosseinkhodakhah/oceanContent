@@ -29,7 +29,7 @@ export default class contentController {
         let subLesson;
         if (content?.state == 1) {
             console.log('its title . . .')
-            subLesson = await subLessonModel.findOneAndUpdate({ 'subLessons._id': content?.subLesson })
+            subLesson = await subLessonModel.findOne({ 'subLessons._id': content?.subLesson })
             subLesson?.subLessons.forEach(element => {
                 if (element._id == content?.subLesson) {
                     element['seen'].push(req.user.id)
