@@ -25,6 +25,9 @@ export default class contentController {
 
     async seenContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
+        if (!content){
+            return next(new response(req, res, 'seen content', 404, 'this content is not exist on databse',null))
+        }
         await services.makeLog(req.user , `seen content` , `seen content ${content?.internalContent.title}`)
         let subLesson;
         if (content?.state == 1) {
