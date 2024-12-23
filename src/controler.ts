@@ -93,7 +93,7 @@ export default class contentController {
         console.log(content)
         await content.updateOne({ $addToSet: { seen: req.user.id } })
         await connection.resetCache()
-        return next(new response(req, res, 'seen content', 200, null, 'content seen by user!'))
+        return next(new response(req, res, 'seen content', 200, null , 'content seen by user!'))
     }
     
 }
