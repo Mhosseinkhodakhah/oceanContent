@@ -19,7 +19,7 @@ export default class contentService {
                 profile : user?.profile,
             },
             title : `resetPassword`,
-            description : `user ${user?.email} resetPassword successfully!`
+            description : `user ${user?.fullName} resetPassword successfully!`
         }
         await connection.putNewLog(userLog)
     }

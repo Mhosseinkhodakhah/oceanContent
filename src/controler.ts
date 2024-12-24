@@ -19,9 +19,7 @@ const services = new contentService()
 const connection = new interConnection()
 
 
-
 export default class contentController {
-
 
     async seenContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
