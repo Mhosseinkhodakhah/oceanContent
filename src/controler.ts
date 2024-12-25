@@ -25,6 +25,7 @@ export default class contentController {
     async seenContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
         let lang : string = req.query.lang;
+        console.log(lang)
         if (!content){
             let Error = (lang && lang != '') ? messages[lang].contentNotExist : messages['english'].contentNotExist
             return next(new response(req, res, 'seen content', 404, Error ,null))
