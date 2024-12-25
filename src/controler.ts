@@ -12,6 +12,7 @@ import { level } from "winston";
 import interConnection from "./interservice/connection";
 import internalCache from "./service/cach";
 import cacher from "./service/cach";
+import messages from "./service/responseMessages";
 
 
 const services = new contentService()
@@ -23,8 +24,10 @@ export default class contentController {
 
     async seenContent(req: any, res: any, next: any) {
         const content = await contentModel.findById(req.params.contentId)
+        let lang : string = req.query.lang;
         if (!content){
-            return next(new response(req, res, 'seen content', 404, 'this content is not exist on databse',null))
+            let Error = (lang && lang != '') ? messages[lang].contentNotExist : messages['english'].contentNotExist
+            return next(new response(req, res, 'seen content', 404, Error ,null))
         }
         await services.makeLog(req.user , `seen content` , `seen content ${content?.internalContent.title}`)
         let subLesson;
@@ -91,7 +94,8 @@ export default class contentController {
         console.log(content)
         await content.updateOne({ $addToSet: { seen: req.user.id } })
         await connection.resetCache()
-        return next(new response(req, res, 'seen content', 200, null , 'content seen by user!'))
+        let message = (lang && lang != '') ? messages[lang].seenContent : messages['english'].seenContent
+        return next(new response(req, res, 'seen content', 200, null , message))
     }
     
 }
