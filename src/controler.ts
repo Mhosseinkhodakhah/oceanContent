@@ -24,7 +24,7 @@ export default class contentController {
 
     async seenContent(req: any, res: any, next: any) {
         let lang: string = req.query.lang;
-        console.log(lang)
+        let navigateToLevel : boolean = true 
         try {
             const content = await contentModel.findById(req.params.contentId)
             if (!content) {
@@ -67,6 +67,7 @@ export default class contentController {
                 if (lesson?.sublessons.length == allLessonSeen) {
                     await lesson.updateOne({ $addToSet: { seen: req.user.id } })
                     const rewardResponse = await connection.putReward(req.user.id, lesson?.reward, `finished lesson ${lesson?.number}`)
+                    navigateToLevel = true
                     await services.makeLog(req.user, `seen content`, `seen all content of lesson ${lesson?.number}`)
                     if (rewardResponse.success) {
                         await lesson.updateOne({ $addToSet: { rewarded: req.user.id } })
@@ -87,6 +88,7 @@ export default class contentController {
                 if (lesson?.sublessons.length == allLessonSeen) {
                     await lesson.updateOne({ $addToSet: { seen: req.user.id } })
                     const rewardResponse = await connection.putReward(req.user.id, lesson?.reward, `finished lesson ${lesson?.number}`)
+                    navigateToLevel = true
                     await services.makeLog(req.user, `seen content`, `seen all content of lesson ${lesson?.number}`)
                     if (rewardResponse.success) {
                         await lesson.updateOne({ $addToSet: { rewarded: req.user.id } })
@@ -97,7 +99,7 @@ export default class contentController {
             await content.updateOne({ $addToSet: { seen: req.user.id } })
             await connection.resetCache()
             let message = (lang && lang != '') ? messages[lang].seenContent : messages['english'].seenContent
-            return next(new response(req, res, 'seen content', 200, null, message))
+            return next(new response(req, res, 'seen content', 200, null, {message : message , navigateToLevel : navigateToLevel}))
 
         } catch (error) {
             console.log('error occured in seenContent>>>>>' , `${error}`)
