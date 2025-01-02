@@ -11,5 +11,6 @@ const router = Router()
 
 router.put('/seen-content/:contentId' , auth , controller.seenContent)
 
+router.put('/time' , controller.time)
 
 export default router;

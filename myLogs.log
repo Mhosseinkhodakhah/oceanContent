@@ -5876,3 +5876,55 @@
   label: 'right meow!',
   timestamp: '2024-12-22 14:54:21'
 }
+{
+  meta: {
+    req: {
+      url: '/time',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '2241d9eb-16d6-4142-9b9a-7255cf278894',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/time',
+      query: {}
+    },
+    res: { statusCode: 404 },
+    responseTime: 4
+  },
+  level: 'warn',
+  message: 'PUT /time 404 4ms',
+  label: 'right meow!',
+  timestamp: '2025-01-01 00:42:06'
+}
+{
+  meta: {
+    req: {
+      url: '/app/time',
+      headers: {
+        'user-agent': 'PostmanRuntime/7.43.0',
+        accept: '*/*',
+        'postman-token': '1f57c0ab-2925-4097-8cf8-1fac58d28746',
+        host: 'localhost:5001',
+        'accept-encoding': 'gzip, deflate, br',
+        connection: 'keep-alive',
+        'content-length': '0'
+      },
+      method: 'PUT',
+      httpVersion: '1.1',
+      originalUrl: '/app/time',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 900
+  },
+  level: 'info',
+  message: 'PUT /app/time 200 900ms',
+  label: 'right meow!',
+  timestamp: '2025-01-01 00:42:16'
+}

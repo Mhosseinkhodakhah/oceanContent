@@ -24,7 +24,7 @@ export default class contentController {
 
     async seenContent(req: any, res: any, next: any) {
         let lang: string = req.query.lang;
-        let navigateToLevel : boolean = true 
+        let navigateToLevel : boolean = false 
         try {
             const content = await contentModel.findById(req.params.contentId)
             if (!content) {
@@ -107,5 +107,13 @@ export default class contentController {
             return next(new response(req, res, 'seen content', 500, Error, null))
         }
     }
+
+
+    async time(req : any , res : any , next : any){
+        await questionModel.updateMany({time : 30})
+        let allQuestion = await questionModel.find()
+        return res.status(200).json(allQuestion)
+    }
+
 
 }
